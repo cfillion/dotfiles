@@ -1,4 +1,5 @@
 cfi30's dotfiles
+================
 
 Installation using [GNU Stow](http://www.gnu.org/software/stow/):
 ```

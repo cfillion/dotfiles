@@ -1,7 +1,6 @@
 source /etc/vimrc
 
 set nocompatible                " choose no compatibility with legacy vi
-set t_Co=256
 set number
 set showcmd                     " display incomplete commands
 set encoding=utf-8

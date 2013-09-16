@@ -26,5 +26,8 @@ setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
 
 [[ -r ~/.aliasrc ]] && . ~/.aliasrc
-[[ $TERM = "xterm-256color" ]] && echo -e -n "\x1b[\x35 q"
+if [[ $TERM = "xterm-256color" ]]; then
+	echo -e -n "\x1b[\x35 q"
+	precmd() { print -Pn "\e]0;%n@%M: %~\a" }
+fi
 

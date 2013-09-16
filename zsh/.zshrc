@@ -25,7 +25,6 @@ setopt COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
 
-if [[ -r ~/.aliasrc ]]; then
-	. ~/.aliasrc
-fi
+[[ -r ~/.aliasrc ]] && . ~/.aliasrc
+[[ $TERM = "xterm-256color" ]] && echo -e -n "\x1b[\x35 q"
 

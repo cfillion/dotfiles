@@ -165,6 +165,7 @@ for_window [class="MPlayer"] floating enable
 bindsym $mod+t exec thunar
 bindsym $mod+k exec keepassx
 bindsym $mod+m exec i3-sensible-terminal -e alsamixer
+bindsym $mod+shift+h exec i3-sensible-terminal -e htop
 bindsym Print exec sleep 0.1 && scrot -msb ~/Pictures/Screenshots/%Y-%m-%d-%T.png -e 'mcomix $f'
 bindsym XF86Launch1 exec --no-startup-id xautolock -locknow
 

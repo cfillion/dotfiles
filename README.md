@@ -9,6 +9,7 @@ $ stow gtk
 $ stow i3
 $ stow ssh
 $ stow vim
+$ stow xterm
 $ stow zsh
 ```
 

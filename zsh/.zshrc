@@ -3,6 +3,12 @@ compinit
 promptinit
 prompt redhat
 
+bindkey -e
+bindkey "^[[H"  beginning-of-line
+bindkey "^[[F"  end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^[[2~" overwrite-mode
+
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history

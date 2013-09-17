@@ -1,0 +1,12 @@
+# Query for the public ip
+myip()
+{
+	curl curlmyip.com
+}
+
+# List largest files/directories
+topdu()
+{
+	du -csh * | sort -rh | less -NS
+}
+

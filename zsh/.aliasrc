@@ -1,0 +1,5 @@
+alias -g ls='ls --color=auto -v'
+alias -g grep='grep --color'
+
+alias -s exe=wine
+

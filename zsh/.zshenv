@@ -1,5 +1,5 @@
 export EDITOR=vim
 
 typeset -U path
-path=($path "$(ruby -rubygems -e "puts Gem.user_dir")/bin")
-
+export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
+path=($path "$GEM_HOME/bin")

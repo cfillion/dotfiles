@@ -1,5 +1,8 @@
+alias e=exec
+
 alias -g ls='ls --color=auto -v'
 alias -g grep='grep --color'
+alias -g unp='unp -U'
 
 alias -s exe=wine
 

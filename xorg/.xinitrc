@@ -11,17 +11,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-export SSH_ASKPASS='/usr/lib/ssh/gnome-ssh-askpass'
-
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
 [ -f ~/.screenlayout/default ] && ~/.screenlayout/default
 xautolock -time 30 -locker 'i3lock -c 000000 --dpms' &
 xset dpms 0 0 0 # disable automatic screen blanking
-
-keychain ~/.ssh/id_rsa
-[ -f ~/.keychain/$HOSTNAME-sh ] && . ~/.keychain/$HOSTNAME-sh 2>/dev/null
-[ -f ~/.keychain/$HOSTNAME-sh-gpg ] && . ~/.keychain/$HOSTNAME-sh-gpg 2>/dev/null
 
 udiskie & # automount devices
 

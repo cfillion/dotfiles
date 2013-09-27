@@ -22,3 +22,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+au BufRead /tmp/mutt-* set tw=72
+

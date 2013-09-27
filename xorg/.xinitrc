@@ -18,6 +18,7 @@ xautolock -time 30 -locker 'i3lock -c 000000 --dpms' &
 xset dpms 0 0 0 # disable automatic screen blanking
 
 udiskie & # automount devices
+offlineimap > ~/.log/offlineimap.log 2>&1 & # syncronise maildirs
 
 # exec gnome-session
 # exec startkde

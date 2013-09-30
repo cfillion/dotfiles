@@ -1,14 +1,24 @@
-autoload -U compinit promptinit
-compinit
-promptinit
-prompt redhat
+# general
+setopt CORRECT
+setopt CORRECT_ALL
+setopt EXTENDED_GLOB
+setopt AUTO_CD
+setopt INTERACTIVE_COMMENTS
 
+# keybindings
 bindkey -e
 bindkey "^[[H"  beginning-of-line
 bindkey "^[[F"  end-of-line
 bindkey "^[[3~" delete-char
 bindkey "^[[2~" overwrite-mode
 
+# prompt
+autoload -U promptinit && promptinit
+autoload -U colors && colors
+PROMPT="%{$fg[magenta]%}%~%(#.#.>)%{$reset_color%} "
+RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}] %{$fg[cyan]%}%T%{$reset_color%}"
+
+# history
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
@@ -20,21 +30,34 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_NO_STORE
 setopt HIST_NO_FUNCTIONS
+setopt HIST_VERIFY
 
-setopt CORRECT
-setopt EXTENDED_GLOB
-setopt AUTO_CD
-
+# completion
+autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
 
-[ -r ~/.aliasrc ] && . ~/.aliasrc
-[ -r ~/.funcrc ] && . ~/.funcrc
+# external editor
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+
+# source additional files
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.aliasrc
+source ~/.funcrc
+
+# xterm-only settings
 if [[ $TERM = "xterm-256color" ]]; then
-	echo -e -n "\x1b[\x35 q"
-	precmd() { print -Pn "\e]0;%n@%M: %~\a" }
+	# set i-beam cursor under xterm
+	echo -ne "\x1b[\x35 q"
+
+	# define terminal title at each prompt
+	precmd() { print -Pn "\e]0;%m: %~\a" }
 fi
 

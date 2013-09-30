@@ -1,12 +1,25 @@
-# Query for the public ip
+# automatic ls on directory change
+chpwd()
+{
+	ls -d */(N)
+}
+
+# query for the public ip
 myip()
 {
 	curl curlmyip.com
 }
 
-# List largest files/directories
+# list largest files/directories
 topdu()
 {
 	du -csh * | sort -rh | less -NS
+}
+
+# execute a command with an appropriate title
+ctitle()
+{
+	[ $TERM = "xterm-256color" ] && echo -n "\033]0;$1\007"
+	command $@
 }
 

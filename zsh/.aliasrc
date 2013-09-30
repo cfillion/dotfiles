@@ -1,8 +1,27 @@
-alias e=exec
+# general aliases
+alias weechat=weechat-curses
+alias ls='ls --color=auto -v'
+alias grep='grep --color'
+alias unp='unp -U'
+alias calc='python -ic "from __future__ import division; from math import *; from random import *"'
 
-alias -g ls='ls --color=auto -v'
-alias -g grep='grep --color'
-alias -g unp='unp -U'
+# shortcuts for frenquently used programs
+alias h=htop
+alias m=mutt
+alias r=ranger
+alias v=alsamixer
+alias R='builtin r'
 
+# launch some commands with a nice title
+alias mutt='ctitle mutt'
+alias htop='ctitle htop'
+alias alsamixer='ctitle alsamixer'
+alias ranger='ctitle ranger'
+alias w3m='ctitle w3m'
+
+# global aliases
+alias -g NUL="> /dev/null 2>&1"
+
+# suffix aliases
 alias -s exe=wine
 

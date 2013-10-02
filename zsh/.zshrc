@@ -52,12 +52,21 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source ~/.aliasrc
 source ~/.funcrc
 
-# xterm-only settings
+# change behaviour
+chpwd()
+{
+	# automatic ls on directory change
+	ls -d */(N)
+}
+
 if [[ $TERM = "xterm-256color" ]]; then
 	# set i-beam cursor under xterm
 	echo -ne "\x1b[\x35 q"
 
 	# define terminal title at each prompt
 	precmd() { print -Pn "\e]0;%m: %~\a" }
+
+	# define terminal title at each command
+	preexec() { print -Pn "\e]0;$2 (%~)\a" }
 fi
 

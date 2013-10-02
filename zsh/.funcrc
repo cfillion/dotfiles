@@ -1,9 +1,3 @@
-# automatic ls on directory change
-chpwd()
-{
-	ls -d */(N)
-}
-
 # query for the public ip
 myip()
 {
@@ -14,12 +8,5 @@ myip()
 topdu()
 {
 	du -csh * | sort -rh | less -NS
-}
-
-# execute a command with an appropriate title
-ctitle()
-{
-	[ $TERM = "xterm-256color" ] && echo -n "\033]0;$1\007"
-	command $@
 }
 

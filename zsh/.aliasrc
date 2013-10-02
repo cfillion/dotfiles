@@ -12,13 +12,6 @@ alias r=ranger
 alias v=alsamixer
 alias R='builtin r'
 
-# launch some commands with a nice title
-alias mutt='ctitle mutt'
-alias htop='ctitle htop'
-alias alsamixer='ctitle alsamixer'
-alias ranger='ctitle ranger'
-alias w3m='ctitle w3m'
-
 # global aliases
 alias -g NUL="> /dev/null 2>&1"
 

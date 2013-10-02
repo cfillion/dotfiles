@@ -24,7 +24,7 @@ font pango:DejaVu Sans Mono 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -162,16 +162,18 @@ for_window [class="Arandr"] floating enable
 for_window [class="Xsane"] floating enable
 for_window [class="MPlayer"] floating enable
 
-bindsym $mod+t exec thunar
-bindsym $mod+k exec keepassx
-bindsym $mod+m exec i3-sensible-terminal -e alsamixer
-bindsym $mod+shift+h exec i3-sensible-terminal -e htop
-bindsym Print exec sleep 0.1 && scrot -msb ~/Pictures/Screenshots/%Y-%m-%d-%T.png -e 'mcomix $f'
-bindsym XF86Launch1 exec --no-startup-id xautolock -locknow
+bindsym $mod+k exec --no-startup-id keepassx
 
+bindsym Print exec ~/.i3/screenshot.sh
+bindsym XF86Display exec arandr
+bindsym XF86Launch1 exec --no-startup-id xautolock -locknow
+bindsym XF86Launch3 exec --no-startup-id udiskie-umount -a
+
+bindsym control+$mod+0 exec --no-startup-id ~/.screenlayout/default
 bindsym control+$mod+1 exec --no-startup-id ~/.screenlayout/lvds-only.sh
 bindsym control+$mod+2 exec --no-startup-id ~/.screenlayout/two-head.sh
 bindsym control+$mod+3 exec --no-startup-id ~/.screenlayout/hdmi-only.sh
 
 exec --no-startup-id qjackctl
 #exec --no-startup-id mplayer /usr/share/sounds/freedesktop/stereo/service-login.oga
+

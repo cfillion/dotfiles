@@ -50,7 +50,7 @@ xterm*faceSize: 9
 ! selectable urls & custom shortcuts
 xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 xterm*VT100*translations: #override \n\
-	Mod1 <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY) \n\
+	Mod1 <Btn1Up>: exec-formatted("dwb '%t'", PRIMARY) \n\
 	Shift Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
 	Mod4 Shift <Key> Return: spawn-new-terminal() \n
 

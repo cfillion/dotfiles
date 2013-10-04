@@ -12,10 +12,18 @@ bindkey "^[[F"  end-of-line
 bindkey "^[[3~" delete-char
 bindkey "^[[2~" overwrite-mode
 
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+
+autoload -Uz copy-earlier-word
+zle -N copy-earlier-word
+bindkey "^[m" copy-earlier-word
+
 # prompt
 autoload -U promptinit && promptinit
 autoload -U colors && colors
-PROMPT="%{$fg[magenta]%}%~%(#.#.>)%{$reset_color%} "
+PROMPT="%{$fg[magenta]%}%~%(#.#.>)%{$reset_color%} "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}] %{$fg[cyan]%}%T%{$reset_color%}"
 
 # history
@@ -41,11 +49,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
-
-# external editor
-autoload edit-command-line
-zle -N edit-command-line
-bindkey '^Xe' edit-command-line
 
 # source additional files
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

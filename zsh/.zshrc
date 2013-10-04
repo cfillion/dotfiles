@@ -59,7 +59,7 @@ source ~/.funcrc
 chpwd()
 {
 	# automatic ls on directory change
-	ls -d */(N)
+	ls
 }
 
 if [[ $TERM = "xterm-256color" ]]; then

@@ -1,6 +1,6 @@
 # general aliases
 alias weechat=weechat-curses
-alias ls='ls --color=auto -v'
+alias ls='ls --color=auto -v --group-directories-first'
 alias grep='grep --color'
 alias unp='unp -U'
 alias calc='python -ic "from __future__ import division; from math import *; from random import *"'

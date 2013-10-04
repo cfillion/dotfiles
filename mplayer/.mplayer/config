@@ -1,0 +1,15 @@
+ao=jack,alsa
+vo=xv,fbdev2,
+lavdopts=threads=4
+af=scaletempo
+
+[protocol.dvd]
+dvd-device=/dev/sr0
+
+[protocol.dvdnav]
+mouse-movements=yes
+nocache=yes
+profile=protocol.dvd
+
+[extension.wav]
+demuxer=lavf

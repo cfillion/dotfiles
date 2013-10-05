@@ -9,8 +9,10 @@ setopt INTERACTIVE_COMMENTS
 bindkey -e
 bindkey "^[[H"  beginning-of-line
 bindkey "^[[F"  end-of-line
-bindkey "^[[3~" delete-char
 bindkey "^[[2~" overwrite-mode
+bindkey "^[[3~" delete-char
+bindkey "^[[5~" up-history
+bindkey "^[[6~" down-history
 
 autoload edit-command-line
 zle -N edit-command-line

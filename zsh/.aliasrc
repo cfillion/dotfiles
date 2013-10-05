@@ -2,6 +2,7 @@
 alias weechat=weechat-curses
 alias ls='ls --color=auto -v --group-directories-first'
 alias grep='grep --color'
+alias rm='rm -vI'
 alias unp='unp -U'
 alias calc='python -ic "from __future__ import division; from math import *; from random import *"'
 

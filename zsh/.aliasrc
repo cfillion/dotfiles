@@ -1,4 +1,4 @@
-# general aliases
+# general
 alias weechat=weechat-curses
 alias ls='ls -vF --color=auto --group-directories-first'
 alias grep='grep --color'
@@ -6,12 +6,19 @@ alias rm='rm -vI'
 alias calc='python -ic "from __future__ import division; from math import *; from random import *"'
 alias vv='f -e vim'
 
-# shortcuts for frenquently used programs
+# frenquently used programs
 alias h=htop
 alias m=mutt
 alias r=ranger
 alias v=alsamixer
 alias R='builtin r'
+
+# systemd
+alias status='systemctl status -l'
+alias start='sudo systemctl start'
+alias restart='sudo systemctl restart'
+alias reload='sudo systemctl reload'
+alias stop='sudo systemctl stop'
 
 # global aliases
 alias -g NUL="> /dev/null 2>&1"

@@ -48,7 +48,7 @@ setopt HIST_VERIFY
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ''
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD

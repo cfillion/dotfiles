@@ -71,6 +71,7 @@ chpwd()
 if [[ $TERM = "xterm-256color" ]]; then
 	# set i-beam cursor under xterm
 	echo -ne "\x1b[\x35 q"
+	clear
 
 	# define terminal title at each prompt
 	precmd() { print -Pn "\e]0;%m: %~\a" }

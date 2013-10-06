@@ -18,7 +18,7 @@ bindkey "^[[6~" down-history
 
 autoload edit-command-line
 zle -N edit-command-line
-bindkey '^Xe' edit-command-line
+bindkey "^Xe" edit-command-line
 
 autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
@@ -55,7 +55,8 @@ setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
 
 # source additional files
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(fasd --init auto)"
+source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source ~/.aliasrc
 source ~/.funcrc
 

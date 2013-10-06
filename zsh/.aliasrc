@@ -5,6 +5,7 @@ alias grep='grep --color'
 alias rm='rm -vI'
 alias unp='unp -U'
 alias calc='python -ic "from __future__ import division; from math import *; from random import *"'
+alias vv='f -e vim'
 
 # shortcuts for frenquently used programs
 alias h=htop
@@ -16,6 +17,6 @@ alias R='builtin r'
 # global aliases
 alias -g NUL="> /dev/null 2>&1"
 
-# suffix aliases
+# suffixes
 alias -s exe=wine
 

@@ -7,7 +7,6 @@ source ~/.funcrc
 
 # general options
 setopt CORRECT
-setopt CORRECT_ALL
 setopt EXTENDED_GLOB
 setopt AUTO_CD
 setopt INTERACTIVE_COMMENTS

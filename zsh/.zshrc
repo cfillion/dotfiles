@@ -1,10 +1,3 @@
-# source additional files
-eval `dircolors`
-eval "$(fasd --init auto)"
-source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source ~/.aliasrc
-source ~/.funcrc
-
 # general options
 setopt CORRECT
 setopt EXTENDED_GLOB
@@ -52,6 +45,8 @@ setopt HIST_VERIFY
 
 # completion
 autoload -U compinit && compinit
+eval "$(fasd --init auto)"
+eval "$(dircolors)"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "$LS_COLORS"
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
@@ -59,6 +54,11 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
+
+# source additional files
+source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source ~/.aliasrc
+source ~/.funcrc
 
 # change behaviour
 chpwd()

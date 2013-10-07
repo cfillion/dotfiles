@@ -27,6 +27,7 @@ Dependencies
 
 **xorg**
 
+- [Hanazono fonts](http://fonts.jp/hanazono/)
 - udiskie
 - xautolock
 

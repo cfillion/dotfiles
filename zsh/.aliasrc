@@ -7,11 +7,12 @@ alias calc='python -ic "from __future__ import division; from math import *; fro
 alias vv='f -e vim'
 
 # frenquently used programs
+alias c=calcurse
 alias h=htop
 alias m=mutt
 alias r=ranger
-alias v=alsamixer
 alias R='builtin r'
+alias v=alsamixer
 
 # systemd
 alias status='systemctl status -l'

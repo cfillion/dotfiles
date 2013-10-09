@@ -4,13 +4,6 @@ pcm.!default
 	slave { pcm "jack" }
 }
 
-ctl.mixer0
-{
-	type hw
-	card 1
-}
-
-# pcm type jack
 pcm.jack
 {
 	type jack

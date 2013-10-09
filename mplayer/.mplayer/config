@@ -1,4 +1,4 @@
-ao=jack,alsa
+ao=jack,alsa:device=hw=0.0
 vo=xv,fbdev2,
 lavdopts=threads=4
 af=scaletempo

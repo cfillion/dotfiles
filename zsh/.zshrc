@@ -8,6 +8,8 @@ setopt INTERACTIVE_COMMENTS
 bindkey -e
 bindkey "^[[H"  beginning-of-line
 bindkey "^[[F"  end-of-line
+bindkey "^[OH"  beginning-of-line
+bindkey "^[OF"  end-of-line
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[2~" overwrite-mode
 bindkey "^[[3~" delete-char

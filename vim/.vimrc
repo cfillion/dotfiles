@@ -8,6 +8,7 @@ set mouse=a
 
 syntax on
 color sunburst
+hi TabLineFill ctermfg=234
 filetype plugin indent on
 
 "" Whitespace

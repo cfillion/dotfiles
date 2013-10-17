@@ -1,0 +1,10 @@
+# audio/video
+ao=jack,alsa:device=[hw:0,0]
+vo=opengl
+
+# misc
+af=scaletempo
+
+[protocol.dvd]
+dvd-device=/dev/sr0
+

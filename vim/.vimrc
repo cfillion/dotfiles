@@ -30,6 +30,7 @@ hi TabLineFill ctermfg=234
 
 " plugins
 filetype plugin indent on
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " special settings
 au BufRead /tmp/mutt-* set tw=72

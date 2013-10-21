@@ -4,6 +4,7 @@ alias df='df -Th'
 alias grep='grep --color'
 alias ls='ls -vF --color=auto --group-directories-first'
 alias rm='rm -vI'
+alias vim='vim -p'
 alias vv='f -e vim'
 alias weechat=weechat-curses
 

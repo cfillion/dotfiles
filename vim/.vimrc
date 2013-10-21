@@ -12,9 +12,9 @@ set wildignore=.git,*.swp,*.o
 
 " whitespace
 set nowrap
+set autoindent
 set copyindent
-set preserveindent
-set tabstop=3 shiftwidth=3 softtabstop=0
+set tabstop=3 shiftwidth=3
 set backspace=indent,eol,start
 
 " searching

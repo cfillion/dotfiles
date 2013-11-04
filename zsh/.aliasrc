@@ -1,6 +1,7 @@
 # general
 alias calc='python -ic "from __future__ import division; from math import *; from random import *"'
 alias df='df -Th'
+alias du='du -h'
 alias grep='grep --color -i'
 alias ls='ls -Fhv --color=auto --group-directories-first'
 alias rm='rm -vI'

@@ -5,6 +5,7 @@ xterm*locale: true
 xterm*metaSendsEscape: true
 xterm*fullscreen: never
 xterm*internalBorder: 0
+xterm*borderWidth: 0
 xterm*saveLines: 4096
 xterm*scrollTtyOutput: false
 xterm*scrollKey: true

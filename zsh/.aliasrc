@@ -7,7 +7,6 @@ alias ls='ls -Fhv --color=auto --group-directories-first'
 alias rm='rm -vI'
 alias vim='vim -p'
 alias vv='f -e vim'
-alias weechat=weechat-curses
 
 # frenquently used programs
 alias c=calcurse

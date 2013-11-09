@@ -25,6 +25,13 @@ Dependencies
 
 - [vim-sunburst](https://github.com/sickill/vim-sunburst)
 
+**weechat**
+
+- [buffers](http://www.weechat.org/scripts/source/buffers.pl.html/)
+- [colorize_lines](http://www.weechat.org/scripts/source/colorize_lines.pl.html/)
+- [colorize_nicks](http://www.weechat.org/scripts/source/colorize_nicks.py.html/)
+- [zerotab](http://www.weechat.org/scripts/source/zerotab.py.html/)
+
 **xorg**
 
 - [Hanazono fonts](http://fonts.jp/hanazono/)

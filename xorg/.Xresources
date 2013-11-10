@@ -54,7 +54,6 @@ xterm*faceSize: 9
 ! selectable urls & custom shortcuts
 xterm*charClass: 33:48,35:48,37-38:48,43-47:48,58:48,61:48,63-64:48,95:48,126:48
 xterm*VT100*translations: #override \n\
-	Mod1 <Btn1Up>: exec-formatted("dwb '%t'", PRIMARY) \n\
-	Shift Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
-	Mod4 Shift <Key> Return: spawn-new-terminal() \n
-
+	Ctrl Shift <Key> V: insert-selection(CLIPBOARD) \n\
+	Mod4 Shift <Key> Return: spawn-new-terminal() \n\
+	Mod1 <Btn1Up>: exec-formatted("dwb '%t'", PRIMARY)

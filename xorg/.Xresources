@@ -1,5 +1,6 @@
 ! general
 xterm*borderWidth: 0
+xterm*fastScroll: true
 xterm*fullscreen: never
 xterm*highlightSelection: true
 xterm*internalBorder: 0

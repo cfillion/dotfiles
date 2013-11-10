@@ -1,6 +1,7 @@
 ! general
 xterm*borderWidth: 0
 xterm*fullscreen: never
+xterm*highlightSelection: true
 xterm*internalBorder: 0
 xterm*locale: true
 xterm*metaSendsEscape: true

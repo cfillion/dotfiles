@@ -18,8 +18,8 @@ Dependencies
 
 **i3**
 
-- [imgur (upload script)](http://imgur.com/tools/imgurbash.sh)
-- scrot
+- [QjackCtl](http://qjackctl.sourceforge.net/)
+- [zscreen](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI)
 
 **vim**
 

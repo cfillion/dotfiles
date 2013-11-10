@@ -1,7 +1,7 @@
 # general options
+setopt AUTO_CD
 setopt CORRECT
 setopt EXTENDED_GLOB
-setopt AUTO_CD
 setopt INTERACTIVE_COMMENTS
 
 # keybindings
@@ -36,29 +36,31 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
 
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
-setopt HIST_NO_STORE
 setopt HIST_NO_FUNCTIONS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
+setopt SHARE_HISTORY
 
 # completion
 autoload -U compinit && compinit
-eval "$(fasd --init auto)"
 eval "$(dircolors)"
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors "$LS_COLORS"
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+eval "$(fasd --init auto)"
+setopt ALWAYS_TO_END
 setopt COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD
-setopt ALWAYS_TO_END
+zstyle ':completion:*' list-colors "$LS_COLORS"
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
 
 # source additional files
 source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
 source ~/.aliasrc
 source ~/.funcrc
 

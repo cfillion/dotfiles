@@ -3,6 +3,7 @@ alias calc='python -ic "from __future__ import division; from math import *; fro
 alias df='df -Th'
 alias du='du -h'
 alias grep='grep --color -i'
+alias klick='klick -Pi'
 alias ls='ls -Fhv --color=auto --group-directories-first'
 alias rm='rm -vI'
 alias vim='vim -p'
@@ -28,4 +29,3 @@ alias -g NUL="> /dev/null 2>&1"
 
 # suffixes
 alias -s exe=wine
-

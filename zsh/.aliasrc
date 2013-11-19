@@ -1,5 +1,6 @@
 # general
 alias calc='python -ic "from __future__ import division; from math import *; from random import *"'
+alias cp='cp -vi'
 alias df='df -Th'
 alias du='du -h'
 alias grep='grep --color -i'

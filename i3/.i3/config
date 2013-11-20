@@ -176,7 +176,6 @@ for_window [class="Keepassx"] floating enable
 for_window [class="Qjackctl"] floating enable
 for_window [class="Qsynth"] floating enable
 for_window [class="Xsane"] floating enable
+for_window [title="Print"] floating enable
 
 exec --no-startup-id qjackctl
-#exec --no-startup-id mplayer /usr/share/sounds/freedesktop/stereo/service-login.oga
-

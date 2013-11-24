@@ -50,10 +50,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -173,9 +173,9 @@ bindsym XF86MonBrightnessUp   $exec amixer set "Auto-Mute Mode" Enabled
 bindsym XF86MonBrightnessDown $exec amixer set "Auto-Mute Mode" Disabled
 
 # other keys
-bindsym XF86Display  exec arandr
-bindsym XF86Launch1 $exec xautolock -locknow
-bindsym XF86Launch3 $exec ~/.i3/umount.sh
+bindsym XF86Display   exec arandr
+bindsym $mod+Shift+l $exec xautolock -locknow
+bindsym $mod+Shift+u $exec ~/.i3/umount.sh
 
 # switch screen layout
 bindsym control+$mod+0 $exec ~/.screenlayout/default

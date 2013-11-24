@@ -175,7 +175,7 @@ bindsym XF86MonBrightnessDown $exec amixer set "Auto-Mute Mode" Disabled
 # other keys
 bindsym XF86Display  exec arandr
 bindsym XF86Launch1 $exec xautolock -locknow
-bindsym XF86Launch3 $exec udiskie-umount -a
+bindsym XF86Launch3 $exec ~/.i3/umount.sh
 
 # switch screen layout
 bindsym control+$mod+0 $exec ~/.screenlayout/default

@@ -19,6 +19,8 @@ Dependencies
 **i3**
 
 - [QjackCtl](http://qjackctl.sourceforge.net/)
+- [udiskie](https://github.com/coldfix/udiskie)
+- xautolock
 - [zscreen](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI)
 
 **vim**
@@ -35,12 +37,9 @@ Dependencies
 **xorg**
 
 - [Hanazono fonts](http://fonts.jp/hanazono/)
-- udiskie
-- xautolock
 
 **zsh**
 
 - [fasd](https://github.com/clvv/fasd)
 - [keychain](https://github.com/funtoo/keychain)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-

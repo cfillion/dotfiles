@@ -9,6 +9,7 @@ alias ls='ls -Fhv --color=auto --group-directories-first'
 alias mkdir='mkdir -pv'
 alias mv='mv -vi'
 alias rm='rm -vI'
+alias rmdir='rmdir -v'
 alias vim='vim -p'
 alias vv='f -e vim'
 

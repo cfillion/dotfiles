@@ -191,7 +191,7 @@ for_window [class="Keepassx"]  floating enable
 for_window [class="Qjackctl"]  floating enable
 for_window [class="Qsynth"]    floating enable
 for_window [class="Xsane"]     floating enable
-for_window [title="Print"]     floating enable
+for_window [title="^Print$"]   floating enable
 
 # autostart
 $exec qjackctl

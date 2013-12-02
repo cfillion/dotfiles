@@ -1,4 +1,5 @@
 # general
+alias ack='ack -i'
 alias calc='python -ic "from __future__ import division; from math import *; from random import *"'
 alias cp='cp -vi'
 alias df='df -Th'
@@ -12,9 +13,9 @@ alias mv='mv -vi'
 alias noproxy="http_proxy='' https_proxy='' ftp_proxy=''"
 alias rm='rm -vI'
 alias rmdir='rmdir -v'
+alias sudo='sudo '
 alias vim='vim -p'
 alias vv='f -e vim'
-alias sudo='sudo '
 
 # frenquently used programs
 alias c=calcurse

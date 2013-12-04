@@ -71,15 +71,16 @@ chpwd()
 	ls
 }
 
-if [[ $TERM = "xterm-256color" ]]; then
+case "$TERM" in
+"linux")
+	;;
+"xterm-256color")
 	# set i-beam cursor under xterm
 	echo -ne "\x1b[\x35 q"
-	clear
 
 	# define terminal title at each prompt
 	precmd() { print -Pn "\e]0;%m: %~\a" }
 
 	# define terminal title at each command
 	preexec() { print -Pn "\e]0;$2 (%~)\a" }
-fi
-
+esac

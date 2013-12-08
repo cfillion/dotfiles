@@ -23,6 +23,5 @@ mbsync -a & # syncronize mail
 # exec gnome-session
 # exec startkde
 # exec startxfce4
-exec i3 > ~/.i3/log
+exec ${2:-i3}
 # ...or the Window Manager of your choice
-

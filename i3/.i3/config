@@ -173,15 +173,9 @@ bindsym XF86MonBrightnessUp   $exec amixer set "Auto-Mute Mode" Enabled
 bindsym XF86MonBrightnessDown $exec amixer set "Auto-Mute Mode" Disabled
 
 # other keys
-bindsym XF86Display   exec arandr
+bindsym $mod+Shift+s $exec ~/.i3/screenlayout.sh
 bindsym $mod+Shift+l $exec xautolock -locknow
 bindsym $mod+Shift+u $exec ~/.i3/umount.sh
-
-# switch screen layout
-bindsym control+$mod+0 $exec ~/.screenlayout/default
-bindsym control+$mod+1 $exec ~/.screenlayout/lvds-only.sh
-bindsym control+$mod+2 $exec ~/.screenlayout/two-head.sh
-bindsym control+$mod+3 $exec ~/.screenlayout/hdmi-only.sh
 
 # window rules
 for_window [class="Arandr"]    floating enable

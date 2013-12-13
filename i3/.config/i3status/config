@@ -12,6 +12,7 @@ general {
 }
 
 #order += "ipv6"
+order += "disk /"
 order += "disk /home"
 #order += "run_watch DHCP"
 order += "run_watch VPN"
@@ -52,6 +53,10 @@ load {
         format = "%1min %5min %15min"
 }
 
+disk "/" {
+        format = "/: %avail (%percentage_used)"
+}
+
 disk "/home" {
-        format = "%free"
+        format = "/home: %avail (%percentage_used)"
 }

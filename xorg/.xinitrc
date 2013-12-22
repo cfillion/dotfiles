@@ -20,8 +20,8 @@ xset dpms 0 0 0 # disable automatic screen blanking
 udiskie & # automount devices
 mbsync -a & # syncronize mail
 
-# use gtk theme in Qt5 applications
-export DESKTOP_SESSION=gnome
+# use gtk2 theme in Qt5 applications
+export DESKTOP_SESSION=gtk2
 
 exec ${2:-i3}
 # ...or the Window Manager of your choice

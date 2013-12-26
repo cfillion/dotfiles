@@ -17,7 +17,9 @@ xrdb -load ~/.Xresources
 xautolock -time 30 -locker 'i3lock -c 000000 --dpms' &
 xset dpms 0 0 0 # disable automatic screen blanking
 
+clipit -d &
 udiskie & # automount devices
+
 mbsync -a & # syncronize mail
 
 # use gtk2 theme in Qt5 applications

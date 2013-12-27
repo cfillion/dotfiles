@@ -1,10 +1,7 @@
-# audio/video
-ao=alsa,alsa:device=[hw:0,0]
-vo=opengl
-
-# misc
 af=scaletempo
+ao=alsa,alsa:device=[hw:0,0]
+no-joystick
+vo=opengl
 
 [protocol.dvd]
 dvd-device=/dev/sr0
-

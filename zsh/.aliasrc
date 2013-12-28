@@ -16,6 +16,7 @@ alias rmdir='rmdir -v'
 alias sudo='sudo '
 alias vim='vim -p'
 alias vv='f -e vim'
+alias dmesg='dmesg -Hw'
 
 # frenquently used programs
 alias c=calcurse

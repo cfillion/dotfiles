@@ -22,8 +22,9 @@ alias dmesg='dmesg -Hw'
 alias c=calcurse
 alias h=htop
 alias m=mutt
-alias r=ranger
 alias R='builtin r'
+alias r=ranger
+alias t='turses'
 alias v=alsamixer
 
 # systemd

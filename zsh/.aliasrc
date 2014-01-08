@@ -3,12 +3,14 @@ alias ack='ack -i'
 alias bc='bc -lq'
 alias cp='cp -vi'
 alias df='df -Th'
+alias dmesg='dmesg -Hw'
 alias du='du -h'
 alias grep='grep --color -i'
 alias klick='klick -Pi'
 alias ln='ln -v'
 alias ls='ls -Fhv --color=auto --group-directories-first'
 alias mkdir='mkdir -pv'
+alias mtr='mtr -rwb'
 alias mv='mv -vi'
 alias noproxy="http_proxy='' https_proxy='' ftp_proxy=''"
 alias rm='rm -vI'
@@ -16,7 +18,6 @@ alias rmdir='rmdir -v'
 alias sudo='sudo '
 alias vim='vim -p'
 alias vv='f -e vim'
-alias dmesg='dmesg -Hw'
 
 # frenquently used programs
 alias c=calcurse

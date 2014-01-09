@@ -5,6 +5,7 @@ xterm*fastScroll: true
 xterm*fullscreen: never
 xterm*highlightSelection: true
 xterm*internalBorder: 0
+xterm*italicULMode: true
 xterm*locale: true
 xterm*metaSendsEscape: true
 xterm*saveLines: 4096

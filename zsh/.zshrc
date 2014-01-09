@@ -82,5 +82,5 @@ case "$TERM" in
 	precmd() { print -Pn "\e]0;%m: %~\a" }
 
 	# define terminal title at each command
-	preexec() { print -Pn "\e]0;$2 (%~)\a" }
+	preexec() { print -Pn "\e]0;$2\a" }
 esac

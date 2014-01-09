@@ -6,24 +6,25 @@ setopt INTERACTIVE_COMMENTS
 
 # keybindings
 bindkey -e
-bindkey "^[[H"  beginning-of-line
-bindkey "^[[F"  end-of-line
-bindkey "^[OH"  beginning-of-line
-bindkey "^[OF"  end-of-line
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[2~" overwrite-mode
-bindkey "^[[3~" delete-char
-bindkey "^[[4~" end-of-line
-bindkey "^[[5~" up-history
-bindkey "^[[6~" down-history
+bindkey '^[[H'  beginning-of-line
+bindkey '^[[F'  end-of-line
+bindkey '^[OH'  beginning-of-line
+bindkey '^[OF'  end-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[2~' overwrite-mode
+bindkey '^[[3~' delete-char
+bindkey '^[[4~' end-of-line
+bindkey '^[[5~' up-history
+bindkey '^[[6~' down-history
+bindkey '^[[Z' reverse-menu-complete
 
 autoload edit-command-line
 zle -N edit-command-line
-bindkey "^Xe" edit-command-line
+bindkey '^Xe' edit-command-line
 
 autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
-bindkey "^[m" copy-earlier-word
+bindkey '^[m' copy-earlier-word
 
 # prompt
 autoload -U promptinit && promptinit
@@ -59,8 +60,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
 
 # source additional files
-source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.aliasrc
 source ~/.funcrc
 
@@ -72,9 +72,9 @@ chpwd()
 }
 
 case "$TERM" in
-"linux")
+'linux')
 	;;
-"xterm-256color")
+'xterm-256color')
 	# set i-beam cursor under xterm
 	echo -ne "\x1b[\x35 q"
 

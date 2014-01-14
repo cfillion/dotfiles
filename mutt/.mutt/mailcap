@@ -1,0 +1,4 @@
+text/html; elinks --dump; copiousoutput
+application/pdf; xdg-open %s
+image/jpeg; xdg-open %s 
+image/png; xdg-open %s

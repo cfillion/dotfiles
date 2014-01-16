@@ -18,6 +18,7 @@ xrdb -load ~/.Xresources
 ~/.screenlayout/default
 
 setxkbmap us colemak #terminate:ctrl_alt_bksp
+xmodmap ~/.Xmodmap
 xset r 66
 
 synclient \

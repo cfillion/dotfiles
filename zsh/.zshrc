@@ -3,6 +3,7 @@ setopt AUTO_CD
 setopt CORRECT
 setopt EXTENDED_GLOB
 setopt INTERACTIVE_COMMENTS
+setopt RM_STAR_SILENT
 
 # keybindings
 bindkey -e

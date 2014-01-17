@@ -65,11 +65,11 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source ~/.aliasrc
 source ~/.funcrc
 
-# change behaviour
+# behaviour
 chpwd()
 {
-	# automatic ls on directory change
 	ls
+	[[ -d .git ]] && git status -sb
 }
 
 case "$TERM" in

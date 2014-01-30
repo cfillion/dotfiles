@@ -1,17 +1,15 @@
-# query for the public ip
 myip()
 {
 	curl curlmyip.com
-}
-
-# list largest files/directories
-topdu()
-{
-	du -csh * | sort -rh | less -NS
 }
 
 sprunge()
 {
 	url=$(curl -F 'sprunge=<-' "http://sprunge.us?$1")
 	[ -z "$url" ] || echo "$url?$1"
+}
+
+topdu()
+{
+	du -sh */ | sort -rh | less -NSFiX
 }

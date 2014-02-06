@@ -1,8 +1,12 @@
 # general options
 setopt AUTO_CD
+setopt CHASE_LINKS
 setopt CORRECT
 setopt EXTENDED_GLOB
 setopt INTERACTIVE_COMMENTS
+setopt MARK_DIRS
+setopt NO_CLOBBER
+setopt NUMERIC_GLOB_SORT
 setopt RM_STAR_SILENT
 
 # keybindings

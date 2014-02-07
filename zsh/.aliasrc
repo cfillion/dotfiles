@@ -38,6 +38,7 @@ alias stop='sudo systemctl stop'
 
 # global aliases
 alias -g NUL="> /dev/null 2>&1"
+alias -g GRP="| grep"
 
 # suffixes
 alias -s exe=wine

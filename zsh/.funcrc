@@ -5,8 +5,7 @@ myip()
 
 sprunge()
 {
-	url=$(curl -F 'sprunge=<-' "http://sprunge.us?$1")
-	[ -z "$url" ] || echo "$url?$1"
+	curl -F 'sprunge=<-' http://sprunge.us
 }
 
 topdu()

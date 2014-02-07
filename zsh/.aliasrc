@@ -1,4 +1,3 @@
-# general
 alias ack='ack -i'
 alias bc='bc -lq'
 alias cp='cp -vi'
@@ -20,7 +19,7 @@ alias sudo='sudo '
 alias vim='vim -p'
 alias vv='f -e vim'
 
-# frenquently used programs
+# frequently used
 alias c=calcurse
 alias h=htop
 alias m=mutt
@@ -28,6 +27,16 @@ alias R='builtin r'
 alias r=ranger
 alias t='turses'
 alias v=alsamixer
+
+# git
+alias ad='git add'
+alias br='git branch'
+alias ch='git checkout'
+alias co='git commit'
+alias di='git diff'
+alias dic='git diff --cached'
+alias lg='git log --decorate --graph --oneline'
+alias st='git status -sb'
 
 # systemd
 alias status='systemctl status -l'

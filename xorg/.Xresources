@@ -1,4 +1,3 @@
-! general
 xterm*bellIsUrgent: true
 xterm*borderWidth: 0
 xterm*fastScroll: true

@@ -1,4 +1,3 @@
-# general options
 setopt AUTO_CD
 setopt CHASE_LINKS
 setopt CORRECT
@@ -21,11 +20,15 @@ bindkey '^[[3~' delete-char
 bindkey '^[[4~' end-of-line
 bindkey '^[[5~' up-history
 bindkey '^[[6~' down-history
+bindkey '2D' backward-word
+bindkey '5D' backward-word
+bindkey '2C' forward-word
+bindkey '5C' forward-word
 bindkey '^[[Z' reverse-menu-complete
 
 autoload edit-command-line
 zle -N edit-command-line
-bindkey '^Xe' edit-command-line
+bindkey '^[e' edit-command-line
 
 autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
@@ -80,7 +83,7 @@ case "$TERM" in
 'linux')
 	;;
 'xterm-256color')
-	# set i-beam cursor under xterm
+	# i-beam cursor in xterm
 	echo -ne "\x1b[\x35 q"
 
 	# define terminal title at each prompt

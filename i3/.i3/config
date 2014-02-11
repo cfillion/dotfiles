@@ -158,7 +158,7 @@ bindsym $mod+k $exec keepassx
 
 # print screen
 bindsym Print       exec zscreen
-bindsym $mod+Print $exec ~/.i3/deleteScreenshot.sh
+bindsym $mod+Print $exec ~/.i3/delete_screenshot.sh
 
 # mixer keys
 bindsym XF86AudioMute         $exec amixer set Master toggle

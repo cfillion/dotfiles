@@ -18,6 +18,7 @@ Dependencies
 
 **i3**
 
+- [jq](http://stedolan.github.io/jq/)
 - [QjackCtl](http://qjackctl.sourceforge.net/)
 - [udiskie](https://github.com/coldfix/udiskie)
 - xautolock

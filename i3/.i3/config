@@ -50,7 +50,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split vertically
-# (vim-like shortcut)
+# (VIM-like shortcut)
 bindsym $mod+v split h
 
 # split horizontally
@@ -103,12 +103,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# make the currently focused window a scratchpad
-bindsym $mod+KP_Subtract move scratchpad
-
-# show the first scratchpad window
-bindsym $mod+KP_Add scratchpad show
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -152,6 +146,14 @@ bar {
 bindsym $mod+t border normal
 bindsym $mod+y border 1pixel
 bindsym $mod+u border none
+
+# scratchpad
+bindsym $mod+KP_Subtract move scratchpad
+bindsym $mod+KP_Add scratchpad show
+
+# VIM-like marks (keycode 48 is ')
+bindcode $mod+48 $exec ~/.i3/goto.sh
+bindsym $mod+m $exec ~/.i3/mark.sh
 
 # fast access
 bindsym $mod+k $exec keepassx

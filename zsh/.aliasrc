@@ -11,6 +11,7 @@ alias ls='ls -Fhv --color=auto --group-directories-first'
 alias mkdir='mkdir -pv'
 alias mtr='mtr -rwb'
 alias mv='mv -vi'
+alias ngrep='ngrep -q'
 alias noproxy="http_proxy='' https_proxy='' ftp_proxy=''"
 alias rm='rm -vI'
 alias rmdir='rmdir -v'

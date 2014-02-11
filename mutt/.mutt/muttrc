@@ -44,7 +44,7 @@ unset reply_self
 set date_format = "%a %b %d %H:%M"
 set index_format = "%4C [%Z] %D | %-15.15F  %s"
 
-set pager_index_lines = 15
+set pager_index_lines = 0
 set tilde
 unset markers
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"

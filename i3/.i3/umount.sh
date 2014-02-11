@@ -1,2 +1,3 @@
 #!/bin/sh
-udiskie-umount -de "/media/$(ls /media | dmenu)"
+device=$(ls /media | dmenu -i -p "device:")
+[ "$device" ] && udiskie-umount -de "/media/$device"

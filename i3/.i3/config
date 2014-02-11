@@ -35,7 +35,7 @@ bindsym $mod+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym Menu $exec i3-dmenu-desktop --entry-type=command
+bindsym Menu $exec i3-dmenu-desktop --dmenu='dmenu -i -p "launch:"' --entry-type=command
 
 # change focus
 bindsym $mod+Left focus left

@@ -46,8 +46,9 @@ alias reload='sudo systemctl reload'
 alias stop='sudo systemctl stop'
 
 # global aliases
-alias -g NUL="> /dev/null 2>&1"
-alias -g GRP="| grep"
+alias -g '\n'='> /dev/null 2>&1'
+alias -g '\g'='| grep'
+alias -g '\l'='| less'
 
 # suffixes
 alias -s exe=wine

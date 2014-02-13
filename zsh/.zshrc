@@ -20,10 +20,10 @@ bindkey '^[[3~' delete-char
 bindkey '^[[4~' end-of-line
 bindkey '^[[5~' up-history
 bindkey '^[[6~' down-history
-bindkey '2D' backward-word
-bindkey '5D' backward-word
-bindkey '2C' forward-word
-bindkey '5C' forward-word
+bindkey '^[[1;2D' backward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;2C' forward-word
+bindkey '^[[1;5C' forward-word
 bindkey '^[[Z' reverse-menu-complete
 
 autoload edit-command-line

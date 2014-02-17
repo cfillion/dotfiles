@@ -62,8 +62,6 @@ bind pager <Up> previous-entry
 bind pager <Down> next-entry
 bind compose p postpone-message
 
-macro index,pager,attach \cb "<pipe-message>urlscan -bc<enter>" "Follow links"
-
 color normal     default       default  # default
 color status     color48       color235 # bars
 color message    default       default

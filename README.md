@@ -26,7 +26,7 @@ Dependencies
 
 **vim**
 
-- [vim-sunburst](https://github.com/sickill/vim-sunburst)
+- [Vundle](https://github.com/gmarik/vundle)
 
 **weechat**
 

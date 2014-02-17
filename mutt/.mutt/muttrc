@@ -69,13 +69,13 @@ color status     color48       color235 # bars
 color message    default       default
 color error      red           default
 color indicator  yellow        color234 # highlight
-color tree       cyan          default
+color tree       blue          default
 color search     brightgreen   default
 color hdrdefault default       color233 # headers
 color header     brightwhite   color233 ^Subject:
 color header     white         color233 ^From:
-color body       brightblue    black    "(https?|ftp|irc)://[^ \"\t\r\n<]*"
-color body       brightyellow  black    "(mailto:)?[-a-z_0-9.%$#]+@[-a-z_0-9.]+"
+color body       brightblue    default  "(https?|ftp|irc)://[^ \"<>]+"
+color body       brightyellow  default  "(mailto:)?[-a-z_0-9.%$#]+@[-a-z_0-9.]+"
 color attachment green         color233
 color markers    brightmagenta default
 color quoted     color36       default

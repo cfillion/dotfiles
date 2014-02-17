@@ -23,6 +23,7 @@ alias vv='f -e vim'
 alias c=calcurse
 alias h=htop
 alias m=mutt
+alias n=newsbeuter
 alias R='builtin r'
 alias r=ranger
 alias t='turses'
@@ -50,7 +51,7 @@ alias stop='sudo systemctl stop'
 alias -g '\g'='| grep'
 alias -g '\h'='| head'
 alias -g '\l'='| less'
-alias -g '\n'='> /dev/null 2>&1'
+alias -g '\n'='>/dev/null 2>&1'
 alias -g '\t'='| tail'
 
 # suffixes

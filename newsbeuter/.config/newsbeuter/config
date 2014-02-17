@@ -1,0 +1,42 @@
+article-sort-order date asc
+auto-reload yes
+browser "$BROWSER %u >/dev/null 2>&1 &"
+confirm-exit yes
+html-renderer "elinks --dump"
+reload-threads 5
+reload-time 30
+swap-title-and-hints yes
+
+include ~/.config/newsbeuter/proxy
+
+articlelist-format "%4i [%f ] %D | %?T?%-15T ?%t"
+articlelist-title-format "%N: %T [Total:%t Unread:%u] %U"
+datetime-format "%a %b %d %H:%M"
+feedlist-format "%4i [%n %S] %-4U%12T | %t%?d?: %d?"
+
+dialogs-title-format "%N: Dialogs"
+feedlist-title-format "%N: Your feeds [Total:%t Unread:%u] %?T?(tag: %T)&?%> v%V"
+filebrowser-title-format "%N: %?O?Open File&Save File? [%f]"
+help-title-format "%N: Help"
+itemview-title-format "   %u/%t: %T%> -- (%N)"
+selectfilter-title-format "%N: Select Filter"
+selecttag-title-format "%N: Select Tag"
+urlview-title-format "%N: URLs"
+
+bind-key d delete-article all
+bind-key UP prev article
+bind-key DOWN next article
+bind-key ENTER down article
+bind-key BACKSPACE up article
+bind-key ; cmdline
+
+color article default default
+color background default default
+color info color48 color235
+color listfocus yellow color234
+color listfocus_unread yellow color234
+color listnormal default default
+color listnormal_unread cyan default
+
+highlight article "^Title: .+$" white default bold
+highlight article "(https?|ftp|irc)://[^ \"<>]+" blue default bold

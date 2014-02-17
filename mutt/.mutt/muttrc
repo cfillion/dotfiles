@@ -42,7 +42,7 @@ unset mime_forward
 unset reply_self
 
 set date_format = "%a %b %d %H:%M"
-set index_format = "%4C [%Z] %D | %-15.15F  %s"
+set index_format = "%4C [%Z] %D | %-15.15F %s"
 
 set pager_index_lines = 0
 set tilde

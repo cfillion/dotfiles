@@ -37,7 +37,7 @@ xterm*VT100*color3:  #ffff00
 xterm*VT100*color11: #e6ea50
 ! blue
 xterm*VT100*color4:  #005f5f
-xterm*VT100*color12: #276cc2
+xterm*VT100*color12: #268bd2
 ! magenta
 xterm*VT100*color5:  #af5f5f
 xterm*VT100*color13: #af8787

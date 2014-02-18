@@ -64,7 +64,6 @@ set noshowmode
 set nowrap
 set number
 set pastetoggle=<Ins>
-set number
 set ruler
 set scrolloff=3
 set shortmess+=I

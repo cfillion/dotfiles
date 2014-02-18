@@ -85,10 +85,18 @@ set wrap
 au BufRead /tmp/mutt-* set tw=72
 au BufReadPost * DetectIndent
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-au BufEnter    * if &modifiable | set noinsertmode | endif
+au BufLeave    * if &modifiable | set noinsertmode | call OffInsert() | endif
 au BufEnter    * checktime
 au CursorHold  * checktime
 au CursorHoldI * checktime
 au InsertEnter * checktime
-au InsertEnter * set number norelativenumber cursorline nohlsearch
-au InsertLeave * set number relativenumber nocursorline hlsearch
+au InsertEnter * call OnInsert()
+au InsertLeave * call OffInsert()
+
+function OnInsert()
+	set number norelativenumber cursorline nohlsearch
+endfunction
+
+function OffInsert()
+	set number relativenumber nocursorline hlsearch
+endfunction

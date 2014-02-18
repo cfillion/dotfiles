@@ -55,7 +55,6 @@ set foldlevelstart=20
 set foldmethod=indent
 set gdefault
 set hidden
-set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
@@ -65,7 +64,7 @@ set noshowmode
 set nowrap
 set number
 set pastetoggle=<Ins>
-set relativenumber
+set number
 set ruler
 set scrolloff=3
 set shortmess+=I
@@ -94,9 +93,10 @@ au InsertEnter * call OnInsert()
 au InsertLeave * call OffInsert()
 
 function OnInsert()
-	set number norelativenumber cursorline nohlsearch
+	set norelativenumber cursorline nohlsearch
 endfunction
 
 function OffInsert()
-	set number relativenumber nocursorline hlsearch
+	set relativenumber nocursorline hlsearch
 endfunction
+call OffInsert()

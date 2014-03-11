@@ -8,6 +8,7 @@ Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'ciaranm/detectindent'
 Bundle 'gmarik/vundle'
 Bundle 'itchyny/lightline.vim'
+Bundle 'junegunn/vim-easy-align'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -38,12 +39,14 @@ set expandtab
 set shiftround
 set tabstop=2 sts=2 sw=2
 
-command Wdiff :w !diff % -
 cnoremap <C-g> <C-c>
-nnoremap ; :
+command Wdiff :w !diff % -
+map <Leader>a <Plug>(EasyAlign)
+nnoremap <f11> mzggg?G`z
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
-vnoremap <silent> . :norm.<CR>
 nnoremap Y y$
+noremap ; :
+vnoremap <silent> . :norm.<CR>
 
 set autoread
 set backupcopy=yes
@@ -76,7 +79,10 @@ set undodir=~/.vim/undo/,.
 set undofile
 set updatetime=1000
 set wildchar=<Tab> wildmenu wildmode=list
-set wildignore=.*,*.o,tmp,node_modules
+set wildignore=.*
+set wildignore+=*.o
+set wildignore+=*.midi,*.pdf
+set wildignore+=tmp,node_modules
 set wildignorecase
 set wrap
 

@@ -91,6 +91,8 @@ au InsertEnter * checktime
 au InsertEnter * call OnInsert()
 au InsertLeave * call OffInsert()
 
+au FileType lilypond setlocal commentstring=%%\ %s
+
 function OnInsert()
 	set norelativenumber cursorline nohlsearch
 endfunction

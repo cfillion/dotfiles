@@ -1,14 +1,19 @@
+gem2ri()
+{
+  gem rdoc --all --ri --no-rdoc
+}
+
 myip()
 {
-	curl curlmyip.com
+  curl curlmyip.com
 }
 
 sprunge()
 {
-	curl -F 'sprunge=<-' http://sprunge.us
+  curl -F 'sprunge=<-' http://sprunge.us
 }
 
 topdu()
 {
-	du -sh */ | sort -rh | less -NSFiX
+  du -sh */ | sort -rh | less -NSFiX
 }

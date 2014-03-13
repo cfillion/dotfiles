@@ -58,7 +58,6 @@ setopt SHARE_HISTORY
 # completion
 autoload -U compinit && compinit
 eval "$(dircolors)"
-eval "$(fasd --init auto)"
 setopt ALWAYS_TO_END
 setopt COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD

@@ -16,7 +16,6 @@ alias rm='rm -vI'
 alias rmdir='rmdir -v'
 alias sudo='sudo '
 alias vim='vim -p'
-alias vv='f -e vim'
 
 # frequently used
 alias c=calcurse

@@ -130,7 +130,7 @@ command vgrep vim "+grep %a"
 
 " Pdf, PostScript & Djvu
 filextype *.pdf,*.ps,*.djvu
-  \ zathura %f &,
+  \ zathura %f %i &,
 fileview *.pdf
   \ pdftotext -nopgbrk %c -
 

@@ -276,7 +276,7 @@ nmap <f3> :!less %f<cr>
 nmap <f4> :edit<cr>
 nmap <f5> :copy<cr>
 nmap <f6> :move<cr>
-nmap <f7> :mkdir<space>
+nmap <f7> :mkdir<space>""<left>
 nmap <f8> :delete<cr>
 
 " External commands

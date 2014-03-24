@@ -15,6 +15,7 @@ alias noproxy="http_proxy='' https_proxy='' ftp_proxy=''"
 alias rm='rm -vI'
 alias rmdir='rmdir -v'
 alias sudo='sudo '
+alias tree='tree -F'
 alias vim='vim -p'
 
 # frequently used

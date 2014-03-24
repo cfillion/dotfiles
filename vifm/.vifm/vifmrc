@@ -221,7 +221,7 @@ fileview *.torrent
 " Directories
 filextype */
 "  \ {View in thunar} Thunar %f &,
-fileview .*/,*/ tree %f
+fileview .*/,*/ tree -FL 1 %f
 
 " Open all other files with default system programs
 " For *nix:

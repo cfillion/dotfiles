@@ -37,8 +37,8 @@ bindkey '^[m' copy-earlier-word
 # prompt
 autoload -U promptinit && promptinit
 autoload -U colors && colors
-PROMPT="%{$fg[magenta]%}%~%(#.#.>)%{$reset_color%} "
-RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}] %{$fg[cyan]%}%T%{$reset_color%}"
+PROMPT="%(!.%{$fg_bold[red]%}.%{$fg[magenta]%})%30<..<%~%(!.#.>)%{$reset_color%} "
+RPROMPT="%m [%{$fg_no_bold[yellow]%}%?%{$reset_color%}] %{$fg[cyan]%}%T%{$reset_color%}"
 
 # history
 HISTSIZE=1000

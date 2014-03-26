@@ -1,6 +1,6 @@
 gem2ri()
 {
-  gem rdoc --all --ri --no-rdoc
+  gem rdoc $* --ri --no-rdoc
 }
 
 myip()

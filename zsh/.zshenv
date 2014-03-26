@@ -2,6 +2,7 @@ export BROWSER=dwb
 export DVDCSS_CACHE=off
 export EDITOR=vim
 export ESCDELAY=0
+export HOSTNAME=`hostname`
 export LESS='-iRX'
 
 typeset -U path

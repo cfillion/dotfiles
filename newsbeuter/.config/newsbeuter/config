@@ -7,8 +7,6 @@ reload-threads 5
 reload-time 30
 swap-title-and-hints yes
 
-include ~/.config/newsbeuter/proxy
-
 articlelist-format "%4i [%f ] %D | %?T?%-15T ?%t"
 articlelist-title-format "%N: %T [Total:%t Unread:%u] %U"
 datetime-format "%a %b %d %H:%M"

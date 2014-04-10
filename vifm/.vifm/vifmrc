@@ -78,6 +78,9 @@ set statusline="%t%= [%A %u:%g %s%d]"
 " Number of spaces that a Tab in the file counts for.
 set tabstop=2
 
+" show "../" in non-root directories of file system
+set dotdirs=rootparent
+
 " :mark mark /full/directory/path [filename]
 mark h ~/
 mark m /media/

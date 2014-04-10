@@ -25,7 +25,7 @@ font pango:DejaVu Sans Mono 10px
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return $exec i3-sensible-terminal
+bindsym Control+Menu $exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill

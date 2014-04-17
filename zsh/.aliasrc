@@ -1,4 +1,5 @@
 alias bc='bc -lq'
+alias cal='task calendar'
 alias cp='cp -vi'
 alias df='df -Th'
 alias dmesg='dmesg -Hw'

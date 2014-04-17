@@ -50,7 +50,7 @@ vnoremap <silent> . :norm.<CR>
 
 set autoread
 set backupcopy=yes
-set colorcolumn=85
+set colorcolumn=80
 set confirm
 set directory=~/.vim/swap/,.
 set encoding=utf-8

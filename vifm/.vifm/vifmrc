@@ -297,5 +297,9 @@ nmap <space> t
 nmap < <c-w><
 nmap > <c-w>>
 
+" Yet another way to go up a directory
+" because I press 'q' by mistake too often...
+map q <Left>
+
 " Single stroke to quit
 map Q :q<cr>

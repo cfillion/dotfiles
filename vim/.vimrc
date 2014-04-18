@@ -57,7 +57,7 @@ set encoding=utf-8
 set foldlevelstart=20
 set foldmethod=indent
 set gdefault
-set hidden
+set nohidden
 set ignorecase
 set incsearch
 set laststatus=2
@@ -103,10 +103,10 @@ au VimResized  * wincmd =
 au FileType lilypond setlocal commentstring=%%\ %s
 
 function OnInsert()
-	set norelativenumber cursorline nohlsearch
+  set norelativenumber cursorline nohlsearch
 endfunction
 
 function OffInsert()
-	set relativenumber nocursorline hlsearch
+  set relativenumber nocursorline hlsearch
 endfunction
 call OffInsert()

@@ -68,6 +68,8 @@ set nowrap
 set number
 set pastetoggle=<Ins>
 set ruler
+set list
+set listchars=tab:>-
 set scrolloff=3
 set shortmess+=I
 set showcmd

@@ -20,12 +20,12 @@ alias tree='tree -F'
 alias vim='vim -p'
 
 # frequently used
-alias c=calcurse
+alias f.='vifm .'
+alias f='vifm'
 alias h=htop
+alias irc=weechat
 alias m=mutt
 alias n=newsbeuter
-alias R='builtin r'
-alias r=ranger
 alias t='turses'
 alias v=alsamixer
 

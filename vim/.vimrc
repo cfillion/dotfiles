@@ -93,6 +93,7 @@ au CursorHoldI * checktime
 au InsertEnter * checktime
 au InsertEnter * call OnInsert()
 au InsertLeave * call OffInsert()
+au TabEnter    * wincmd =
 au VimResized  * wincmd =
 
 au FileType lilypond setlocal commentstring=%%\ %s

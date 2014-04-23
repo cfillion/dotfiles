@@ -8,12 +8,10 @@ Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'ciaranm/detectindent'
 Bundle 'gmarik/vundle'
 Bundle 'itchyny/lightline.vim'
-Bundle 'junegunn/vim-easy-align'
+Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'Raimondi/delimitMate'
 Bundle 'sickill/vim-sunburst'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-abolish'
@@ -22,11 +20,10 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 
-let g:delimitMate_balance_matchpairs = 1
-let g:delimitMate_expand_cr = 1
-let g:delimitMate_expand_space = 1
 let g:lightline = {'colorscheme': 'jellybeans'}
 let g:vim_markdown_folding_disabled = 1
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
 
 syntax on
 color Sunburst
@@ -35,13 +32,11 @@ filetype plugin indent on
 set autoindent
 set backspace=2
 set copyindent
-set expandtab
 set shiftround
-set tabstop=2 sts=2 sw=2
 
 cnoremap <C-g> <C-c>
 command Wdiff :w !diff % -
-map <Leader>a <Plug>(EasyAlign)
+map <Leader>a :Tab /
 nnoremap <f11> mzggg?G`z
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap Y y$

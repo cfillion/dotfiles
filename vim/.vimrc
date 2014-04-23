@@ -84,6 +84,7 @@ set wildignorecase
 set wrap
 
 au BufRead /tmp/mutt-* set tw=72
+au BufNewFile  * DetectIndent
 au BufReadPost * DetectIndent
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 au BufLeave    * if &modifiable | set noinsertmode | call OffInsert() | endif

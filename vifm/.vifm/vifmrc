@@ -60,8 +60,8 @@ set wildmenu
 set ignorecase
 set smartcase
 
-" Don't highlight search results automatically
-set nohlsearch
+" Select search results automatically
+set hlsearch
 
 " Use increment searching (search while typing)
 set incsearch

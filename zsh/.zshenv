@@ -1,7 +1,8 @@
-export BROWSER=dwb
-export DVDCSS_CACHE=off
-export EDITOR=vim
+export BROWSER='dwb'
+export DVDCSS_CACHE='off'
+export EDITOR='vim'
 export ESCDELAY=0
+export GCC_COLORS='auto'
 export HOSTNAME=`hostname`
 export LESS='-iRX'
 

@@ -77,10 +77,12 @@ set undodir=~/.vim/undo/,.
 set undofile
 set updatetime=1000
 set wildchar=<Tab> wildmenu wildmode=list
-set wildignore=.*
+set wildignore+=.*
 set wildignore+=*.o
 set wildignore+=*.midi,*.pdf
-set wildignore+=tmp,node_modules
+set wildignore+=*.mp3,*.jpg
+set wildignore+=tmp,node_modules,bower_components
+set wildignore+=_site,build,dist
 set wildignorecase
 set wrap
 

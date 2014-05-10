@@ -25,6 +25,7 @@ let g:lightline = {'colorscheme': 'jellybeans'}
 let g:vim_markdown_folding_disabled = 1
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
+let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10'
 
 syntax on
 color Sunburst

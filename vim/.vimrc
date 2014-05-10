@@ -88,6 +88,7 @@ au BufRead /tmp/mutt-* set tw=80
 au BufRead *.md set tw=80
 au BufNewFile  * DetectIndent
 au BufReadPost * DetectIndent
+au VimEnter    * DetectIndent
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 au BufLeave    * if &modifiable | set noinsertmode | call OffInsert() | endif
 au BufEnter    * checktime

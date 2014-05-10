@@ -42,9 +42,11 @@ nnoremap <f11> mzggg?G`z
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap Y y$
 noremap ; :
+noremap <f9> :make!<CR>
 vnoremap <silent> . :norm.<CR>
 
 set autoread
+set autowrite
 set backupcopy=yes
 set colorcolumn=81
 set confirm

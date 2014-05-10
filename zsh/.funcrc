@@ -1,3 +1,8 @@
+compress()
+{
+  convert -strip -interlace Plane -quality 85% $*
+}
+
 gem2ri()
 {
   gem rdoc $* --ri --no-rdoc

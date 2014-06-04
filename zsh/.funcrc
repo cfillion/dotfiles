@@ -8,6 +8,11 @@ gem2ri()
   gem rdoc $* --ri --no-rdoc
 }
 
+lsfont()
+{
+  fc-list : family
+}
+
 myip()
 {
   curl curlmyip.com

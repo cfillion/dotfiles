@@ -3,7 +3,7 @@ auto-reload yes
 browser "$BROWSER %u >/dev/null 2>&1 &"
 confirm-exit yes
 html-renderer "elinks --dump"
-reload-threads 5
+reload-threads 6
 reload-time 30
 swap-title-and-hints yes
 

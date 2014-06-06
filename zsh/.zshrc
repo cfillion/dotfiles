@@ -7,6 +7,7 @@ setopt MARK_DIRS
 setopt NO_CLOBBER
 setopt NUMERIC_GLOB_SORT
 setopt RM_STAR_SILENT
+unsetopt CASE_GLOB
 
 # keybindings
 bindkey -e

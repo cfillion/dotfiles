@@ -1,5 +1,6 @@
 xterm*bellIsUrgent: true
 xterm*borderWidth: 0
+xterm*cutNewline: false
 xterm*fastScroll: true
 xterm*fullscreen: never
 xterm*highlightSelection: true

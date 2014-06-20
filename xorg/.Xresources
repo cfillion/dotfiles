@@ -1,3 +1,5 @@
+Xcursor.theme: Vanilla-DMZ-AA
+
 xterm*bellIsUrgent: true
 xterm*borderWidth: 0
 xterm*cutNewline: false

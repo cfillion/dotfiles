@@ -98,6 +98,7 @@ au VimEnter    * DetectIndent
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 au BufLeave    * if &modifiable | set noinsertmode | call OffInsert() | endif
 au BufEnter    * checktime
+au BufEnter    * setl makeprg=make
 au CursorHold  * checktime
 au CursorHoldI * checktime
 au InsertEnter * checktime

@@ -7,10 +7,10 @@ feh()
 {
   opts = ''
   if [ "$1" ]; then
-    opts = "$opts --start-at ./$1"
+    command feh $opts --start-at ./$1
+  else
+    command feh $opts
   fi
-
-  command feh $opts
 }
 
 gem2ri()

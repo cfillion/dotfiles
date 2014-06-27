@@ -1,6 +1,5 @@
 af=scaletempo
 ao=alsa,alsa:device=[hw:0,0]
-autosub-match=fuzzy
 vo=opengl
 
 [protocol.dvd]

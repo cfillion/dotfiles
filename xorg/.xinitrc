@@ -32,9 +32,8 @@ xautolock -time 30 -locker \
   'i3lock -c 000000 --dpms' &
 xset dpms 0 0 0
 
-clipit -d &
-mbsync -a &
-qjackctl  &
-udiskie   &
+mbsync -a   &
+qjackctl    &
+udisks-glue &
 
 exec ${2:-i3}

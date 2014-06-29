@@ -33,6 +33,12 @@ sprunge()
   curl -F 'sprunge=<-' http://sprunge.us
 }
 
+startx()
+{
+  [ $DISPLAY ] && return
+  command startx
+}
+
 topdu()
 {
   du -sh */ | sort -rh | less -NSFiX

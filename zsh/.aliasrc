@@ -31,7 +31,7 @@ alias n=newsbeuter
 alias t='task'
 alias tw='command t'
 alias v=alsamixer
-alias x='[ $DISPLAY ] || startx'
+alias x='startx'
 
 # git
 alias ad='git add'

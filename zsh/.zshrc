@@ -25,6 +25,8 @@ bindkey '^[[1;2D' backward-word
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;2C' forward-word
 bindkey '^[[1;5C' forward-word
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
 bindkey '^[[Z' reverse-menu-complete
 
 autoload edit-command-line

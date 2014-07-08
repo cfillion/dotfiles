@@ -37,7 +37,7 @@ Dependencies
 
 **xorg**
 
-- [Hanazono fonts](http://fonts.jp/hanazono/)
+- [IPA Fonts](http://ipafont.ipa.go.jp/)
 
 **zsh**
 

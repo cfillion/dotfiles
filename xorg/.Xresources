@@ -54,7 +54,7 @@ xterm*VT100*color15: #ffffff
 
 ! font
 xterm*faceName: DejaVu Sans Mono
-xterm*faceNameDoublesize: HanaMinA
+xterm*faceNameDoublesize: IPAGothic
 xterm*faceSize: 9
 
 ! selectable urls & custom shortcuts

@@ -1,0 +1,14 @@
+#!/bin/sh
+playlist="/tmp/playlist-$RANDOM"
+folder=$(realpath -q "$1")
+
+find "$folder" -type f -name '*.mp3' > "$playlist" 2>/dev/null
+count=$(wc -l < "$playlist")
+
+printf "Found %'d song(s) in '%s'" "$count" "$folder"
+
+[ "$count" == 0 ] && echo && exit
+echo -e "\n"
+
+mpv --shuffle --loop=inf --no-video --playlist "$playlist"
+rm $playlist 2>/dev/null

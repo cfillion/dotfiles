@@ -20,7 +20,7 @@ export LESS='-iRX'
 
 typeset -U path
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
-path=($path "$GEM_HOME/bin")
+path=("$HOME/.local/bin" $path "$GEM_HOME/bin")
 
 # keybindings
 bindkey -e

@@ -1,14 +1,20 @@
 #!/bin/sh
-playlist="/tmp/playlist-$RANDOM"
-folder=$(realpath -q "$1")
+playlist="$HOME/.music-playlist"
 
-find "$folder" -type f -name '*.mp3' > "$playlist" 2>/dev/null
-count=$(wc -l < "$playlist")
+if [ -n "$1" ]; then
+  folder=$(realpath -q "$1")
+  find "$folder" -type f -name '*.mp3' > "$playlist" 2>/dev/null
 
-printf "Found %'d song(s) in '%s'" "$count" "$folder"
+  printf "Found %'d song(s) in '%s'" $(wc -l < "$playlist") "$folder"
+  echo -e "\n"
+fi
 
-[ "$count" == 0 ] && echo && exit
-echo -e "\n"
+if [ ! -s $playlist ]; then
+  echo "The playlist was not generated or is empty."
+  echo
+  echo "To (re)generate the playlist, run:"
+  echo "  music Directory/"
+  exit
+fi
 
 mpv --shuffle --loop=inf --no-video --playlist "$playlist"
-rm $playlist 2>/dev/null

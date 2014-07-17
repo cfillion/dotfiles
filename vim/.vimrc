@@ -2,24 +2,25 @@ set nocompatible
 runtime macros/matchit.vim
 
 filetype off
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
+set runtimepath+=~/.vim/bundle/Vundle.vim/
 
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'ciaranm/detectindent'
-Bundle 'gmarik/vundle'
-Bundle 'godlygeek/tabular'
-Bundle 'itchyny/lightline.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'sickill/vim-sunburst'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-characterize'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
+call vundle#begin()
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'ciaranm/detectindent'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'itchyny/lightline.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'sickill/vim-sunburst'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-characterize'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+call vundle#end()
 
 let g:lightline = {'colorscheme': 'jellybeans'}
 let g:vim_markdown_folding_disabled = 1
@@ -89,7 +90,7 @@ set wildignore+=_site,build,dist
 set wildignore+=CMakeFiles,CMakeCache.txt,*.cmake
 set wildignore+=*.aux,*.log
 set wildignore+=tmp,node_modules,bower_components
-set wildignore+=pkg,doc
+set wildignore+=*.gem
 set wildignorecase
 set wrap
 

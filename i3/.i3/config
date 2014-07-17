@@ -144,8 +144,7 @@ bar {
 
 # change focused window border style
 bindsym $mod+t border normal
-bindsym $mod+y border 1pixel
-bindsym $mod+u border none
+bindsym $mod+Shift+t border pixel
 
 # scratchpad
 bindsym $mod+KP_Subtract move scratchpad

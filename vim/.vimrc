@@ -15,8 +15,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'sickill/vim-sunburst'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-characterize'
+Plugin 'tpope/vim-abolish' " CoeRcion
+Plugin 'tpope/vim-characterize' " ga
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
@@ -80,7 +80,7 @@ set ttimeoutlen=0
 set undodir=~/.vim/undo/,.
 set undofile
 set updatetime=1000
-set wildchar=<Tab> wildmenu wildmode=list
+set wildchar=<Tab> wildmenu
 set wildignore+=*.jpg
 set wildignore+=*.midi,*.mp3,*.ogg
 set wildignore+=*.o

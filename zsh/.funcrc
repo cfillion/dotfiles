@@ -38,7 +38,7 @@ sprunge()
 startx()
 {
   [ $DISPLAY ] && return
-  command startx
+  command startx $*
 }
 
 topdu()

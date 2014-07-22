@@ -155,7 +155,7 @@ bindcode $mod+48 $exec ~/.i3/goto.sh
 bindsym $mod+m $exec ~/.i3/mark.sh
 
 # fast access
-bindsym $mod+k $exec passmenu -i -p "password:"
+bindsym $mod+k $exec passmenu --type -i -p "password:"
 
 # print screen
 bindsym Print       exec zscreen

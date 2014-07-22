@@ -90,20 +90,20 @@ source ~/.funcrc
 # behaviour
 chpwd()
 {
-	ls
-	[[ -d .git ]] && git status -sb
+  ls
+  [[ -d .git ]] && git status -sb
 }
 
 case "$TERM" in
 'linux')
-	;;
+  ;;
 'xterm-256color')
-	# i-beam cursor in xterm
-	echo -ne "\x1b[\x35 q"
+  # i-beam cursor in xterm
+  echo -ne "\x1b[\x35 q"
 
-	# define terminal title at each prompt
-	precmd() { print -Pn "\e]0;%m: %~\a" }
+  # define terminal title at each prompt
+  precmd() { print -Pn "\e]0;%m: %~\a" }
 
-	# define terminal title at each command
-	preexec() { print -Pn "\e]0;$2\a" }
+  # define terminal title at each command
+  preexec() { print -Pn "\e]0;$2\a" }
 esac

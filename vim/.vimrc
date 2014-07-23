@@ -62,7 +62,7 @@ set incsearch
 set laststatus=2
 set linebreak
 set list
-set listchars=tab:>-
+set listchars=tab:>-,nbsp:·
 set mouse=a
 set nohidden
 set noshowmode

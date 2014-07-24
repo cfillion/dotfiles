@@ -1,0 +1,20 @@
+#!/bin/sh
+bridge_opts='-q 0'
+
+# create jack clients (alsa bridge)
+alsa_in -j ploop -d ploop $bridge_opts &
+alsa_out -j cloop -d cloop $bridge_opts &
+
+sleep 1
+
+# connect clients
+jack_connect ploop:capture_1 system:playback_1
+jack_connect ploop:capture_2 system:playback_2
+
+jack_connect system:capture_1 cloop:playback_1
+jack_connect system:capture_2 cloop:playback_2
+
+# start other utilities
+a2jmidid -e &
+
+exit 0

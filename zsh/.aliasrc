@@ -25,15 +25,15 @@ alias vim='vim -p'
 
 # frequently used
 alias f.='vifm .'
-alias f='vifm'
+alias f=vifm
 alias h=htop
 alias irc=weechat
 alias m=mutt
 alias n=newsbeuter
-alias t='task'
+alias t=task
 alias tw='command t'
 alias v=alsamixer
-alias x='startx'
+alias x=startx
 
 # git
 alias ad='git add'

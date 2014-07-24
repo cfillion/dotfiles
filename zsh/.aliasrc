@@ -32,7 +32,7 @@ alias m=mutt
 alias n=newsbeuter
 alias t=task
 alias tw='command t'
-alias v=alsamixer
+alias v='alsamixer -c 1'
 alias x=startx
 
 # git

@@ -1,5 +1,5 @@
 af=scaletempo
-ao=alsa,alsa:device=[hw:0,0]
+ao=jack,alsa,alsa:device=[hw:0,0]
 vo=opengl
 
 [protocol.dvd]

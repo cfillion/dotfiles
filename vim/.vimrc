@@ -12,6 +12,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'sickill/vim-sunburst'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-abolish' " CoeRcion

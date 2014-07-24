@@ -12,6 +12,10 @@ $ stow i3 xorg zsh ... # partial installation
 Dependencies
 ------------
 
+**alsa-jack**
+
+- `snd-aloop` kernel module
+
 **gtk**
 
 - [MediterraneanNight Series](http://gnome-look.org/content/show.php/MediterraneanNight+Series?content=156782)

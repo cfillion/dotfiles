@@ -5,16 +5,6 @@ compress()
   convert -strip -interlace Plane -quality 85% $*
 }
 
-feh()
-{
-  opts = ''
-  if [ "$1" ]; then
-    command feh $opts --start-at ./$1
-  else
-    command feh $opts
-  fi
-}
-
 gem2ri()
 {
   gem rdoc $* --ri --no-rdoc

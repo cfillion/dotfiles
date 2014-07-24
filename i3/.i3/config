@@ -162,11 +162,11 @@ bindsym Print       exec zscreen
 bindsym $mod+Print $exec ~/.i3/delete_screenshot.sh
 
 # mixer keys
-bindsym XF86AudioMute         $exec amixer set Master toggle
-bindsym XF86AudioLowerVolume  $exec amixer set Master 5%-
-bindsym XF86AudioRaiseVolume  $exec amixer set Master 5%+
-bindsym XF86MonBrightnessUp   $exec amixer set "Auto-Mute Mode" Enabled
-bindsym XF86MonBrightnessDown $exec amixer set "Auto-Mute Mode" Disabled
+bindsym XF86AudioMute         $exec amixer -c 0 set Master toggle
+bindsym XF86AudioLowerVolume  $exec amixer -c 0 set Master 5%-
+bindsym XF86AudioRaiseVolume  $exec amixer -c 0 set Master 5%+
+bindsym XF86MonBrightnessUp   $exec amixer -c 0 set "Auto-Mute Mode" Enabled
+bindsym XF86MonBrightnessDown $exec amixer -c 0 set "Auto-Mute Mode" Disabled
 
 # other keys
 bindsym $mod+Shift+s $exec ~/.i3/screenlayout.sh

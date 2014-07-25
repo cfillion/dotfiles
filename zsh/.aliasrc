@@ -19,7 +19,6 @@ alias noproxy="http_proxy='' https_proxy='' ftp_proxy=''"
 alias rm='rm -vI'
 alias rmdir='rmdir -v'
 alias sort='sort -h'
-alias sqlite3='sqlite3 -column'
 alias sudo='sudo '
 alias tree='tree -F'
 alias vim='vim -p'

@@ -1,10 +1,11 @@
-article-sort-order date asc
 auto-reload yes
 browser "$BROWSER %u >/dev/null 2>&1 &"
-confirm-exit yes
-html-renderer "elinks --dump"
 reload-threads 6
 reload-time 30
+
+article-sort-order date asc
+confirm-exit yes
+html-renderer "elinks --dump"
 swap-title-and-hints yes
 
 articlelist-format "%4i [%f ] %D | %?T?%-15T ?%t"

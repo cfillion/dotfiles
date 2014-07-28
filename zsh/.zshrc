@@ -94,6 +94,9 @@ chpwd()
   [[ -d .git ]] && git status -sb
 }
 
+# changing $TERM to linux is required for xterm
+TERM=linux setterm -regtabs 2
+
 case "$TERM" in
 'linux')
   ;;

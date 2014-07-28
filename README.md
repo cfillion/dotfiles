@@ -1,12 +1,12 @@
 cfi30's dotfiles
 ================
 
-Installation using [GNU Stow](http://www.gnu.org/software/stow/) (does not overwrite existing files):
+Installation (asks before overwriting any file):
 ```
 $ git clone https://cfi30@bitbucket.org/cfi30/dotfiles.git ~/cfi30-dotfiles
 $ cd ~/cfi30-dotfiles
-$ stow */ # full installation
-$ stow i3 xorg zsh ... # partial installation
+$ ./install.sh */ # full installation
+$ ./install.sh i3 xorg zsh ... # partial installation
 ```
 
 Dependencies

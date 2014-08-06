@@ -1,6 +1,6 @@
 #!/bin/sh
-playlist="$HOME/.music-playlist"
 config="$HOME/.musicrc"
+playlist="$HOME/.music-playlist"
 
 if [ -n "$1" ]; then
   folder=$(realpath -q "$1")

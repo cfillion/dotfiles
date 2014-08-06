@@ -1,5 +1,7 @@
 name *.mp3
 or
+name *.wav
+or
 name *.ogg
 or
 name *.m4a

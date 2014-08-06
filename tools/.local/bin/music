@@ -1,9 +1,12 @@
 #!/bin/sh
 playlist="$HOME/.music-playlist"
+config="$HOME/.musicrc"
 
 if [ -n "$1" ]; then
   folder=$(realpath -q "$1")
-  find "$folder" -type f -name '*.mp3' > "$playlist" 2>/dev/null
+  opts=$(sed 's/^/-/' "$config" | tr '\n' ' ')
+
+  find "$folder" -type f $opts > "$playlist" 2>/dev/null
 
   printf "Found %'d song(s) in '%s'" $(wc -l < "$playlist") "$folder"
   echo -e "\n"

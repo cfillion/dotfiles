@@ -1,9 +1,9 @@
 #!/bin/sh
-bridge_opts='-q 0'
+bridge_opts='-q 0 -r 44800 -p 6000'
 
 # create jack clients (alsa bridge)
-alsa_in -j ploop -d ploop $bridge_opts &
-alsa_out -j cloop -d cloop $bridge_opts &
+nice alsa_in -j ploop -d ploop $bridge_opts &
+nice alsa_out -j cloop -d cloop $bridge_opts &
 
 sleep 1
 
@@ -15,6 +15,6 @@ jack_connect system:capture_1 cloop:playback_1
 jack_connect system:capture_2 cloop:playback_2
 
 # start other utilities
-a2jmidid -e &
+nice a2jmidid -e &
 
 exit 0

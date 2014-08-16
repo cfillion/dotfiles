@@ -1,6 +1,3 @@
 af=scaletempo
 ao=jack,alsa,alsa:device=[hw:0,0]
 vo=opengl
-
-[protocol.dvd]
-dvd-device=/dev/sr0

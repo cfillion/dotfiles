@@ -2,6 +2,9 @@
 config="$HOME/.musicrc"
 playlist="$HOME/.music-playlist"
 
+# disable globbing because the configuration may contains wildcards
+set -f
+
 if [ -n "$1" ]; then
   folder=$(realpath -q "$1")
   opts=$(sed 's/^/-/' "$config" | tr '\n' ' ')

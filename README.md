@@ -25,6 +25,7 @@ Dependencies
 - [zscreen](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI)
 
 **tools**
+
 - [a2jmidid](http://home.gna.org/a2jmidid/)
 - [i3](http://i3wm.org/)
 - [jack2-dbus](http://jackaudio.org/)

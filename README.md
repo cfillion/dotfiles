@@ -22,11 +22,14 @@ Dependencies
 
 **i3**
 
-- [jq](http://stedolan.github.io/jq/)
-- [QjackCtl](http://qjackctl.sourceforge.net/)
-- [udiskie](https://github.com/coldfix/udiskie)
-- xautolock
 - [zscreen](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI)
+
+**tools**
+- [a2jmidid](http://home.gna.org/a2jmidid/)
+- [i3](http://i3wm.org/)
+- [jack2-dbus](http://jackaudio.org/)
+- [jq](http://stedolan.github.io/jq/)
+- [mpv](http://mpv.io/)
 
 **vim**
 
@@ -42,9 +45,12 @@ Dependencies
 **xorg**
 
 - [IPA Fonts](http://ipafont.ipa.go.jp/)
+- [QjackCtl](http://qjackctl.sourceforge.net/)
+- [udisks-glue](https://github.com/fernandotcl/udisks-glue)
+- [xautolock](https://www.archlinux.org/packages/community/x86_64/xautolock/)
 
 **zsh**
 
-- [fasd](https://github.com/clvv/fasd)
 - [keychain](https://github.com/funtoo/keychain)
+- [ruby](https://www.ruby-lang.org/)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)

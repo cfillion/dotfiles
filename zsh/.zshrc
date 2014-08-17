@@ -19,7 +19,7 @@ export HOSTNAME=`hostname`
 export LESS='-iRX'
 
 typeset -U path
-export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
+export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 path=("$HOME/.local/bin" $path "$GEM_HOME/bin")
 
 # keybindings
@@ -94,7 +94,7 @@ chpwd()
   [[ -d .git ]] && git status -sb
 }
 
-# changing $TERM to linux is required for xterm
+# forcing $TERM to linux is required for xterm
 TERM=linux setterm -regtabs 2
 
 case "$TERM" in

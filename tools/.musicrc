@@ -1,7 +1,16 @@
-name *.mp3
-or
-name *.wav
-or
-name *.ogg
-or
-name *.m4a
+{
+  "match_extensions": [
+    "mp3",
+    "wav",
+    "og[ga]",
+    "m4a"
+  ],
+  "exclude": [
+    "inst(rumental)?",
+    "without",
+    "karaoke",
+    "off vocal",
+    "TV",
+    "EDIT"
+  ]
+}

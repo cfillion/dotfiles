@@ -7,9 +7,26 @@ set -f
 
 if [ -n "$1" ]; then
   folder=$(realpath -q "$1")
-  opts=$(sed 's/^/-/' "$config" | tr '\n' ' ')
 
-  find "$folder" -type f $opts > "$playlist" 2>/dev/null
+  if ! (jq -e 'true' "$config" > /dev/null); then
+    echo "invalid configuration in '$config'"
+    exit 2
+  fi
+
+  excl_opts=()
+  for pattern in $(jq -r '.exclude[]' "$config"); do
+    [ -z "$excl_opts" ] || excl_opts=(${excl_opts[@]} '-and')
+    excl_opts=(${excl_opts[@]} '-not' '-iregex' "^.*$pattern.*$")
+  done
+
+  match_opts=()
+  for ext in $(jq -r '.match_extensions[]' "$config"); do
+    [ -z "$match_opts" ] || match_opts=(${match_opts[@]} '-or')
+    match_opts=(${match_opts[@]} '-iregex' ".*\.$ext$")
+  done
+
+  find_opts=('-type' 'f' ${excl_opts[@]} ${match_opts[@]})
+  find "$folder" -regextype posix-extended ${find_opts[@]} > "$playlist"
 
   printf "Found %'d song(s) in '%s'" $(wc -l < "$playlist") "$folder"
   echo -e "\n"
@@ -20,7 +37,8 @@ if [ ! -s $playlist ]; then
   echo
   echo "To (re)generate the playlist, run:"
   echo "  music Directory/"
-  exit
+  exit 1
 fi
 
 mpv --shuffle --loop=inf --no-video --playlist "$playlist"
+exit 0

@@ -84,8 +84,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
 
 # source additional files
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.aliasrc
-source ~/.funcrc
+source ~/.zaliasrc
+source ~/.zfuncrc
 
 # behaviour
 chpwd()

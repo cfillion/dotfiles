@@ -151,15 +151,15 @@ bindsym $mod+KP_Subtract move scratchpad
 bindsym $mod+KP_Add scratchpad show
 
 # VIM-like marks (keycode 48 is ')
-bindcode $mod+48 $exec ~/.i3/goto.sh
-bindsym $mod+m $exec ~/.i3/mark.sh
+bindcode $mod+48 $exec i3-goto
+bindsym $mod+m $exec i3-mark
 
 # fast access
 bindsym $mod+k $exec passmenu --type -i -p "password:"
 
 # print screen
 bindsym Print       exec zscreen
-bindsym $mod+Print $exec ~/.i3/delete_screenshot.sh
+bindsym $mod+Print $exec zscreen-delete
 
 # mixer keys
 bindsym XF86AudioMute         $exec amixer -c 1 set Master toggle
@@ -169,9 +169,9 @@ bindsym XF86MonBrightnessUp   $exec amixer -c 1 set "Auto-Mute Mode" Enabled
 bindsym XF86MonBrightnessDown $exec amixer -c 1 set "Auto-Mute Mode" Disabled
 
 # other keys
-bindsym $mod+Shift+s $exec ~/.i3/screenlayout.sh
+bindsym $mod+Shift+s $exec screenlayout
 bindsym $mod+Shift+l $exec xautolock -locknow
-bindsym $mod+Shift+u $exec ~/.i3/umount.sh
+bindsym $mod+Shift+u $exec umount-menu
 
 # window rules
 for_window [class="Gcolor2"]   floating enable

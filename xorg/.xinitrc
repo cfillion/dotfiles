@@ -28,12 +28,13 @@ synclient \
   HorizTwoFingerScroll=0 \
   CoastingSpeed=0
 
-xautolock -time 30 -locker \
-  'i3lock -c 000000 --dpms' &
+# prevent screen from turning off
 xset dpms 0 0 0
 
 mbsync -a   &
 qjackctl    &
 udisks-glue &
+xautolock -time 30 -locker \
+  'i3lock -c 000000 --dpms' &
 
 exec ${2:-i3}

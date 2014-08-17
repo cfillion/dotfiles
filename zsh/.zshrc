@@ -54,7 +54,7 @@ bindkey '^[m' copy-earlier-word
 autoload -U promptinit && promptinit
 autoload -U colors && colors
 PROMPT="%(!.%{$fg_bold[red]%}.%{$fg[magenta]%})%30<..<%~%(!.#.>)%{$reset_color%} "
-RPROMPT="%(1j.%{$fg_bold[green]%}(%j jobs)%{$reset_color%} .)%(?..[%{$fg[yellow]%}%?%{$reset_color%}] )%m %{$fg[cyan]%}%*%{$reset_color%}"
+RPROMPT="%(?..[%{$fg[yellow]%}%?%{$reset_color%}] )%(1j.%{$fg_bold[green]%}(%j jobs)%{$reset_color%} .)%m %{$fg[cyan]%}%*%{$reset_color%}"
 
 # history
 HISTSIZE=1000

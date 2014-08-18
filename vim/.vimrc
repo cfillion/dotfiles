@@ -5,21 +5,27 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim/
 
 call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'sickill/vim-sunburst'
+
+" addons
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'ciaranm/detectindent'
-Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'sickill/vim-sunburst'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-abolish' " CoeRcion
 Plugin 'tpope/vim-characterize' " ga
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+
+" languages
+Plugin 'slim-template/vim-slim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
+
 call vundle#end()
 
 let g:lightline = {'colorscheme': 'jellybeans'}

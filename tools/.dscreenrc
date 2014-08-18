@@ -1,0 +1,8 @@
+SCREEN_DIR="$HOME/Pictures/_Screenshots"
+SCREEN_OUT='%Y-%m-%d_%s.png'
+SCREEN_ARG=(
+  '--select'
+  '--delay 1'
+  '--delay 5'
+  '--delay 10'
+)

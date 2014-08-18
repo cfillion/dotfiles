@@ -1,0 +1,133 @@
+#!/bin/sh
+DATABASE="$HOME/.dscreen-db"
+
+source "$HOME/.dscreenrc"
+[ -z "$SCREEN_DIR" ] && SCREEN_DIR="$HOME/Screenshots/"
+[ -z "$SCREEN_OUT" ] && SCREEN_OUT='%Y-%m-%d_%s.png'
+[ -z "$SCREEN_ARG" ] && SCREEN_ARG=()
+
+[ -w "$DATABASE" ] || touch "$DATABASE"
+[ -d "$SCREEN_DIR" ] || mkdir -p "$SCREEN_DIR"
+
+usage()
+{
+  echo "$(basename $0) --take|--share|--open|--unshare|--rm"
+  exit -1
+}
+
+query()
+{
+  image="$(realpath -q "$1")"
+  field="$2"
+  row=$(grep "$image," "$DATABASE")
+
+  if [ "$?" != 0 ]; then
+    echo "$image is not in the database" >&2
+    exit -2
+  fi
+
+  echo "$row" | cut -d, -f$field
+}
+
+take()
+{
+  args=$(printf '%s\n' "${SCREEN_ARG[@]}" | dmenu -i -p "scrot-args:")
+  [ -z "$args" ] && exit 1
+
+  scrot $args "$SCREEN_DIR/$SCREEN_OUT" -e 'dscreen --share "$f"'
+  exit "$?"
+}
+
+share()
+{
+  file="$(realpath -q "$1")"
+
+  if [ -z "$file" ]; then
+    echo "missing file" >&2
+    exit 1
+  fi
+
+  notify-send 'dscreen' "Uploading $(basename $file)"
+
+  tmp=$(mktemp -d)
+  imgf="$tmp/image_link"
+  delf="$tmp/delete_link"
+
+  imgur "$file" 1>"$imgf" 2>"$delf"
+
+  if [ "$?" != 0 ]; then
+    err=$(cat "$delf")
+    echo $err >&2
+    notify-send -u critical 'dscreen' "Upload error: $err"
+    exit 2
+  fi
+
+  imglink=$(cat "$imgf")
+  dellink=$(cat "$delf" | cut -d ' ' -f 3)
+
+  echo "$file,$imglink,$dellink" >> "$DATABASE"
+
+  notify-send 'dscreen' "Uploaded to $imglink"
+  open "$file"
+  echo "$imglink"
+}
+
+open()
+{
+  if [ -z "$1" ]; then
+    echo "missing file" >&2
+    exit 1
+  fi
+
+  img=$(query "$1" 2); st="$?"
+  [ "$st" == 0 ] || exit "$st"
+
+  xdg-open "$img" >/dev/null &
+}
+
+unshare()
+{
+  if [ -z "$1" ]; then
+    echo "missing file" >&2
+    exit 1
+  fi
+
+  del=$(query "$1" 3); st="$?"
+  [ "$st" == 0 ] || exit "$st"
+
+  echo "$del"
+  xdg-open "$del" >/dev/null &
+
+  tmp=$(mktemp)
+  grep -v "$(realpath -q "$1")," "$DATABASE" > "$tmp"
+  mv "$tmp" "$DATABASE"
+
+  echo "file removed from the database"
+}
+
+delete()
+{
+  unshare "$1"
+  rm -v "$(realpath -q "$1")"
+}
+
+case "$1" in
+'--take')
+  take
+  ;;
+'--share')
+  share "$2"
+  ;;
+'--open')
+  open "$2"
+  ;;
+'--unshare')
+  unshare "$2"
+  ;;
+'--rm')
+  delete "$2"
+  ;;
+*)
+  usage
+  ;;
+esac

@@ -22,7 +22,7 @@ Dependencies
 
 **i3**
 
-- [zscreen](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI)
+- `tools/` from this repository
 
 **tools**
 
@@ -30,7 +30,9 @@ Dependencies
 - [i3](http://i3wm.org/)
 - [jack2-dbus](http://jackaudio.org/)
 - [jq](http://stedolan.github.io/jq/)
+- [libnotify](https://developer.gnome.org/notification-spec/)
 - [mpv](http://mpv.io/)
+- [scrot](http://scrot.sourcearchive.com/)
 
 **vim**
 

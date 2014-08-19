@@ -10,6 +10,7 @@ Plugin 'sickill/vim-sunburst'
 
 " addons
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'bkad/CamelCaseMotion'
 Plugin 'ciaranm/detectindent'
 Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'

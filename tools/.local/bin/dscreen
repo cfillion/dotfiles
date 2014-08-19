@@ -11,7 +11,7 @@ source "$HOME/.dscreenrc"
 
 usage()
 {
-  echo "$(basename $0) --take|--share|--open|--unshare|--rm"
+  echo "$(basename "$0") --take|--share|--open|--unshare|--rm"
   exit -1
 }
 
@@ -19,7 +19,7 @@ query()
 {
   image="$(realpath -q "$1")"
   field="$2"
-  row=$(grep "$image," "$DATABASE")
+  row=$(grep -F "$image," "$DATABASE")
 
   if [ "$?" != 0 ]; then
     echo "$image is not in the database" >&2
@@ -47,7 +47,7 @@ share()
     exit 1
   fi
 
-  notify-send 'dscreen' "Uploading $(basename $file)"
+  notify-send 'dscreen' "Uploading $(basename "$file")"
 
   tmp=$(mktemp -d)
   imgf="$tmp/image_link"
@@ -99,7 +99,7 @@ unshare()
   xdg-open "$del" >/dev/null &
 
   tmp=$(mktemp)
-  grep -v "$(realpath -q "$1")," "$DATABASE" > "$tmp"
+  grep -vF "$(realpath -q "$1")," "$DATABASE" > "$tmp"
   mv "$tmp" "$DATABASE"
 
   echo "file removed from the database"

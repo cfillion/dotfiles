@@ -12,9 +12,9 @@ Plugin 'sickill/vim-sunburst'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'ciaranm/detectindent'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-abolish' " CoeRcion
 Plugin 'tpope/vim-characterize' " ga

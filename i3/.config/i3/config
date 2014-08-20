@@ -140,6 +140,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3status
+
+  colors {
+    focused_workspace  #2F857F #246662 #ffffff
+  }
 }
 
 # change focused window border style

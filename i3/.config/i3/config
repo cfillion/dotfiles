@@ -172,6 +172,10 @@ bindsym $mod+Shift+s $exec screenlayout
 bindsym $mod+Shift+l $exec xautolock -locknow
 bindsym $mod+Shift+u $exec umount-menu
 
+# colors
+# class                 border  backgr. text    indicator
+client.focused          #2F857F #246662 #ffffff #3BA8A3
+
 # window rules
 for_window [class="Gcolor2"]   floating enable
 for_window [class="Gucharmap"] floating enable

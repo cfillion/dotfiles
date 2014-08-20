@@ -34,7 +34,14 @@ take()
   args=$(printf '%s\n' "${SCREEN_ARG[@]}" | dmenu -i -p "scrot-args:")
   [ -z "$args" ] && exit 1
 
-  scrot $args "$SCREEN_DIR/$SCREEN_OUT" -e 'dscreen --share "$f"'
+  postcmd=''
+  if [ "$(printf '%s\n' 'Yes' 'No' | dmenu -i -p "share:")" == 'Yes' ]; then
+    postcmd='dscreen --share "$f"'
+  else
+    postcmd='feh "$f"'
+  fi
+
+  scrot $args "$SCREEN_DIR/$SCREEN_OUT" -e "$postcmd"
   exit "$?"
 }
 

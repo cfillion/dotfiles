@@ -158,7 +158,7 @@ bindsym $mod+m $exec i3-mark
 bindsym $mod+k $exec passmenu --type -i -p "password:"
 
 # print screen
-bindsym Print       exec dscreen --take
+bindsym Print $exec dscreen --take
 
 # mixer keys
 bindsym XF86AudioMute         $exec amixer -c 1 set Master toggle

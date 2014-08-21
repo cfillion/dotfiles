@@ -1,0 +1,4 @@
+#!/bin/sh
+# dmenu configuration wrapper
+
+/usr/bin/dmenu -sb '#246662' -i $*

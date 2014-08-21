@@ -18,7 +18,7 @@ Dependencies
 
 **gtk**
 
-- [MediterraneanNight Series](http://gnome-look.org/content/show.php/MediterraneanNight+Series?content=156782)
+- [Zen suite](http://opendesktop.org/content/show.php/Zen+suite?content=149883)
 
 **i3**
 

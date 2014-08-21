@@ -23,12 +23,12 @@ xterm*waitForMap: true
 xterm*foreground: #20ad20
 xterm*background: #080808
 
-! emulator colors
-xterm*VT100*foreground: rgb:b2/b2/b2
-xterm*VT100*background: rgb:00/00/00
+! default colors
+xterm*VT100*background: #0c0c0c
+xterm*VT100*foreground: #b2b2b2
 
 ! black
-xterm*VT100*color0:  #000000
+xterm*VT100*color0:  #0c0c0c
 xterm*VT100*color8:  #3d3d3d
 ! red
 xterm*VT100*color1:  #ff5d28

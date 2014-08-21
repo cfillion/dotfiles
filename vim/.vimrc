@@ -6,7 +6,6 @@ set runtimepath+=~/.vim/bundle/Vundle.vim/
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'sickill/vim-sunburst'
 
 " addons
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -27,22 +26,21 @@ Plugin 'slim-template/vim-slim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'kchmck/vim-coffee-script'
 
+" color scheme
+Plugin 'sickill/vim-sunburst'
+
 call vundle#end()
+
+syntax on
+color Sunburst
+
+filetype plugin indent on
 
 let g:lightline = {'colorscheme': 'jellybeans'}
 let g:vim_markdown_folding_disabled = 1
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10'
-
-syntax on
-color Sunburst
-
-filetype plugin indent on
-set autoindent
-set backspace=2
-set copyindent
-set shiftround
 
 cnoremap <C-g> <C-c>
 command Wdiff :w !diff % -
@@ -54,11 +52,15 @@ noremap ; :
 noremap <f9> :make!<CR>
 vnoremap <silent> . :norm.<CR>
 
+set autoindent
 set autoread
 set autowrite
+set background=dark
+set backspace=2
 set backupcopy=yes
 set colorcolumn=81
 set confirm
+set copyindent
 set directory=~/.vim/swap/,.
 set encoding=utf-8
 set foldlevelstart=20
@@ -78,6 +80,7 @@ set number
 set pastetoggle=<Ins>
 set ruler
 set scrolloff=3
+set shiftround
 set shortmess+=I
 set showcmd
 set smartcase
@@ -88,6 +91,8 @@ set undodir=~/.vim/undo/,.
 set undofile
 set updatetime=1000
 set wildchar=<Tab> wildmenu
+set wildignore+=*.aux,*.log
+set wildignore+=*.gem
 set wildignore+=*.jpg
 set wildignore+=*.midi,*.mp3,*.ogg
 set wildignore+=*.o
@@ -95,9 +100,7 @@ set wildignore+=*.pdf
 set wildignore+=.*
 set wildignore+=_site,build,dist
 set wildignore+=CMakeFiles,CMakeCache.txt,*.cmake
-set wildignore+=*.aux,*.log
 set wildignore+=tmp,node_modules,bower_components
-set wildignore+=*.gem
 set wildignorecase
 set wrap
 

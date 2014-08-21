@@ -28,7 +28,7 @@ bindsym $mod+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym Menu $exec i3-dmenu-desktop --dmenu='dmenu -i -p "launch:"' --entry-type=command
+bindsym Menu $exec i3-dmenu-desktop --dmenu='dmenu -p "launch:"' --entry-type=command
 
 # change focus
 bindsym $mod+Left focus left
@@ -116,7 +116,7 @@ bindcode $mod+48 $exec i3-goto
 bindsym $mod+m $exec i3-mark
 
 # fast access
-bindsym $mod+k $exec passmenu --type -i -p "password:"
+bindsym $mod+k $exec passmenu --type -p "password:"
 
 # print screen
 bindsym Print $exec dscreen --take

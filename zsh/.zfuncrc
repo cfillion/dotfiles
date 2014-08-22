@@ -1,12 +1,10 @@
 # vim: ft=zsh
 
-compress()
-{
+compress() {
   convert -strip -interlace Plane -quality 85% $*
 }
 
-gem2ri()
-{
+gem2ri() {
   gem rdoc $* --ri --no-rdoc
 }
 
@@ -15,23 +13,19 @@ lsfont()
   fc-list : family
 }
 
-myip()
-{
+myip() {
   curl curlmyip.com
 }
 
-sprunge()
-{
+sprunge() {
   curl -F 'sprunge=<-' http://sprunge.us
 }
 
-startx()
-{
+startx() {
   [ $DISPLAY ] && return
   command startx $*
 }
 
-topdu()
-{
+topdu() {
   du -sh */ | sort -rh | less -NSFiX
 }

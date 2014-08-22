@@ -8,8 +8,11 @@ gem2ri() {
   gem rdoc $* --ri --no-rdoc
 }
 
-lsfont()
-{
+lsaur() {
+  pacman -Qem
+}
+
+lsfont() {
   fc-list : family
 }
 

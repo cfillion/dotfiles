@@ -17,6 +17,7 @@ rm -rf ~/.cache/dwb*
 xrdb -load ~/.Xresources
 ~/.screenlayout/default
 
+numlockx on
 setxkbmap us colemak #terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap
 xset r 66

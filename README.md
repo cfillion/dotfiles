@@ -15,15 +15,17 @@ Dependencies
 **alsa-jack**
 
 - `snd-aloop` kernel module
-  /etc/modprobe.d/snd-aloop.conf
-  ```
-  alias snd-card-0 snd-aloop
-  alias snd-card-1 snd-hdsp
-  alias snd-card-2 snd-hda-intel
 
-  options snd-aloop index=0 pcm_substreams=2
-  options snd-hda-intel index=1
-  ```
+    /etc/modprobe.d/snd-aloop.conf
+
+    ```
+    alias snd-card-0 snd-aloop
+    alias snd-card-1 snd-hdsp
+    alias snd-card-2 snd-hda-intel
+
+    options snd-aloop index=0 pcm_substreams=2
+    options snd-hda-intel index=1
+    ```
 
 **gtk**
 

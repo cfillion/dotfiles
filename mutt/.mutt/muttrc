@@ -31,16 +31,17 @@ set send_charset = "us-ascii:utf-8"
 set sendmail = "/usr/bin/msmtp"
 set sig_dashes
 set sort = threads
-#set sort_aux = reverse-last-date-received
 set sort_re
 set spoolfile = "+INBOX"
 set thorough_search
 set timeout = 3
 set uncollapse_jump
 set wait_key = no
+unset confirmappend
 unset mime_forward
 unset reply_self
 
+#set sort_aux = reverse-last-date-received
 set date_format = "%a %b %d %H:%M"
 set index_format = "%4C [%Z] %D | %-15.15F %s"
 

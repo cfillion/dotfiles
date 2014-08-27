@@ -138,9 +138,9 @@ fileview *.pdf
   \ pdftotext -nopgbrk %c -
 
 " Audio
-filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a,*.wma
+filetype *.wav,*.mp3,*.flac,*.ogg,*.oga,*.m4a,*.wma
   \ mpv %f,
-fileview *.wav,*.mp3,*.flac,*.ogg,*.m4a,*.wma
+fileview *.wav,*.mp3,*.flac,*.ogg,*.oga,*.m4a,*.wma
   \ mediainfo
 
 " Video

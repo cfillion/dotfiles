@@ -1,5 +1,5 @@
 #!/bin/sh
-# dwb:xyt
+# dwb:,m
 
 proxy="$DWB_PROXY"
 uri="$DWB_URI"

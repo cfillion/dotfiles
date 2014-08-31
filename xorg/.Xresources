@@ -17,7 +17,6 @@ xterm*termName: xterm-256color
 xterm*title: 
 xterm*utf8Title: true
 xterm*utmpInhibit: true
-xterm*waitForMap: true
 
 ! menu colors
 xterm*foreground: #20ad20

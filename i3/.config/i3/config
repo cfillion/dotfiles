@@ -180,4 +180,5 @@ for_window [class="Qsynth"]    floating enable
 for_window [class="Vmpk"]      floating enable
 for_window [class="Xsane"]     floating enable
 
-for_window [title="dwb-web-inspector"]   floating enable
+for_window [title="dwb-web-inspector"] floating enable
+for_window [title="Developer Tools"]   floating enable

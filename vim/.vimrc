@@ -14,6 +14,7 @@ Plugin 'ciaranm/detectindent'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'
+Plugin 'othree/html5.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-abolish' " CoeRcion
 Plugin 'tpope/vim-characterize' " ga

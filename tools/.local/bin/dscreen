@@ -19,14 +19,14 @@ query()
 {
   image="$(realpath -q "$1")"
   field="$2"
-  row=$(grep -F "$image," "$DATABASE")
+  row=$(grep -F "$image;" "$DATABASE")
 
   if [ "$?" != 0 ]; then
     echo "$image is not in the database" >&2
     exit -2
   fi
 
-  echo "$row" | cut -d, -f$field
+  echo "$row" | cut -d ';' -f$field
 }
 
 take()
@@ -59,8 +59,10 @@ share()
   tmp=$(mktemp -d)
   imgf="$tmp/image_link"
   delf="$tmp/delete_link"
+  srcf="$tmp/source"
 
-  imgur "$file" 1>"$imgf" 2>"$delf"
+  ln -s "$file" "$srcf"
+  imgur "$srcf" 1>"$imgf" 2>"$delf"
 
   if [ "$?" != 0 ]; then
     err=$(cat "$delf")
@@ -72,11 +74,13 @@ share()
   imglink=$(cat "$imgf")
   dellink=$(cat "$delf" | cut -d ' ' -f 3)
 
-  echo "$file,$imglink,$dellink" >> "$DATABASE"
+  echo "$file;$imglink;$dellink" >> "$DATABASE"
+  rm -r "$tmp"
 
   notify-send 'dscreen' "Uploaded to $imglink"
   open "$file"
   echo "$imglink"
+
 }
 
 open()
@@ -106,7 +110,7 @@ unshare()
   xdg-open "$del" >/dev/null &
 
   tmp=$(mktemp)
-  grep -vF "$(realpath -q "$1")," "$DATABASE" > "$tmp"
+  grep -vF "$(realpath -q "$1");" "$DATABASE" > "$tmp"
   mv "$tmp" "$DATABASE"
 
   echo "file removed from the database"

@@ -20,6 +20,7 @@ alias rm='rm -vI'
 alias rmdir='rmdir -v'
 alias sort='sort -h'
 alias sudo='sudo '
+alias timidity='timidity -Oj'
 alias tree='tree -F'
 alias vim='vim -p'
 

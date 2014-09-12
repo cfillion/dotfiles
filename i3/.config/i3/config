@@ -173,12 +173,12 @@ bar {
 }
 
 # window rules
-for_window [class="Gcolor2"]   floating enable
-for_window [class="Gucharmap"] floating enable
-for_window [class="Qjackctl"]  floating enable
-for_window [class="Qsynth"]    floating enable
-for_window [class="Vmpk"]      floating enable
-for_window [class="Xsane"]     floating enable
+for_window [class="Gcolor2"]       floating enable
+for_window [class="Gucharmap"]     floating enable
+for_window [class="Jack-keyboard"] floating enable
+for_window [class="Qjackctl"]      floating enable
+for_window [class="Qsynth"]        floating enable
+for_window [class="Xsane"]         floating enable
 
 for_window [title="dwb-web-inspector"] floating enable
 for_window [title="Developer Tools"]   floating enable

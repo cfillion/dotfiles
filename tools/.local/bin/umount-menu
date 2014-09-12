@@ -1,4 +1,9 @@
 #!/bin/sh
+
+####################
+# Unmount a device #
+####################
+
 device=$(ls /media | dmenu -p "device:")
 [ "$device" ] || exit
 

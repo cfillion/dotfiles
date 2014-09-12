@@ -1,4 +1,9 @@
 #!/bin/sh
+
+#################################
+# Set the current screen layout #
+#################################
+
 LAYOUTDIR="$HOME/.screenlayout"
 
 choice=$(ls "$LAYOUTDIR" | dmenu -p "screen-layout:")

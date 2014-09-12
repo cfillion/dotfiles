@@ -1,4 +1,9 @@
 #!/bin/sh
+
+#################################
+# Playlist generator and player #
+#################################
+
 config="$HOME/.musicrc"
 playlist="$HOME/.music-playlist"
 

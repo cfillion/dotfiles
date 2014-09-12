@@ -1,3 +1,8 @@
 #!/bin/sh
+
+###########################
+# Mark the current window #
+###########################
+
 mark_id=$(echo -n | dmenu -p "identifier:")
 [ "$mark_id" ] && i3-msg "mark $mark_id"

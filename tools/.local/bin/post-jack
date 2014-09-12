@@ -1,4 +1,9 @@
 #!/bin/sh
+
+###########################################################
+# Setup alsa2jack bridge and start jack-related utilities #
+###########################################################
+
 bridge_opts='-q 0 -r 44800 -p 6000'
 
 # create jack clients (alsa bridge)

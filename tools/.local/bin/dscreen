@@ -1,4 +1,9 @@
 #!/bin/sh
+
+###########################
+# Take & Share screenshot #
+###########################
+
 DATABASE="$HOME/.dscreen-db"
 SEPARATOR=$(echo -ne "\037")
 

@@ -1,0 +1,34 @@
+#!/bin/sh
+
+##################################
+# View all images in a directory #
+##################################
+
+IFS='
+'
+
+mklist() { ls -v "$1"; }
+
+if [ ! -r "$1" ]; then
+  echo "$(basename "$0") FILE|DIRECTORY" >&2
+  exit -1
+fi
+
+arg="$(realpath -q "$1")"
+
+if [ -d "$arg" ]; then
+  list=($(mklist "$arg"))
+  first="$(echo "$list" | head -n 1)"
+else
+  _dir="$(dirname "$arg")"
+
+  list=($(mklist "$_dir"))
+  first="$(basename "$arg")"
+fi
+
+feh               \
+  --draw-filename  \
+  --draw-tinted     \
+  --auto-zoom        \
+  --start-at "$first" \
+  ${list[@]}

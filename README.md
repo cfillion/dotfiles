@@ -36,6 +36,7 @@ Dependencies
 **tools**
 
 - [a2jmidid](http://home.gna.org/a2jmidid/)
+- [feh](http://feh.finalrewind.org/)
 - [i3](http://i3wm.org/)
 - [jack2-dbus](http://jackaudio.org/)
 - [jq](http://stedolan.github.io/jq/)

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+####################################################
+# EXECUTE A COMMAND SUPPLYING IT A SHORT FILENAME  #
+# usefull to run commands behaving badly when      #
+# working with files containing special characters #
+# in the filename.                                 #
+# {} is replaced by the temporary copy's path.     #
+####################################################
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+  echo "USAGE: $(basename "$0") FILE COMMAND..."
+  exit -1
+fi
+
+file="$(realpath -q "$1")"; shift
+link=$(mktemp -u)
+safe=$(echo "$link" | sed 's/\//\\\//g')
+line="$(echo "$*" | sed s/{}/"$safe"/g)"
+
+if [ ! -r "$file" ]; then
+  echo "temp: $file: No such file or directory" >&2
+  exit -2
+fi
+
+ln -s "$file" "$link"
+$line
+rm "$link" 2>/dev/null

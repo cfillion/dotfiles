@@ -29,6 +29,11 @@ startx() {
   command startx $*
 }
 
+timer() {
+  echo "Press ^D to end the timer." >&2
+  (time cat > /dev/null) 2>&1 | awk '{print $(NF-1)}'
+}
+
 topdu() {
   du -sh */ | sort -rh | less -NSFiX
 }

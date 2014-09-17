@@ -14,7 +14,7 @@ echo "js \
 
 cookies="/tmp/youtube-cookies-$RANDOM"
 ua="$(youtube-dl --dump-user-agent)"
-media="$(youtube-dl -g --cookies "$cookies" --proxy "$proxy" "$uri")"
+media="$(youtube-dl -g --no-playlist --cookies "$cookies" --proxy "$proxy" "$uri")"
 
 (
 http_proxy="$proxy" mpv --quiet --force-window \

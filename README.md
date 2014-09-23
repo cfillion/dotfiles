@@ -2,7 +2,8 @@ cfi30's dotfiles
 ================
 
 Installation (asks before overwriting any file):
-```
+
+```sh
 $ git clone https://cfi30@bitbucket.org/cfi30/dotfiles.git ~/cfi30-dotfiles
 $ cd ~/cfi30-dotfiles
 $ ./install.sh */ # full installation

@@ -122,7 +122,7 @@ au InsertLeave * call OffInsert()
 au TabEnter    * wincmd =
 au VimResized  * wincmd =
 
-au FileType lilypond setlocal commentstring=%%\ %s
+call tcomment#DefineType('lilypond','%% %s')
 
 function OnInsert()
   set norelativenumber cursorline nohlsearch

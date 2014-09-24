@@ -7,7 +7,7 @@
 IFS='
 '
 
-mklist() { ls -v "$1"; }
+mklist() { find "$1" -maxdepth 1 -type f | sort -fg; }
 
 if [ ! -r "$1" ]; then
   echo "$(basename "$0") FILE|DIRECTORY" >&2
@@ -23,7 +23,7 @@ else
   _dir="$(dirname "$arg")"
 
   list=($(mklist "$_dir"))
-  first="$(basename "$arg")"
+  first="$arg"
 fi
 
 feh               \

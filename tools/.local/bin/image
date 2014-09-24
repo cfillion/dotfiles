@@ -31,4 +31,5 @@ feh               \
   --draw-tinted     \
   --auto-zoom        \
   --start-at "$first" \
+  --action1 'mpv --loop-file %F' \
   ${list[@]}

@@ -7,7 +7,7 @@
 IFS='
 '
 
-mklist() { find "$1" -maxdepth 1 -type f | sort -fg; }
+mklist() { find "$1" -maxdepth 1 -type f | sort -fV; }
 
 if [ ! -r "$1" ]; then
   echo "$(basename "$0") FILE|DIRECTORY" >&2

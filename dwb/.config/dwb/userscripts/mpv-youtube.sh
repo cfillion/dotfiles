@@ -19,7 +19,7 @@ media="$(youtube-dl -g --no-playlist --cookies "$cookies" --proxy "$proxy" "$uri
 (
 http_proxy="$proxy" mpv --quiet --force-window \
   --user-agent="$ua" --cookies --cookies-file="$cookies" \
-  --title="$DWB_TITLE" "$media"
+  --media-title="$DWB_TITLE" "$media"
 
 rm "$cookies"
 ) &

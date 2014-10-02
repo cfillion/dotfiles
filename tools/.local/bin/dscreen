@@ -60,6 +60,13 @@ share()
     exit 1
   fi
 
+  link=$(query "$file" 2 2>/dev/null); st="$?"
+  if [ "$st" == 0 ]; then
+    echo "file already uploaded" >&2
+    open "$file"
+    exit
+  fi
+
   notify-send 'dscreen' "Uploading $(basename "$file")"
 
   tmp=$(mktemp -d)

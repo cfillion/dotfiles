@@ -87,6 +87,7 @@ set showcmd
 set smartcase
 set splitbelow
 set splitright
+set t_RV= ttymouse=xterm2
 set ttimeoutlen=0
 set undodir=~/.vim/undo/,.
 set undofile

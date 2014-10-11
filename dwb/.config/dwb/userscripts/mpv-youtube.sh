@@ -17,7 +17,7 @@ ua="$(youtube-dl --dump-user-agent)"
 media="$(youtube-dl -g --no-playlist --cookies "$cookies" --proxy "$proxy" "$uri")"
 
 (
-http_proxy="$proxy" mpv --quiet --force-window \
+http_proxy="$proxy" mpv --quiet --force-window --fullscreen \
   --user-agent="$ua" --cookies --cookies-file="$cookies" \
   --media-title="$DWB_TITLE" "$media"
 

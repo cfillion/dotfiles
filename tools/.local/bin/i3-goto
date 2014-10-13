@@ -4,5 +4,5 @@
 # Give the focus to a marked window #
 #####################################
 
-mark_id=$(i3-msg -t get_marks | jq -r ".[]" | dmenu -p "mark:")
+mark_id=$(i3-msg -t get_marks | jshon -a -u | dmenu -p "mark:")
 [ "$mark_id" ] && i3-msg "[con_mark=\"$mark_id\"] focus"

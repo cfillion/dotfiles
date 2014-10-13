@@ -13,19 +13,19 @@ set -f
 if [ -n "$1" ]; then
   folder=$(realpath -q "$1")
 
-  if ! (jq -e 'true' "$config" > /dev/null); then
+  if ! (jshon < "$config" > /dev/null); then
     echo "invalid configuration in '$config'"
     exit 2
   fi
 
   excl_opts=()
-  for pattern in $(jq -r '.exclude[]' "$config"); do
+  for pattern in $(jshon -e exclude -a -u < "$config"); do
     [ -z "$excl_opts" ] || excl_opts=(${excl_opts[@]} '-and')
     excl_opts=(${excl_opts[@]} '-not' '-iregex' "^.*$pattern.*$")
   done
 
   match_opts=()
-  for ext in $(jq -r '.match_extensions[]' "$config"); do
+  for ext in $(jshon -e match_extensions -a -u < "$config"); do
     [ -z "$match_opts" ] || match_opts=(${match_opts[@]} '-or')
     match_opts=(${match_opts[@]} '-iregex' ".*\.$ext$")
   done

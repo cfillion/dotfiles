@@ -40,7 +40,7 @@ Dependencies
 - [feh](http://feh.finalrewind.org/)
 - [i3](http://i3wm.org/)
 - [jack2-dbus](http://jackaudio.org/)
-- [jq](http://stedolan.github.io/jq/)
+- [jshon](http://kmkeen.com/jshon/)
 - [libnotify](https://developer.gnome.org/notification-spec/)
 - [mpv](http://mpv.io/)
 - [scrot](http://scrot.sourcearchive.com/)

@@ -1,4 +1,0 @@
-set prompt "lftp [\S\? \u\@\h \w]$ "
-set ssl:verify-certificate no
-set cmd:set-term-status on
-

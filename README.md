@@ -1,11 +1,11 @@
-cfi30's dotfiles
+cfillion's dotfiles
 ================
 
-Installation (asks before overwriting any file):
+Installation (will prompt before overwriting existing files):
 
 ```sh
-$ git clone https://cfi30@bitbucket.org/cfi30/dotfiles.git ~/cfi30-dotfiles
-$ cd ~/cfi30-dotfiles
+$ git clone https://github.com/cfillion/dotfiles.git ~/.cfillion-dotfiles
+$ cd ~/.cfillion-dotfiles
 $ ./install.sh */ # full installation
 $ ./install.sh i3 xorg zsh ... # partial installation
 ```

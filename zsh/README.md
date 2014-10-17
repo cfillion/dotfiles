@@ -4,7 +4,7 @@ Post-installation instructions:
 
 1. Install dependencies
 
-        $ pacaur -S keychain ruby zsh-syntax-highlighting
+		$ pacaur -S keychain ruby zsh-syntax-highlighting
 
   - [keychain](https://github.com/funtoo/keychain)
   - [ruby](https://www.ruby-lang.org/)

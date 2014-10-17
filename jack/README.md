@@ -1,5 +1,8 @@
-# Alsa-to-Jack bridge
+# JACK Audio Connection Kit - http://jackaudio.org/
 
+	# pacman -S jack2-dbus
+
+Read more about the Alsa-to-Jack bridge:
 http://alsa.opensrc.org/Jack_and_Loopback_device_as_Alsa-to-Jack_bridge
 
 Post-installation instructions:

@@ -1,10 +1,10 @@
-# ZSH dotfiles
+# Zsh
 
-Post-installation instructions:
+http://www.zsh.org/
 
-1. Install dependencies
+	$ pacaur -S zsh keychain ruby zsh-syntax-highlighting
 
-		$ pacaur -S keychain ruby zsh-syntax-highlighting
+Dependencies:
 
   - [keychain](https://github.com/funtoo/keychain)
   - [ruby](https://www.ruby-lang.org/)

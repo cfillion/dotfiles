@@ -1,7 +1,5 @@
-# GTK+ configuration
+# GTK+
 
-Post-installation instructions:
+Install [Zen suite](http://opendesktop.org/content/show.php/Zen+suite?content=149883):
 
-1. Install [Zen suite](http://opendesktop.org/content/show.php/Zen+suite?content=149883)
-
-		$ pacaur -S zen-gtk-themes
+	$ pacaur -S zen-gtk-themes

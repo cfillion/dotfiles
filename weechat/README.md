@@ -1,4 +1,8 @@
-# WeeChat configuration
+# WeeChat
+
+http://weechat.org/
+
+	$ pacaur -S weechat
 
 Post-installation instructions:
 

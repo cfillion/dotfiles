@@ -1,7 +1,7 @@
-# i3 configuration and scripts
+# i3 Window Manager
 
-Post-installation instructions:
+http://i3wm.org/
 
-1. Install [jshon](http://kmkeen.com/jshon/) (required by the `i3-goto` script)
+	$ pacaur -S i3 jshon
 
-		# pacman -S jshon
+[jshon](http://kmkeen.com/jshon/) is required for the `i3-goto` script.

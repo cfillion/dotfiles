@@ -1,11 +1,12 @@
 # JACK Audio Connection Kit
 
+http://jackaudio.org/
+
 	$ pacaur -S jack2-dbus qjackctl a2jmidid
 
 Dependencies:
 
 - [a2jmidid](http://home.gna.org/a2jmidid/)
-- [jack2-dbus](http://jackaudio.org/)
 - [QjackCtl](http://qjackctl.sourceforge.net/)
 
 Read more about the Alsa-to-Jack bridge:

@@ -1,4 +1,8 @@
-# VIM dotfiles
+# VIM
+
+http://www.vim.org/
+
+	$ pacaur -S gvim
 
 Post-installation instructions:
 

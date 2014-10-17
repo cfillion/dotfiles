@@ -1,0 +1,1 @@
+# dmenu configuration wrapper

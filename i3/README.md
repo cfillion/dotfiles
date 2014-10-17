@@ -2,6 +2,8 @@
 
 http://i3wm.org/
 
-	$ pacaur -S i3 jshon
+	$ pacaur -S i3 jshon xautolock
 
-[jshon](http://kmkeen.com/jshon/) is required for the `i3-goto` script.
+Dependencies:
+- [jshon](http://kmkeen.com/jshon/) for the `i3-goto` script.
+- [xautolock](https://www.archlinux.org/packages/community/x86_64/xautolock/)

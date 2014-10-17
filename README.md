@@ -24,4 +24,3 @@ Dependencies
 **xorg**
 
 - [IPA Fonts](http://ipafont.ipa.go.jp/)
-- [xautolock](https://www.archlinux.org/packages/community/x86_64/xautolock/)

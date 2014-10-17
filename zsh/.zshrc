@@ -59,7 +59,7 @@ RPROMPT="%(?..[%{$fg[yellow]%}%?%{$reset_color%}])%(1j. %{$fg_bold[green]%}(%j j
 # history
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.history
+HISTFILE=~/.zhistory
 
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY

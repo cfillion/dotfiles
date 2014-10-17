@@ -2,7 +2,7 @@
 
 http://www.zsh.org/
 
-	$ pacaur -S zsh keychain ruby zsh-syntax-highlighting
+	$ pacaur -S zsh zsh-completions keychain ruby zsh-syntax-highlighting
 
 Dependencies:
 

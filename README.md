@@ -20,7 +20,3 @@ Dependencies
 - [libnotify](https://developer.gnome.org/notification-spec/)
 - [mpv](http://mpv.io/)
 - [scrot](http://scrot.sourcearchive.com/)
-
-**xorg**
-
-- [IPA Fonts](http://ipafont.ipa.go.jp/)

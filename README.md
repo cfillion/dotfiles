@@ -13,10 +13,6 @@ $ ./install.sh i3 xorg zsh ... # partial installation
 Dependencies
 ------------
 
-**i3**
-
-- `tools/` from this repository
-
 **tools**
 
 - [a2jmidid](http://home.gna.org/a2jmidid/)

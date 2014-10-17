@@ -1,5 +1,7 @@
 # Alsa-to-Jack bridge
 
+http://alsa.opensrc.org/Jack_and_Loopback_device_as_Alsa-to-Jack_bridge
+
 Post-installation instructions:
 
 1. Setup the `snd-aloop` kernel module

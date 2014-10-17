@@ -15,3 +15,14 @@ Post-installation instructions:
 
 		options snd-aloop index=0 pcm_substreams=2
 		options snd-hda-intel index=1
+
+2. Install dependencies:
+
+  - (a2jmidid)[http://home.gna.org/a2jmidid/]
+
+		$ pacaur -S a2jmidid
+
+3. Configure QjackCtl
+
+  1. `Setup...` > `Options`
+  2. Set "Execute script after Startup" to `~/.local/bin/post-jack`

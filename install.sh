@@ -9,7 +9,7 @@ if [ -z "$*" ]; then
 fi
 
 install() {
-  local files="$(find $* -type f)"
+  local files="$(find $* -type f -not -name README\*)"
 
   for file in $files; do
     local dest="$HOME/${file#*/}"

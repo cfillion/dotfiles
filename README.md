@@ -16,7 +16,6 @@ Dependencies
 **tools**
 
 - [feh](http://feh.finalrewind.org/)
-- [i3](http://i3wm.org/)
 - [jshon](http://kmkeen.com/jshon/)
 - [libnotify](https://developer.gnome.org/notification-spec/)
 - [mpv](http://mpv.io/)
@@ -25,6 +24,4 @@ Dependencies
 **xorg**
 
 - [IPA Fonts](http://ipafont.ipa.go.jp/)
-- [QjackCtl](http://qjackctl.sourceforge.net/)
-- [udisks-glue](https://github.com/fernandotcl/udisks-glue)
 - [xautolock](https://www.archlinux.org/packages/community/x86_64/xautolock/)

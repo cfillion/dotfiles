@@ -1,24 +1,5 @@
-" cfi30's vifm theme
+set tuioptions=p
 
-" The standard ncurses colors are:
-" Default = -1 = None, can be used for transparency or default color
-" Black = 0
-" Red = 1
-" Green = 2
-" Yellow = 3
-" Blue = 4
-" Magenta = 5
-" Cyan = 6
-" White = 7
-
-" Available attributes (some of them can be combined):
-" bold
-" underline
-" reverse or inverse
-" standout
-" none
-
-" highlight group cterm=attrs ctermfg=foreground_color ctermbg=background_color
 highlight Win        cterm=none ctermfg=default ctermbg=default
 highlight Border     cterm=none ctermfg=default ctermbg=default
 highlight TopLine    cterm=none ctermfg=48 ctermbg=235

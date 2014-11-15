@@ -67,6 +67,7 @@ set encoding=utf-8
 set foldlevelstart=20
 set foldmethod=indent
 set gdefault
+set ghr=0
 set ignorecase
 set incsearch
 set laststatus=2

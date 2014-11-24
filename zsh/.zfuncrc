@@ -12,6 +12,10 @@ lsaur() {
   pacman -Qem
 }
 
+lsorphans() {
+  pacaur -Qdt
+}
+
 lsfont() {
   fc-list : family
 }

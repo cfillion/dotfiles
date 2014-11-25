@@ -23,9 +23,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " languages
-Plugin 'slim-template/vim-slim'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'slim-template/vim-slim'
 
 " color scheme
 Plugin 'sickill/vim-sunburst'

@@ -10,3 +10,7 @@ Post-installation instructions:
 
 		$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 		$ vim +PluginInstall +qall
+
+2. Create missing directories
+
+		$ mkdir ~/.vim/{swap,undo}

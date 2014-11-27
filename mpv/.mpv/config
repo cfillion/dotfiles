@@ -1,3 +1,4 @@
 af=scaletempo
 ao=jack,alsa,alsa:device=[hw:0,0]
 vo=opengl
+ytdl

@@ -180,5 +180,6 @@ for_window [class="Qjackctl"]      floating enable
 for_window [class="Qsynth"]        floating enable
 for_window [class="Xsane"]         floating enable
 
-for_window [title="dwb-web-inspector"] floating enable
 for_window [title="chrome-devtools"]   floating enable
+for_window [title="dwb-web-inspector"] floating enable
+for_window [title="^mpv.sh:"]          floating enable

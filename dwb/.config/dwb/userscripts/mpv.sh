@@ -3,24 +3,6 @@
 
 proxy="$DWB_PROXY"
 uri="$DWB_URI"
-title="$DWB_TITLE"
 
-notify-send -t 2 "$title" "Extracting media..."
-
-echo "js \
-  f=document.getElementsByTagName('embed')[0]; \
-  f.parentNode.removeChild(f);
-" > "$DWB_FIFO"
-
-cookies="/tmp/youtube-cookies-$RANDOM"
-ua="$(youtube-dl --dump-user-agent)"
-media="$(youtube-dl -g --no-playlist --cookies "$cookies" --proxy "$proxy" "$uri")"
-
-(
-http_proxy="$proxy" mpv --quiet --force-window --fullscreen \
-  --user-agent="$ua" --cookies --cookies-file="$cookies" \
-  --media-title="$DWB_TITLE" --osd-playing-msg="$DWB_TITLE" \
-  "$media"
-
-rm "$cookies"
-) &
+play='http_proxy="'"$proxy"'" mpv --fs "'"$uri"'" || read'
+xterm -T "mpv.sh: $uri" -e "zsh -ic '$play'"

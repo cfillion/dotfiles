@@ -20,6 +20,11 @@ lsfont() {
   fc-list : family
 }
 
+mail() {
+  mbsync -a
+  mutt
+}
+
 myip() {
   curl curlmyip.com
 }

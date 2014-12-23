@@ -144,9 +144,9 @@ fileview *.wav,*.mp3,*.flac,*.ogg,*.oga,*.m4a,*.wma
   \ mediainfo
 
 " Video
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts
+filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts,*.rm
   \ mpv %f %i &,
-fileview *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts
+fileview *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts,*.rm
   \ mediainfo
 
 " Midi

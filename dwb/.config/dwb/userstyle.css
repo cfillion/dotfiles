@@ -5,3 +5,7 @@ input, textarea, select {
 .easySpoilerSpoils {
   display: block !important
 }
+
+#watch-description-text {
+  max-height: inherit !important
+}

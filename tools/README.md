@@ -4,13 +4,13 @@
 
 Take, share and manage screenshots.
 
-	$ pacaur -S dmenu feh imgur libnotify scrot
+	$ pacaur -S dmenu feh imgur libnotify maim slop
 
 - [dmenu](http://tools.suckless.org/dmenu/)
 - [feh](http://feh.finalrewind.org/)
 - [imgur](http://imgur.com/tools/imgurbash.sh)
 - [libnotify](https://developer.gnome.org/notification-spec/)
-- [scrot](http://scrot.sourcearchive.com/)
+- [maim](https://github.com/naelstrof/maim) & [slop](https://github.com/naelstrof/slop)
 
 ## image
 

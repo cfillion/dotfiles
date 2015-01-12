@@ -1,8 +1,8 @@
 SCREEN_DIR="$HOME/Pictures/_Screenshots"
-SCREEN_OUT='%Y-%m-%d_%s.png'
+SCREEN_OUT="$(date +%Y-%m-%d_%s).png"
 SCREEN_ARG=(
   '--select'
-  '--delay 1'
-  '--delay 5'
-  '--delay 10'
+  '-s --delay 1'
+  '-s --delay 5'
+  '-s --delay 10'
 )

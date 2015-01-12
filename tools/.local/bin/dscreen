@@ -37,18 +37,23 @@ query()
 
 take()
 {
-  args=$(printf '%s\n' "${SCREEN_ARG[@]}" | dmenu -p "scrot-args:")
+  args=$(printf '%s\n' "${SCREEN_ARG[@]}" | dmenu -p "maim-args:")
   [ -z "$args" ] && exit 1
 
-  postcmd=''
-  if [ "$(printf '%s\n' 'Yes' 'No' | dmenu -p "share:")" == 'Yes' ]; then
-    postcmd='dscreen --share "$f"'
-  else
-    postcmd='feh "$f"'
+  share="$(printf '%s\n' 'Yes' 'No' | dmenu -p "share:")"
+
+  f="$SCREEN_DIR/$SCREEN_OUT"
+  maim $args "$f"
+
+  if [ "$?" != 0 ]; then
+    exit -1
   fi
 
-  scrot $args "$SCREEN_DIR/$SCREEN_OUT" -e "$postcmd"
-  exit "$?"
+  if [ "$share" == 'Yes' ]; then
+    dscreen --share "$f"
+  else
+    image "$f"
+  fi
 }
 
 share()

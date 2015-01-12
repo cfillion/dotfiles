@@ -24,6 +24,7 @@ Plugin 'tpope/vim-surround'
 
 " languages
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'slim-template/vim-slim'
 

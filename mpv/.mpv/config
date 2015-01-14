@@ -1,4 +1,5 @@
 af=scaletempo
 ao=jack,alsa,alsa:device=[hw:0,0]
+audio-display=no
 vo=opengl
 ytdl

@@ -45,5 +45,5 @@ if [ ! -s $playlist ]; then
   exit 1
 fi
 
-mpv --shuffle --loop=inf --no-video --playlist "$playlist"
+mpv --shuffle --loop=inf --playlist "$playlist"
 exit 0

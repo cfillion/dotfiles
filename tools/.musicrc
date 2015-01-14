@@ -3,7 +3,8 @@
     "mp3",
     "wav",
     "og[ga]",
-    "m4a"
+    "m4a",
+    "flac"
   ],
   "exclude": [
     "inst(rumental)?",

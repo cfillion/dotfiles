@@ -32,6 +32,7 @@ alias h=htop
 alias irc=weechat
 alias m=mail
 alias n=newsbeuter
+alias se=sudoedit
 alias t=task
 alias tw='command t'
 alias v='alsamixer -c 1'

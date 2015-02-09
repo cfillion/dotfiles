@@ -12,9 +12,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'ciaranm/detectindent'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'
-Plugin 'othree/html5.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-abolish' " CoeRcion
 Plugin 'tpope/vim-characterize' " ga
@@ -23,8 +21,10 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " languages
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'othree/html5.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'slim-template/vim-slim'
 

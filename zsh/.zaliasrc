@@ -23,6 +23,7 @@ alias sort='sort -h'
 alias sudo='sudo '
 alias timidity='timidity -Oj'
 alias tree='tree -F'
+alias tup='tup --quiet'
 alias vim='vim -p'
 
 # frequently used

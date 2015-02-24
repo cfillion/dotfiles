@@ -83,7 +83,6 @@ set dotdirs=rootparent
 
 " :mark mark /full/directory/path [filename]
 mark h ~/
-mark m /media/
 mark t ~/.vifm/Trash/
 
 " :com[mand] command_name action

@@ -1,4 +1,3 @@
-source /etc/Muttrc.gpg.dist
 source ~/.mutt/addressesrc
 
 set askcc

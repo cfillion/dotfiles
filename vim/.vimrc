@@ -3,6 +3,7 @@ runtime macros/matchit.vim
 
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim/
+set runtimepath+=/usr/local/share/lilypond/*/vim/
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'

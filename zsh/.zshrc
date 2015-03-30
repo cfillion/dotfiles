@@ -83,9 +83,9 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
 
 # source additional files
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zaliasrc
-source ~/.zfuncrc
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/aliases
+source ~/.zsh/functions
 
 # behaviour
 chpwd()

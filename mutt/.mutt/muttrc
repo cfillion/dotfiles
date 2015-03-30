@@ -27,7 +27,7 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set reply_to
 set reverse_name
 set send_charset = "us-ascii:utf-8"
-set sendmail = "/usr/bin/msmtp"
+set sendmail = "msmtp"
 set sig_dashes
 set sort = threads
 set sort_re

@@ -17,7 +17,7 @@ set mail_check = 0
 set mailcap_path = ~/.mutt/mailcap
 set mbox_type=Maildir
 set pipe_decode
-set postpone = ask-no
+set postpone = ask-yes
 set postponed = "+Drafts"
 set print_command="~/.mutt/pymuttprint/pymuttprint.py && xdg-open /tmp/texput.pdf"
 set print_decode="no"
@@ -56,6 +56,7 @@ bind index gg first-entry
 bind index G last-entry
 bind index,pager R group-reply
 bind index <space> collapse-thread
+bind index p recall-message
 bind pager gg top
 bind pager G  bottom
 bind pager <Up> previous-entry

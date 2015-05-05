@@ -81,6 +81,9 @@ set tabstop=2
 " show "../" in non-root directories of file system
 set dotdirs=rootparent
 
+" don't call external binaries
+set syscalls
+
 " :mark mark /full/directory/path [filename]
 mark h ~/
 mark t ~/.vifm/Trash/

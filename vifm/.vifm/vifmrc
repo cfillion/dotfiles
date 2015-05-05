@@ -169,6 +169,7 @@ filextype *.gif
   \ {Loop} mpv --loop=inf %f %i &,
 
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg,*.ico
+  \ open %f &,
   \ image %c %i &,
 fileview *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg,*.ico
   \ identify %f

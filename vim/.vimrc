@@ -22,6 +22,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " languages
+Plugin 'dpwright/vim-tup'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'octol/vim-cpp-enhanced-highlight'

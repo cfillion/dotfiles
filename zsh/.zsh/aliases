@@ -18,6 +18,7 @@ alias mv='mv -vi'
 alias netjack='jackd -R -d netone'
 alias ngrep='ngrep -q'
 alias noproxy="http_proxy='' https_proxy='' ftp_proxy=''"
+alias pdflatex='pdflatex -halt-on-error -file-line-error'
 alias rm='rm -vI'
 alias rmdir='rmdir -v'
 alias sort='sort -h'

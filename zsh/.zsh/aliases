@@ -27,6 +27,7 @@ alias timidity='timidity -OO 2> /dev/null'
 alias tree='tree -F'
 alias tup='tup --quiet'
 alias vim='vim -p'
+alias which='which -a'
 
 # frequently used
 alias f.='vifm .'

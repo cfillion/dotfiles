@@ -54,6 +54,7 @@ alias gg='git grep'
 alias lg='git log --decorate --graph --oneline'
 alias mg='git merge'
 alias pl='git pull --rebase'
+alias rei='git rebase -i'
 alias st='git status -sb'
 
 # ruby

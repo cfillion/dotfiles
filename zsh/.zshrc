@@ -19,8 +19,27 @@ export HOSTNAME=`hostname`
 export LESS='-iRX'
 
 typeset -U path
+
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
-path=("$HOME/.local/bin" $path "$GEM_HOME/bin")
+path=("$HOME/.local/bin" "$GEM_HOME/bin" $path)
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  eval $(/usr/libexec/path_helper -s)
+
+  [ -d /usr/local/opt/coreutils ] || \
+    echo "missing package: coreutils"
+  path=(/usr/local/opt/coreutils/libexec/gnubin $path)
+
+  [ -d /usr/local/opt/gnu-tar ] || \
+    echo "missing package: gnu-tar"
+  path=(/usr/local/opt/gnu-tar/libexec/gnubin $path)
+
+  [ -d /usr/local/share/zsh-completions ] || \
+    echo "missing package: zsh-completions"
+  fpath=(/usr/local/share/zsh-completions $fpath)
+
+  export BROWSER='open'
+fi
 
 # keybindings
 bindkey -e
@@ -95,7 +114,7 @@ chpwd()
 }
 
 # $TERM hack required for this to work in xterm
-TERM=linux setterm -regtabs 2
+type setterm \n && TERM=linux setterm -regtabs 2
 
 case "$TERM" in
 'linux')
@@ -104,8 +123,13 @@ case "$TERM" in
   # i-beam cursor in xterm
   echo -ne "\x1b[\x35 q"
 
-  # define terminal title at each prompt
-  precmd() { print -Pn "\e]0;%m: %~\a" }
+  precmd() {
+    # define terminal title at each prompt
+    print -Pn "\e]0;%m: %~\a"
+
+    # set current directory for Terminal.app (OS X)
+    print -Pn "\e]7;%d\a"
+  }
 
   # define terminal title at each command
   preexec() { print -Pn "\e]0;%m: $2\a" }

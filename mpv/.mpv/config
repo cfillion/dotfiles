@@ -1,5 +1,7 @@
 af=scaletempo
-ao=jack,alsa,alsa:device=[hw:0,0]
+ao=coreaudio,jack,alsa,alsa:device=[hw:0,0]
 audio-display=no
+audio-pitch-correction=no
+msg-level=ao=fatal
 vo=opengl
 ytdl

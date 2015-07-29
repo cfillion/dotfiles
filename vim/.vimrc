@@ -136,3 +136,7 @@ function OffInsert()
   set relativenumber nocursorline hlsearch
 endfunction
 call OffInsert()
+
+if filereadable(glob("~/.vim/vimrc_override"))
+  source ~/.vim/vimrc_override
+end

@@ -11,6 +11,9 @@ fi
 install() {
   local files="$(find $* -type f -not -name README\*)"
 
+  oldIFS="$IFS"
+  IFS=$'\n'
+
   for file in $files; do
     local dest="$HOME/${file#*/}"
 
@@ -19,6 +22,8 @@ install() {
     # create an absolute symlink
     ln -si "$ROOT/$file" "$dest"
   done
+
+  IFS="$oldIFS"
 }
 
 readme() {

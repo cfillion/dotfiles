@@ -34,6 +34,7 @@ set sort_re
 set spoolfile = "+INBOX"
 set thorough_search
 set timeout = 3
+set ts_enabled
 set uncollapse_jump
 set wait_key = no
 unset confirmappend

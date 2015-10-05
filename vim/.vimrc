@@ -20,6 +20,7 @@ Plugin 'tpope/vim-characterize' " ga
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'junegunn/vim-easy-align'
 
 " languages
 Plugin 'dpwright/vim-tup'
@@ -48,13 +49,13 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10'
 
 cnoremap <C-g> <C-c>
 command Wdiff :w !diff % -
-map <Leader>a :Tab /
 nnoremap <f11> mzggg?G`z
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap Y y$
 noremap ; :
 noremap <f9> :make!<CR>
 vnoremap <silent> . :norm.<CR>
+vmap <Leader>a <Plug>(EasyAlign)
 
 set autoindent
 set autoread

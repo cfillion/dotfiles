@@ -3,5 +3,6 @@ ao=coreaudio,jack,alsa,alsa:device=[hw:0,0]
 audio-display=no
 audio-pitch-correction=no
 msg-level=ao=fatal
+screenshot-template=shot%n
 vo=opengl
 ytdl

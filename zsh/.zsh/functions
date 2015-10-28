@@ -47,3 +47,12 @@ timer() {
 topdu() {
   du -sh */ | sort -rh | less -NSFiX
 }
+
+vifm() {
+  if [ -z $VIFM ]; then
+    command vifm $*
+  else
+    echo 'Already inside vifm.'
+    return 1
+  fi
+}

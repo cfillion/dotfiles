@@ -94,7 +94,7 @@ setopt SHARE_HISTORY
 autoload -U compinit && compinit
 eval "$(dircolors)"
 setopt ALWAYS_TO_END
-setopt COMPLETE_ALIASES
+setopt NO_COMPLETE_ALIASES
 setopt COMPLETE_IN_WORD
 zstyle ':completion:*' list-colors "$LS_COLORS"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'

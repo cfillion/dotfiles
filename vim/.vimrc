@@ -93,6 +93,7 @@ set splitbelow
 set splitright
 set t_RV= ttymouse=xterm2
 set t_ts=]0;
+set tabpagemax=100
 set title
 set ttimeoutlen=0
 set undodir=~/.vim/undo/,.

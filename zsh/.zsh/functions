@@ -21,9 +21,7 @@ lsfont() {
 }
 
 mail() {
-  mbsync -a
-  mutt
-  mbsync -a
+  mbsync -a && mutt && mbsync -a
 }
 
 myip() {

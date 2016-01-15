@@ -34,7 +34,7 @@ if [ -n "$1" ]; then
   find "$folder" -regextype posix-extended ${find_opts[@]} > "$playlist"
 
   printf "Found %'d song(s) in '%s'" $(wc -l < "$playlist") "$folder"
-  echo -e "\n"
+  echo; echo
 fi
 
 if [ ! -s $playlist ]; then

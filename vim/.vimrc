@@ -46,6 +46,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10'
+let g:ctrlp_max_files = 400
 
 cnoremap <C-g> <C-c>
 command Wdiff :w !diff % -

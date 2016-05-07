@@ -45,18 +45,15 @@ alias x=startx
 
 # git
 alias ad='git add'
+alias bl='git blame -s'
 alias br='git branch'
 alias ca='git commit --amend'
 alias ci='git commit'
 alias co='git checkout'
 alias di='git diff'
 alias dic='git diff --cached'
-alias gg='git grep'
-alias gt='git tag'
+alias gt='git tag -s'
 alias lg='git log --decorate --graph --oneline'
-alias mg='git merge'
-alias pl='git pull --rebase'
-alias rei='git rebase -i'
 alias st='git status -sb'
 
 # ruby

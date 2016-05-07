@@ -1,5 +1,9 @@
 # vim: ft=zsh
 
+ag() {
+  command ag --color-line-number='0;93' --color-match='31;1' --smart-case $*
+}
+
 compress() {
   convert -strip -interlace Plane -quality 85% $*
 }

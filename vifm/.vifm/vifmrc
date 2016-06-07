@@ -141,15 +141,15 @@ fileview *.pdf
   \ pdftotext -nopgbrk %c -
 
 " Audio
-filetype *.wav,*.mp3,*.flac,*.ogg,*.oga,*.m4a,*.wma,*.aac
+filetype *.wav,*.mp3,*.flac,*.ogg,*.oga,*.m4a,*.wma,*.aac,*.3gp
   \ mpv %f,
-fileview *.wav,*.mp3,*.flac,*.ogg,*.oga,*.m4a,*.wma,*.aac
+fileview *.wav,*.mp3,*.flac,*.ogg,*.oga,*.m4a,*.wma,*.aac,*.3gp
   \ mediainfo
 
 " Video
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts,*.rm,*.mov
+filextype *.avi,*.mp4,*.wmv,*.dat,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts,*.rm,*.mov
   \ mpv %f %i &,
-fileview *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts,*.rm,*.mov
+fileview *.avi,*.mp4,*.wmv,*.dat,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2ts,*.rm,*.mov
   \ mediainfo
 
 " Midi

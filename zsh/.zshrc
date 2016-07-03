@@ -20,9 +20,6 @@ export LESS='-iRX'
 
 typeset -U path
 
-export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
-path=("$HOME/.local/bin" "$GEM_HOME/bin" $path)
-
 if [[ "$(uname)" == "Darwin" ]]; then
   eval $(/usr/libexec/path_helper -s)
 
@@ -40,6 +37,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   export BROWSER='open'
 fi
+
+export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+path=("$HOME/.local/bin" "$GEM_HOME/bin" $path)
 
 # keybindings
 bindkey -e

@@ -28,6 +28,7 @@ alias tree='tree -F'
 alias vim='vim -p'
 alias wget='wget --content-disposition'
 alias which='which -a'
+alias http='NO_PROXY="*" http'
 
 # frequently used
 alias f.='vifm .'

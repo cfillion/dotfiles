@@ -36,6 +36,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fpath=(/usr/local/share/zsh-completions $fpath)
 
   export BROWSER='open'
+
+  [ -r ~/.homebrew_token ] && \
+    export HOMEBREW_GITHUB_API_TOKEN="$(cat ~/.homebrew_token)"
 fi
 
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')

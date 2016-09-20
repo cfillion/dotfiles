@@ -41,12 +41,13 @@ color Sunburst
 
 filetype plugin indent on
 
-let g:lightline = {'colorscheme': 'jellybeans'}
-let g:vim_markdown_folding_disabled = 1
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 2
+let g:ctrlp_brief_prompt = 1
 let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10'
 let g:ctrlp_max_files = 400
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 2
+let g:lightline = {'colorscheme': 'jellybeans'}
+let g:vim_markdown_folding_disabled = 1
 
 cnoremap <C-g> <C-c>
 command Wdiff :w !diff % -

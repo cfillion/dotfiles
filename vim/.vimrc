@@ -14,13 +14,14 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'ciaranm/detectindent'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'SirVer/ultisnips'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-abolish' " CoeRcion
 Plugin 'tpope/vim-characterize' " ga
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'junegunn/vim-easy-align'
 
 " languages
 Plugin 'dpwright/vim-tup'
@@ -48,6 +49,12 @@ let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 let g:lightline = {'colorscheme': 'jellybeans'}
 let g:vim_markdown_folding_disabled = 1
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsListSnippets = '<F2>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsEditSplit = 'context'
 
 cnoremap <C-g> <C-c>
 command Wdiff :w !diff % -

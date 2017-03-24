@@ -72,6 +72,7 @@ set autowrite
 set background=dark
 set backspace=2
 set backupcopy=yes
+set breakindent
 set colorcolumn=81
 set confirm
 set copyindent
@@ -103,6 +104,7 @@ set splitright
 set t_RV= ttymouse=xterm2
 set t_ts=]0;
 set tabpagemax=100
+set textwidth=80
 set title
 set ttimeoutlen=0
 set undodir=~/.vim/undo/,.
@@ -122,8 +124,6 @@ set wildignore+=tmp,node_modules,bower_components
 set wildignorecase
 set wrap
 
-au BufRead /tmp/mutt-* set tw=80
-au BufRead *.md set tw=80
 au BufNewFile  * DetectIndent
 au BufReadPost * DetectIndent
 au VimEnter    * DetectIndent

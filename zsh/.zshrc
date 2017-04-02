@@ -31,6 +31,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
     echo "missing package: gnu-tar"
   path=(/usr/local/opt/gnu-tar/libexec/gnubin $path)
 
+  [ -d /usr/local/opt/sqlite ] || \
+    echo "missing package: sqlite"
+  path=(/usr/local/opt/sqlite/bin $path)
+
   [ -d /usr/local/share/zsh-completions ] || \
     echo "missing package: zsh-completions"
   fpath=(/usr/local/share/zsh-completions $fpath)

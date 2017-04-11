@@ -21,6 +21,8 @@ export LESS='-iRX'
 typeset -U path
 
 if [[ "$(uname)" == "Darwin" ]]; then
+  stty erase '^H'
+
   eval $(/usr/libexec/path_helper -s)
 
   [ -d /usr/local/opt/coreutils ] || \

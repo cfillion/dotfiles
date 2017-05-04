@@ -1,5 +1,12 @@
 # Collection of Custom Scripts
 
+## chat
+
+Simple TCP chat server. Run using `chat [hostname] [port]` and connect using `nc
+host port` (or any TCP client).
+
+	$ gem install eventmachine
+
 ## dscreen
 
 Take, share and manage screenshots.

@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+
+# Simple TCP chat server by cfillion.
+#
+# Usage:
+#   chat [hostname] [port]
+#
+# Connect using any TCP client. Using netcat:
+#   nc hostname port
+
+require 'eventmachine'
+require 'zlib'
+
+Signal.trap('INT') { abort }
+
+module Server
+  COLORS = [10,12,30,32,34,36,38,42,44,50,62,64,66,68,70,72,74,96,98,100,104,
+            106,108,110,112,114,136,138,140,142,168,170,172,174,176,178,204,
+            216,218,222,228]
+
+  @@clients = []
+
+  attr_reader :nick
+
+  def post_init
+    @nick, @color = '', 255
+    send_data 'Welcome! '
+    prompt_nick
+  end
+
+  def unbind
+    @@clients.delete self
+    broadcast '(%s) has left' % @nick if signed_in?
+  end
+
+  def signed_in?
+    not @nick.empty?
+  end
+
+  def sign_in(nick)
+    if invalid_nick? nick
+      send_data 'Try again. '
+      prompt_nick
+    else
+      @nick, @color = nick, COLORS[Zlib.crc32(nick) % COLORS.size]
+      @@clients.push self
+      broadcast '(%s) has joined' % @nick if signed_in?
+    end
+  end
+
+  def prompt_nick
+    send_data 'Pick your username: '
+  end
+
+  def invalid_nick?(nick)
+    nick.empty? || @@clients.any? {|c| c.nick == nick }
+  end
+
+  def receive_data(data)
+    data.strip!
+
+    if not signed_in?
+      sign_in data.split(/\s+/).first.to_s
+    elsif not data.empty?
+      broadcast "(#{@nick}) #{data}"
+    end
+  end
+
+  def make_msg(data)
+    time = Time.now.strftime '%H:%M:%S'
+    colorize "#{time} #{data}\a\n", @color
+  end
+
+  def broadcast(data)
+    msg = make_msg data
+    @@clients.each {|c| c.send_data msg }
+  end
+
+  def colorize(str, color)
+    "\x1b[38;5;%dm%s\x1b[0m" % [color, str]
+  end
+end
+
+begin
+  host, port = ARGV
+  host, port = '', host unless port
+
+  EventMachine.run do
+    server = EM.start_server host.to_s, port.to_i, Server
+
+    sockname = EM.get_sockname server
+    *addr = Socket.unpack_sockaddr_in sockname
+    addr.reverse!
+
+    puts 'Listening on %s:%d...' % addr
+  end
+rescue RuntimeError => e
+  puts "#{e.class}: #{e.message}"
+end

@@ -31,9 +31,8 @@ Opens all images from a directory in feh, correctly sorted.
 
 Random playlist generator and player.
 
-	$ pacaur -S jshon mpv
+	$ pacaur -S mpv
 
-- [jshon](http://kmkeen.com/jshon/)
 - [mpv](http://mpv.io/)
 
 ## screenlayout

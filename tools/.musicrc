@@ -1,17 +1,4 @@
-{
-  "match_extensions": [
-    "mp3",
-    "wav",
-    "og[ga]",
-    "m4a",
-    "flac"
-  ],
-  "exclude": [
-    "inst(rumental)?",
-    "without",
-    "karaoke",
-    "off vocal",
-    "TV",
-    "EDIT"
-  ]
-}
+# vim:ft=sh
+PLAYLIST="$HOME/.music-playlist"
+FILETYPES=("mp3" "wav" "og[ga]" "m4a" "flac")
+EXCLUDE=("inst(rumental)?" "without" "karaoke" "off vocal" "TV" "EDIT")

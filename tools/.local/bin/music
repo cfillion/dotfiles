@@ -4,8 +4,9 @@
 # Playlist generator and player #
 #################################
 
-config="$HOME/.musicrc"
-playlist="$HOME/.music-playlist"
+if ! source "$HOME/.musicrc"; then
+  exit 2
+fi
 
 # disable globbing because the configuration may contains wildcards
 set -f
@@ -13,27 +14,22 @@ set -f
 if [ -n "$1" ]; then
   folder=$(realpath -q "$1")
 
-  if ! (jshon < "$config" > /dev/null); then
-    echo "invalid configuration in '$config'"
-    exit 2
-  fi
-
   excl_opts=()
-  for pattern in $(jshon -e exclude -a -u < "$config"); do
+  for pattern in ${EXCLUDE[@]}; do
     [ -z "$excl_opts" ] || excl_opts=(${excl_opts[@]} '-and')
     excl_opts=(${excl_opts[@]} '-not' '-iregex' "^.*$pattern.*$")
   done
 
   match_opts=()
-  for ext in $(jshon -e match_extensions -a -u < "$config"); do
+  for ext in ${FILETYPES[@]}; do
     [ -z "$match_opts" ] || match_opts=(${match_opts[@]} '-or')
     match_opts=(${match_opts[@]} '-iregex' ".*\.$ext$")
   done
 
   find_opts=('-type' 'f' ${excl_opts[@]} ${match_opts[@]})
-  find "$folder" -regextype posix-extended ${find_opts[@]} > "$playlist"
+  find "$folder" -regextype posix-extended ${find_opts[@]} > "$PLAYLIST"
 
-  printf "Found %'d song(s) in '%s'" $(wc -l < "$playlist") "$folder"
+  printf "Found %'d song(s) in '%s'" $(wc -l < "$PLAYLIST") "$folder"
   echo; echo
 fi
 
@@ -45,5 +41,5 @@ if [ ! -s $playlist ]; then
   exit 1
 fi
 
-mpv --shuffle --loop=inf --playlist "$playlist"
+mpv --shuffle --loop-playlist --playlist "$PLAYLIST"
 exit 0

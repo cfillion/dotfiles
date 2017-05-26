@@ -18,33 +18,21 @@ export GCC_COLORS='auto'
 export HOSTNAME=`hostname`
 export LESS='-iRX'
 
-typeset -U path
 # source additional files
 source ~/.zsh/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search.zsh
 source ~/.zsh/aliases
 source ~/.zsh/functions
 
+typeset -U path manpath
+
 if [[ "$(uname)" == "Darwin" ]]; then
   stty erase '^H'
 
   eval $(/usr/libexec/path_helper -s)
 
-  [ -d /usr/local/opt/coreutils ] || \
-    echo "missing package: coreutils"
-  path=(/usr/local/opt/coreutils/libexec/gnubin $path)
-
-  [ -d /usr/local/opt/gnu-tar ] || \
-    echo "missing package: gnu-tar"
-  path=(/usr/local/opt/gnu-tar/libexec/gnubin $path)
-
-  [ -d /usr/local/opt/sqlite ] || \
-    echo "missing package: sqlite"
-  path=(/usr/local/opt/sqlite/bin $path)
-
-  [ -d /usr/local/opt/bc ] || \
-    echo "missing package: bc"
-  path=(/usr/local/opt/bc/bin $path)
+  path=(/usr/local/opt/*/libexec/gnubin /usr/local/opt/*/bin $path)
+  manpath=(/usr/local/opt/*/libexec/gnuman /usr/local/opt/*/share/man $manpath)
 
   [ -d /usr/local/share/zsh-completions ] || \
     echo "missing package: zsh-completions"

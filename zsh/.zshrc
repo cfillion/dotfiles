@@ -19,6 +19,11 @@ export HOSTNAME=`hostname`
 export LESS='-iRX'
 
 typeset -U path
+# source additional files
+source ~/.zsh/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-history-substring-search.zsh
+source ~/.zsh/aliases
+source ~/.zsh/functions
 
 if [[ "$(uname)" == "Darwin" ]]; then
   stty erase '^H'
@@ -56,23 +61,25 @@ path=("$HOME/.local/bin" "$GEM_HOME/bin" $path)
 
 # keybindings
 bindkey -e
-bindkey '^[[H'  beginning-of-line
-bindkey '^[[F'  end-of-line
-bindkey '^[OH'  beginning-of-line
-bindkey '^[OF'  end-of-line
-bindkey '^[[1~' beginning-of-line
-bindkey '^[[2~' overwrite-mode
-bindkey '^[[3~' delete-char
-bindkey '^[[4~' end-of-line
-bindkey '^[[5~' up-history
-bindkey '^[[6~' down-history
+bindkey '^[[H'    beginning-of-line
+bindkey '^[[F'    end-of-line
+bindkey '^[OH'    beginning-of-line
+bindkey '^[OF'    end-of-line
+bindkey '^[[1~'   beginning-of-line
+bindkey '^[[2~'   overwrite-mode
+bindkey '^[[3~'   delete-char
+bindkey '^[[4~'   end-of-line
+bindkey '^[[5~'   up-history
+bindkey '^[[6~'   down-history
 bindkey '^[[1;2D' backward-word
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;2C' forward-word
 bindkey '^[[1;5C' forward-word
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-bindkey '^[[Z' reverse-menu-complete
+bindkey '^F'      history-substring-search-up
+bindkey '^P'      history-substring-search-down
+bindkey '^[[A'    up-line-or-search
+bindkey '^[[B'    down-line-or-search
+bindkey '^[[Z'    reverse-menu-complete
 
 autoload edit-command-line
 zle -N edit-command-line
@@ -103,6 +110,9 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 setopt SHARE_HISTORY
 
+typeset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=yellow,fg=black'
+typeset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=black'
+
 # completion
 autoload -U compinit && compinit
 eval "$(dircolors)"
@@ -113,11 +123,6 @@ zstyle ':completion:*' list-colors "$LS_COLORS"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
-
-# source additional files
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/aliases
-source ~/.zsh/functions
 
 # behaviour
 chpwd()

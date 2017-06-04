@@ -240,7 +240,7 @@ fileview .*/,*/ tree -FL 1 %f
 
 " All other files get free syntax highlighting
 fileview *
-  \ highlight --out-format=ansi --force -q %f
+  \ highlight --out-format=ansi --force -qWJ %pw -t 2 %c
 
 " What should be saved automatically between vifm runs
 " Like in previous versions of vifm

@@ -1,6 +1,6 @@
 # X.Org
 
-	$ pacaur -S ttf-dejavu gsfonts otf-ipafont xorg-xinit xterm
+	$ pacaur -S ttf-dejavu gsfonts otf-ipafont qt5-styleplugins xorg-xinit xterm
 
 - [DejaVu font family](http://dejavu-fonts.org/wiki/Main_Page)
 - [Ghostscript fonts](http://sourceforge.net/projects/gs-fonts/)

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ROOT="$(pwd -P)"
 
 if [ -z "$*" ]; then

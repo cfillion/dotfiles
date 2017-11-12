@@ -154,7 +154,7 @@ fileview *.avi,*.mp4,*.wmv,*.dat,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.webm,*.mts,*.m2
 
 " Midi
 filetype *.mid,*.midi
-  \ timidity -OO %f 2> /dev/null,
+  \ timidity %f,
 fileview *.mid,*.midi
   \ mediainfo
 

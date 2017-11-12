@@ -43,7 +43,7 @@ alias se='sudo -e'
 alias t=task
 alias tw='command t'
 alias twu='tw update'
-alias v='alsamixer -c 1'
+alias v='alsamixer -c 0'
 alias x=startx
 
 # git

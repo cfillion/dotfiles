@@ -6,5 +6,6 @@ audio-pitch-correction=no
 msg-level=ao=fatal
 screenshot-template=shot%n
 title=${?media-title:${media-title}}${!media-title:No file}
-vo=opengl
+no-native-fs
 ytdl
+fs

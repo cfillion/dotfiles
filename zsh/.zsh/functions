@@ -17,7 +17,7 @@ lsaur() {
 }
 
 lsorphans() {
-  pacaur -Qdt
+  pacman -Qdt
 }
 
 lsfont() {

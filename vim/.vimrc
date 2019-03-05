@@ -120,7 +120,7 @@ set wildignore+=*.o
 set wildignore+=*.pdf
 set wildignore+=.*
 set wildignore+=_site,build,dist
-set wildignore+=CMakeFiles,CMakeCache.txt,*.cmake
+set wildignore+=CMakeFiles,CMakeCache.txt
 set wildignore+=tmp,node_modules,bower_components
 set wildignorecase
 set wrap

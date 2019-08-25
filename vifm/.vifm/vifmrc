@@ -34,7 +34,7 @@ set novimhelp
 
 " If you would like to run an executable file when you
 " press return on the file name set this.
-set runexec
+set norunexec
 
 " Use KiB, MiB, ... instead of KB, MB, ...
 set noiec
@@ -73,7 +73,7 @@ set scrolloff=3
 set slowfs=curlftpfs
 
 " Set custom status line look
-set statusline="%t%= [%A %u:%g %s%d]"
+set statusline="%t%= [%A %u:%g %s %d]"
 
 " Number of spaces that a Tab in the file counts for.
 set tabstop=2
@@ -223,7 +223,7 @@ filextype *.pro
 
 " Torrents
 fileview *.torrent
-  \ transmission-show
+  \ aria2c -S
 
 " Directories
 filextype */
@@ -307,3 +307,9 @@ map q <Left>
 
 " Single stroke to quit
 map Q :q<cr>
+
+" Print  line  number  in front of each file name
+set relativenumber
+set numberwidth=3
+
+set title

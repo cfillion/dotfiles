@@ -32,6 +32,7 @@ set sig_dashes
 set sort = threads
 set sort_re
 set spoolfile = "+INBOX"
+set text_flowed
 set thorough_search
 set timeout = 3
 set ts_enabled

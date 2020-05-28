@@ -58,6 +58,7 @@ alias dic='git diff --cached'
 alias gt='git tag -s'
 alias lg='git log --decorate --graph --oneline'
 alias st='git status -sb'
+alias sw='git switch'
 
 # ruby
 alias ri='ri -af ansi'

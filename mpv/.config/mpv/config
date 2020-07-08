@@ -1,11 +1,12 @@
 af=scaletempo
-ao=coreaudio,jack,alsa,alsa
+ao=coreaudio,pulse,jack,alsa
 audio-device=alsa:[hw:0,0]
 audio-display=no
-audio-pitch-correction=no
 msg-level=ao=fatal
 screenshot-template=shot%n
 title=${?media-title:${media-title}}${!media-title:No file}
 no-native-fs
 ytdl
 fs
+audio-channels=stereo
+ytdl-format=bestvideo[height<=?1080]+bestaudio/best

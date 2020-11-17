@@ -294,8 +294,7 @@ nmap @ :!<space>%f<left><left><left>
 map ; :
 
 " Tagging
-nmap t tj
-nmap <space> t
+nmap <space> tj
 
 " Resize
 nmap < <c-w><

@@ -45,7 +45,8 @@ filetype plugin indent on
 
 let g:ctrlp_brief_prompt = 1
 let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10'
-let g:ctrlp_max_files = 400
+let g:ctrlp_max_files = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 let g:lightline = {'colorscheme': 'jellybeans'}

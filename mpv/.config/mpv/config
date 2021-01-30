@@ -1,4 +1,4 @@
-af=scaletempo
+af=rubberband
 ao=coreaudio,pulse,jack,alsa
 audio-device=alsa:[hw:0,0]
 audio-display=no

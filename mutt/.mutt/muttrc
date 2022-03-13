@@ -31,6 +31,7 @@ set sendmail = "msmtp"
 set sig_dashes
 set sort = threads
 set sort_re
+set sort_aux = last-date-received
 set spoolfile = "+INBOX"
 set text_flowed
 set thorough_search
@@ -42,7 +43,6 @@ unset confirmappend
 unset mime_forward
 unset reply_self
 
-#set sort_aux = reverse-last-date-received
 set date_format = "%a %b %d %H:%M"
 set index_format = "%4C [%Z] %D | %-15.15F %s"
 

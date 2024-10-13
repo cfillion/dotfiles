@@ -11,3 +11,6 @@ fs
 audio-channels=stereo
 ytdl-format=bestvideo[height<=?1080]+bestaudio/best
 stretch-dvd-subs=yes
+alang=jpn,eng
+slang=jpn,eng
+deband=yes

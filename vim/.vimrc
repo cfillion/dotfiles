@@ -16,6 +16,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'posva/vim-vue'
 Plugin 'SirVer/ultisnips'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-abolish' " CoeRcion
@@ -23,6 +24,7 @@ Plugin 'tpope/vim-characterize' " ga
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'peterhoeg/vim-qml'
 
 " languages
 Plugin 'dpwright/vim-tup'
@@ -64,6 +66,7 @@ nnoremap <f11> mzggg?G`z
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 nnoremap Y y$
 noremap ; :
+noremap <silent> <C-p> :CommandT<CR>
 noremap <f9> :make!<CR>
 vnoremap <silent> . :norm.<CR>
 vmap <Leader>a <Plug>(EasyAlign)
@@ -92,7 +95,6 @@ set listchars=tab:>-,nbsp:·
 set mouse=a
 set nohidden
 set noshowmode
-set nowrap
 set number
 set pastetoggle=<Ins>
 set ruler
@@ -103,10 +105,7 @@ set showcmd
 set smartcase
 set splitbelow
 set splitright
-set t_RV= ttymouse=xterm2
-set t_ts=]0;
 set tabpagemax=100
-set textwidth=80
 set title
 set ttimeoutlen=0
 set undodir=~/.vim/undo/,.
@@ -126,20 +125,28 @@ set wildignore+=tmp,node_modules,bower_components
 set wildignorecase
 set wrap
 
-au BufNewFile  * DetectIndent
-au BufReadPost * DetectIndent
-au VimEnter    * DetectIndent
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-au BufLeave    * if &modifiable | set noinsertmode | call OffInsert() | endif
+set suffixesadd+=.rb,.c,.cpp,.h,hpp,.md,.lua
+
 au BufEnter    * checktime
 au BufEnter    * setl makeprg=make
+au BufLeave    * if &modifiable | set noinsertmode | call OffInsert() | endif
+au BufNewFile  * DetectIndent
+au BufReadPost * DetectIndent
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 au CursorHold  * checktime
 au CursorHoldI * checktime
-au InsertEnter * checktime
 au InsertEnter * call OnInsert()
+au InsertEnter * checktime
 au InsertLeave * call OffInsert()
 au TabEnter    * wincmd =
+au VimEnter    * DetectIndent
 au VimResized  * wincmd =
+
+" https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
+au FileType vue syntax sync fromstart
+
+" prettier frontmatter in markdown and slim templates
+au BufNewFile,BufRead,BufWrite * syntax match Comment /\%^---\_.\{-}---$/
 
 function OnInsert()
   set norelativenumber cursorline nohlsearch

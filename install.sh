@@ -9,7 +9,7 @@ if [ -z "$*" ]; then
 fi
 
 install() {
-  local files="$(find $* -type f -not -name README\*)"
+  local files="$(find -L $* -type f -not -name README\*)"
 
   oldIFS="$IFS"
   IFS=$'\n'

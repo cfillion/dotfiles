@@ -1,9 +1,5 @@
 # vim: ft=zsh
 
-ag() {
-  command ag --color-line-number='0;93' --color-match='31;1' --smart-case $*
-}
-
 compress() {
   convert -strip -interlace Plane -quality 85% $*
 }
@@ -20,7 +16,7 @@ lsorphans() {
   pacman -Qdt
 }
 
-lsfont() {
+lsfonts() {
   fc-list : family
 }
 
@@ -32,8 +28,8 @@ myip() {
   dig +short myip.opendns.com @resolver1.opendns.com
 }
 
-sprunge() {
-  curl -F 'sprunge=<-' http://sprunge.us
+pastebin() {
+  curl -F 'file=@-' 0x0.st
 }
 
 startx() {
@@ -43,11 +39,11 @@ startx() {
 
 timer() {
   echo "Press ^D to end the timer." >&2
-  (time cat > /dev/null) 2>&1 | awk '{print $(NF-1)}'
+  (time cat >/dev/null) 2>&1 | awk '{print $(NF-1)}'
 }
 
 topdu() {
-  du -sh */ | sort -rh | less -NSFiX
+  du -sh */ | sort -rh | less -NSF
 }
 
 vifm() {

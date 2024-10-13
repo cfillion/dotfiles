@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if hyprctl -j activewindow | jq -e 'select(.class != "foot")' >/dev/null; then
+  exec foot
+else
+  hyprctl dispatch sendshortcut Ctrl Shift, N,
+fi

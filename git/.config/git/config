@@ -1,0 +1,27 @@
+[commit]
+gpgSign = true
+
+[diff]
+algorithm = histogram
+submodule = log
+wsErrorHighlight = all
+
+[include]
+path = identity
+
+[init]
+defaultBranch = master
+
+[log]
+date = iso-local
+showSignature = true
+
+[pull]
+ff = only
+
+[push]
+autoSetupRemote = true
+default = upstream
+
+[tag]
+sort = -version:refname

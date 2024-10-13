@@ -1,0 +1,6 @@
+set debuginfod enabled on
+set history filename ~/.gdb_history
+set history remove-duplicates unlimited
+set history save on
+set pagination off
+set startup-quietly on

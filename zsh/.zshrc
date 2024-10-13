@@ -1,142 +1,145 @@
-setopt AUTO_CD
-setopt CHASE_LINKS
-setopt CORRECT
-setopt EXTENDED_GLOB
-setopt INTERACTIVE_COMMENTS
-setopt MARK_DIRS
-setopt NO_CLOBBER
-setopt NUMERIC_GLOB_SORT
-setopt RM_STAR_SILENT
-unsetopt CASE_GLOB
+autoload add-zsh-hook compinit edit-command-line zmv
 
-# environment
-export BROWSER='dwb'
-export DVDCSS_CACHE='off'
+eval "$(dircolors)"
+export BROWSER='qutebrowser'
 export EDITOR='vim'
-export ESCDELAY=0
-export GCC_COLORS='auto'
-export HOSTNAME=`hostname`
-export LESS='-iRX'
+export LESS='-iRQ'
+export PAGER='less'
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+# export DVDCSS_CACHE='off'
+# export ESCDELAY=0
+# export GCC_COLORS='auto'
 
-# source additional files
-source ~/.zsh/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-history-substring-search.zsh
+# export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+# path=("$HOME/.local/bin" "$GEM_HOME/bin" $path)
+
 source ~/.zsh/aliases
 source ~/.zsh/functions
 
-typeset -U path manpath
+# changing directories
+setopt AUTO_CD
+setopt AUTO_PUSHD
+# setopt CHASE_LINKS
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  stty erase '^H'
+_chpwd() { ls; [[ -d .git ]] && st }
+add-zsh-hook chpwd _chpwd
 
-  eval $(/usr/libexec/path_helper -s)
+# line editor
+setopt NO_BEEP
+setopt NO_COMBINING_CHARS # show accidental NFD
 
-  path=(/usr/local/opt/*/libexec/gnubin /usr/local/opt/*/bin $path)
-  manpath=(/usr/local/opt/*/libexec/gnuman /usr/local/opt/*/share/man $manpath)
-
-  [ -d /usr/local/share/zsh-completions ] || \
-    echo "missing package: zsh-completions"
-  fpath=(/usr/local/share/zsh-completions $fpath)
-
-  export BROWSER='open'
-
-  [ -r ~/.homebrew_token ] && \
-    export HOMEBREW_GITHUB_API_TOKEN="$(cat ~/.homebrew_token)"
-fi
-
-export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
-path=("$HOME/.local/bin" "$GEM_HOME/bin" $path)
-
-# keybindings
-bindkey -e
-bindkey '^[[H'    beginning-of-line
-bindkey '^[[F'    end-of-line
-bindkey '^[OH'    beginning-of-line
-bindkey '^[OF'    end-of-line
-bindkey '^[[1~'   beginning-of-line
-bindkey '^[[2~'   overwrite-mode
-bindkey '^[[3~'   delete-char
-bindkey '^[[4~'   end-of-line
-bindkey '^[[5~'   up-history
-bindkey '^[[6~'   down-history
-bindkey '^[[1;2D' backward-word
-bindkey '^[[1;5D' backward-word
-bindkey '^[[1;2C' forward-word
-bindkey '^[[1;5C' forward-word
-bindkey '^F'      history-substring-search-up
-bindkey '^P'      history-substring-search-down
-bindkey '^[[A'    up-line-or-search
-bindkey '^[[B'    down-line-or-search
-bindkey '^[[Z'    reverse-menu-complete
-
-autoload edit-command-line
 zle -N edit-command-line
-bindkey '^[e' edit-command-line
 
-autoload -Uz copy-earlier-word
-zle -N copy-earlier-word
-bindkey '^[m' copy-earlier-word
+bindkey -e
+bindkey '^V'      vi-quoted-insert
+bindkey '^[e'     edit-command-line
+bindkey '^[[H'    beginning-of-line # Home
+bindkey '^[[F'    end-of-line       # End
+bindkey '^[[2~'   overwrite-mode    # Insert
+bindkey '^[[3~'   delete-char       # Delete
+bindkey '^[[5~'   beginning-of-buffer-or-history # PgUp
+bindkey '^[[6~'   end-of-buffer-or-history       # PgDown
+bindkey '^[[1;2D' backward-word # Shift+Left
+bindkey '^[[1;5D' backward-word # Ctrl+Left
+bindkey '^[[1;2C' forward-word  # Shift+Right
+bindkey '^[[1;5C' forward-word  # Ctrl+Right
+bindkey '^[[A'    up-line-or-search # Up
+bindkey '^[[1;2A' up-line-or-history # Shift+Up
+bindkey '^[[B'    down-line-or-search # Down
+bindkey '^[[1;2B' down-line-or-history # Shift+Down
+bindkey '^[[Z'    reverse-menu-complete # Shift+Tab
+bindkey '^[[1;5A' history-substring-search-up # Ctrl+Up
+bindkey '^[[1;5B' history-substring-search-down # Ctrl+Down
 
-# prompt
-autoload -U promptinit && promptinit
-autoload -U colors && colors
-PROMPT="%(!.%{$fg_bold[red]%}.%{$fg[magenta]%})%30<..<%~%(!.#.>)%{$reset_color%} "
-RPROMPT="%(?..[%{$fg[yellow]%}%?%{$reset_color%}])%(1j. %{$fg_bold[green]%}(%j jobs)%{$reset_color%}.)"
+# completion
+compinit -i -d ~/.cache/zcompdump # after bindkey
+
+setopt COMPLETE_IN_WORD
+setopt LIST_PACKED
+setopt NO_LIST_AMBIGUOUS
+setopt NO_LIST_BEEP
+
+zstyle ':completion:*' list-colors "$LS_COLORS"
+zstyle ':completion:*' complete-options true
+zstyle ':completion:*' completer _complete _prefix # removes _ignored
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' add-space true # for _prefix
+zstyle ':completion:*' list-dirs-first true
+zstyle ':completion:*' matcher-list '' \
+  'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:complete:-command-:*' group-order aliases functions
+zstyle ':completion:*:complete:-command-::functions' ignored-patterns '_*'
+zstyle ':completion:*:descriptions' format '%F{white}[%d]%f'
+zstyle ':completion:*:kill:*' tag-order '!process-groups'
+zstyle ':completion:*:processes' command 'ps -u $USER -o pid,%cpu,cmd'
+zstyle ':completion:*:ssh:argument-1:*' tag-order '!users'
+
+# globbing
+setopt EXTENDED_GLOB
+setopt GLOB_STAR_SHORT
+setopt NO_CASE_GLOB
+setopt NUMERIC_GLOB_SORT
+
+# help (Alt+H)
+unalias run-help 2>/dev/null
+autoload run-help run-help-btrfs run-help-git run-help-ip
+autoload run-help-openssl run-help-sudo
 
 # history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=4096
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.zhistory
 
-setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
+setopt HIST_LEX_WORDS
 setopt HIST_NO_FUNCTIONS
-setopt HIST_NO_STORE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 setopt SHARE_HISTORY
 
-typeset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=yellow,fg=black'
-typeset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=black'
+# input/output
+setopt APPEND_CREATE
+setopt CORRECT
+setopt INTERACTIVE_COMMENTS
+setopt NO_CLOBBER
+setopt PIPE_FAIL
+setopt RM_STAR_SILENT # covered by rm alias
 
-# completion
-autoload -U compinit && compinit
-eval "$(dircolors)"
-setopt ALWAYS_TO_END
-setopt NO_COMPLETE_ALIASES
-setopt COMPLETE_IN_WORD
-zstyle ':completion:*' list-colors "$LS_COLORS"
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' menu select
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,cmd'
+CORRECT_IGNORE='_*'
 
-# behaviour
-chpwd()
-{
-  ls
-  [[ -d .git ]] && git status -sb
-}
+# plugins
+ZPLUGINS=/usr/share/zsh/plugins
+. $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. $ZPLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
+unset ZPLUGINS
 
-# $TERM hack required for this to work in xterm
-type setterm \n && TERM=linux setterm -regtabs 2
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 
-case "$TERM" in
-'linux')
-  ;;
-'xterm-256color')
-  # i-beam cursor in xterm
-  echo -ne "\x1b[\x35 q"
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=magenta,bold'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=black'
 
-  precmd() {
-    # define terminal title at each prompt
-    print -Pn "\e]0;%m: %~\a"
+# prompt
+PS1="%{%(!.%S%F{red}.%F{magenta})%}[%30<…<%~]%(!.#.$)%{%f%s%} "
+RPS1="%(?..%{%B%F{red}%}(exit=%?%)%{%f%b%})"
+RPS1+="%(1j. %{%B%F{green}%}(%j jobs)%{%f%b%}.)"
+if [ -v SUDO_USER ]; then RPS1+=" %{%F{yellow}%}[%n@%m]%{%f%}"
+elif [ -v SSH_TTY ]; then RPS1+=" %{%F{cyan}%}[%m]%{%f%}"; fi
+ZLE_RPROMPT_INDENT=0
 
-    # set current directory for Terminal.app (OS X)
-    print -Pn "\e]7;%d\a"
-  }
+setopt TRANSIENT_RPROMPT
 
-  # define terminal title at each command
-  preexec() { print -Pn "\e]0;%m: $2\a" }
-esac
+# terminal emulator
+tabs -2
+
+if [ -v SUDO_USER ]; then _title_prefix="[%n@%m] "
+elif [ -v SSH_TTY ]; then _title_prefix="[%m] "; fi
+_set-term-title-idle() { print -Pn "\e]0;${_title_prefix}[%~]\a"    }
+_set-term-title-exec() { print -Pn "\e]0;${_title_prefix}[%~] $2\a" }
+_set-term-currentdir() { print -Pn "\e]7;file://%d\a" }
+add-zsh-hook chpwd   _set-term-currentdir
+add-zsh-hook precmd  _set-term-title-idle
+add-zsh-hook preexec _set-term-title-exec

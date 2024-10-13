@@ -1,0 +1,8 @@
+# file managers
+.directory/
+.DS_Store
+
+# vim
+*~
+*.sw?
+tags

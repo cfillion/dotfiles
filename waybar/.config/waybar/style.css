@@ -1,0 +1,71 @@
+@define-color -white  #c2c2c2;
+@define-color -bwhite #ffffff;
+@define-color -white  #00ff86;
+@define-color -black  #262626;
+@define-color -red #C00;
+@define-color -orange #F80;
+
+* {
+  font-family: "Input Mono Narrow", Hack;
+  font-size: 9pt;
+  padding: 0;
+  min-height: 1.5em;
+}
+
+#waybar {
+  background-color: @-black;
+  color: @-white;
+}
+
+button, button:hover {
+  background: none;
+  border: none;
+  border-radius: 0;
+  transition: none;
+  text-shadow: none;
+  box-shadow: none;
+  color: inherit;
+}
+
+.modules-left .module {
+  margin-right: 8px;
+}
+
+.modules-right .module {
+  margin-left: 16px;
+}
+
+#submap {
+  font-weight: bold;
+  color: @-bwhite;
+}
+
+#window {
+  font-weight: bold;
+}
+
+#window image {
+  margin-right: -4px;
+}
+
+#workspaces .active {
+  color: @-black;
+  background-color: @-white;
+}
+
+#workspaces .urgent {
+  color: @-bwhite;
+  background-color: @-red;
+}
+
+#temperature {
+  margin-left: 0;
+}
+
+#temperature.critical {
+  color: @-orange;
+}
+
+#tray {
+  margin-left: 8px;
+}

@@ -1,0 +1,73 @@
+{
+  "margin": 0,
+  "spacing": 0,
+  "position": "top",
+  "modules-left": [
+    "hyprland/submap",
+    "hyprland/workspaces",
+    "hyprland/window",
+  ],
+  "modules-right": [
+    "cpu",
+    "temperature",
+    "jack",
+    "memory",
+    "disk",
+    "network#wan",
+    "network#vpn",
+    "clock",
+    "tray"
+  ],
+  "hyprland/submap": {
+    "format": "-- {} --"
+  },
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace m-1",
+    "on-scroll-down": "hyprctl dispatch workspace m+1"
+  },
+  "hyprland/window": {
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 16
+  },
+  "disk": {
+    "interval": 1,
+    "format": "SSD {percentage_used}%"
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "CPU {usage}%"
+  },
+  "temperature": {
+    "format": " {temperatureC}ºC",
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "interval": 1,
+    "critical-threshold": 90
+  },
+  "jack": {
+    "format": "DSP {}%",
+    "tooltip-format": "{bufsize}spls {samplerate}Hz {latency}ms {xruns}xruns"
+  },
+  "memory": {
+    "interval": 1,
+    "format": "RAM {}%",
+    "tooltip-format": "{used:0.1f}/{total:0.1f}GiB used, {avail:0.1f}GiB avail"
+  },
+  "network#wan": {
+    "interval": 1,
+    "format-ethernet": "NET {ipaddr}",
+    "format-wifi": "NET {ipaddr} ({essid})",
+    "tooltip-format": "Up: {bandwidthUpBytes} Down: {bandwidthDownBytes}\nGateway: {gwaddr}\nNetmask: {netmask}"
+  },
+  "network#vpn": {
+    "interface": "wg0",
+    "interval": 1,
+    "format": "VPN {ipaddr}",
+    "format-disconnected": "VPN offline",
+    "tooltip-format": "Up: {bandwidthUpBytes} Down: {bandwidthDownBytes}"
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%a %F %T %Z}"
+  }
+},

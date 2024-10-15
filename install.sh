@@ -20,7 +20,7 @@ install() {
     mkdir -p "$(dirname "$dest")"
 
     # create an absolute symlink
-    ln -si "$ROOT/$file" "$dest"
+    ln -sir "$ROOT/$file" "$dest"
   done
 
   IFS="$oldIFS"

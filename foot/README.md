@@ -17,3 +17,12 @@ Allow running `beep` as non-root:
     # cat /etc/udev/rules.d/20-pcspkr-beep.rules
     ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", TAG+="uaccess"
     # udevadm control --reload && rmmod pcspkr && modprobe pcspkr
+
+Input Mono should be configured with the following settings:
+
+    --asterisk=height
+    --braces=straight
+    --g=ss
+    --i=serif
+    --l=serifs_round
+    --lineHeight=1.2

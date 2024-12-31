@@ -9,8 +9,7 @@ https://codeberg.org/dnkl/foot
 Dependencies:
 
 - [beep](https://github.com/spkr-beep/beep)
-- [Input Mono](https://input.djr.com/)
-  and/or [ttf-hack](https://sourcefoundry.org/hack/)
+- `fontconfig` directory for mapping monospace to Input Mono (w/ Hack fallback)
 
 Allow running `beep` as non-root:
 
@@ -18,11 +17,4 @@ Allow running `beep` as non-root:
     ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", TAG+="uaccess"
     # udevadm control --reload && rmmod pcspkr && modprobe pcspkr
 
-Input Mono should be configured with the following settings:
-
-    --asterisk=height
-    --braces=straight
-    --g=ss
-    --i=serif
-    --l=serifs_round
-    --lineHeight=1.2
+Input Mono must be configured with 1.2x line height for uncropped rendering (eg. uppercase letters with diacritics).

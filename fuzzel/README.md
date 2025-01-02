@@ -8,5 +8,4 @@ https://codeberg.org/dnkl/fuzzel
 
 Dependencies:
 
-- [Input Mono](https://input.djr.com/)
-  and/or [ttf-hack](https://sourcefoundry.org/hack/)
+- [foot](https://codeberg.org/dnkl/foot) for launching TUI applications

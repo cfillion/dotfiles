@@ -15,6 +15,7 @@
     "disk",
     "network#wan",
     "network#vpn",
+    "custom/mail",
     "clock",
     "tray"
   ],
@@ -65,6 +66,11 @@
     "format": "VPN {ipaddr}",
     "format-disconnected": "VPN offline",
     "tooltip-format": "Up: {bandwidthUpBytes} Down: {bandwidthDownBytes}"
+  },
+  "custom/mail": {
+    "format": "MAIL {}",
+    "exec": "~/.local/bin/watch-mail",
+    "restart-interval": 60
   },
   "clock": {
     "interval": 1,

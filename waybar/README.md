@@ -9,3 +9,4 @@ Dependencies:
 - [Hyprland](https://github.com/hyprwm/Hyprland)
 - [Input Mono](https://input.djr.com/)
   and/or [ttf-hack](https://sourcefoundry.org/hack/)
+- `watch-mail` script from the `mutt` folder

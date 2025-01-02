@@ -1,0 +1,81 @@
+set folder=~/.mail
+set mbox_type=Maildir
+set postponed=+Drafts
+set record   =+Sent
+set spoolfile=+INBOX
+
+source ~/.config/mutt/identrc
+source ~/.config/mutt/themerc
+
+bind index,pager g noop
+bind index gg first-entry
+bind index G last-entry
+bind index,pager R group-reply
+bind index,pager M recall-message
+bind pager gg top
+bind pager G  bottom
+bind pager <Up> previous-line
+bind pager <Down> next-line
+
+# general
+set confirmappend=no
+set flag_safe
+set help=no
+# set mark_old=no
+set pipe_decode
+set sleep_time=0
+# set wait_key=no
+
+# index view
+set cursor_overlay
+set date_format="%a %Y-%m-%d %H:%M"
+set index_format="%4C %D │%Z│ %18.18F %s"
+set menu_context=3
+set menu_move_off=no
+set menu_scroll
+set narrow_tree
+set sort=threads
+set sort_aux=last-date-received
+set status_format="%f %r Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?B? Back:%B? %?L?%L/?%l (%s/%?T?%T/?%S)%*  %P"
+# set ts_enabled
+# set ts_status_format="%f - Mutt"
+set uncollapse_jump
+
+# mail view
+auto_view text/html
+alternative_order text/enriched text/plain text/html
+set markers=no
+set pager_format="%i%*  [%c %e/%E] %P"
+set pager_index_lines=6
+set pager_stop
+set quote_regexp="^( {0,4}[>|:%]| {0,4}[a-z0-9]+[>|]+)+"
+set search_context=1
+set tilde
+
+ignore   Date
+unignore Reply-to
+unignore X-Forwarded-For
+
+# attachments
+set abort_noattach=ask-yes
+set attach_format="%2n │%u%D%I%t│ %T%d%*  [%m/%M %.6e%?C? %C? %s]"
+set attach_save_dir=`xdg-user-dir DOWNLOAD`
+set mailcap_path=~/.config/mutt/mailcap
+# set mime_forward
+set digest_collapse=no
+
+# composing
+set autoedit
+set compose_format="Attachments: %a (~%l)"
+set edit_headers
+set fast_reply
+set fcc_attach
+set forward_format="Fwd: %s"
+set include
+set postpone_encrypt
+set reverse_name
+set sendmail=msmtp
+set text_flowed
+
+# file browser
+set folder_format="%4C │%N%t│ [%F %-8.8u:%-8.8g %D] %f %*  %8s"

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+folders=(~/.mail/**/new)
+count="$(find "${folders[@]}" -type f -printf . | wc -c)"
+
+echo "$count"
+
+inotifywait -m "${folders[@]}" -e create -e move -e delete --format %e -q | while read action; do
+  case "$action" in
+  CREATE|MOVED_TO)
+    ((++count))
+    ;;
+  DELETE|MOVED_FROM)
+    ((--count))
+    ;;
+  esac
+
+  echo "$count"
+done

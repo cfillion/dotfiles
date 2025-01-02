@@ -1,0 +1,33 @@
+# vim: ft=muttrc
+
+color error      bold    red     default
+color indicator  reverse default default
+color message            default default
+color normal             default default
+color markers            blue    default
+color tilde              blue    default
+color tree               blue    default
+color search     bold    magenta default
+color status     bold    green   default
+
+color hdrdefault bold    default default
+color header     bold    cyan    default ^Subject:
+color body       bold    default default "^#.+"
+color body       bold    blue    default "(https?|ftp|irc)://[^ \"<>]+"
+color body       bold    yellow  default "(mailto:)?[-a-z_0-9.%$#]+@[-a-z_0-9.]+"
+color attachment         green   default
+color signature          yellow  default
+color quoted             magenta  default
+color quoted1            yellow  default
+
+color index bold cyan   default  ~N # new
+color index bold cyan   default  %v~(~N) # contains collapsed
+color index      cyan   default  ~O # unread
+color index      cyan   default  %v~(~O)
+color index bold red    default  ~F # flagged
+color index bold red    default  %v~(~F)
+color index      yellow default  ~D # deleted
+color index      green  default  ~T # tagged
+
+source `[ "$(tput colors)" -ge 256 ] && \
+  echo ~/.config/mutt/themerc.256 || echo /dev/null`

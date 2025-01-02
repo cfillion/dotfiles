@@ -1,0 +1,5 @@
+text/html; xdg-open %s && sleep 0.1; nametemplate=%s.html
+text/html; w3m -dump -I %{charset} -s -cols $COLUMNS -o display_link_number=TRUE -T text/html %s; copiousoutput
+image/*; img2sixel -h $(($(tput lines)*16)) %s; needsterminal
+application/gzip; zless %s
+application/zip;  zless %s

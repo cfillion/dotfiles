@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically synchronize mailboxes
+
+[Timer]
+OnBootSec=0
+OnUnitInactiveSec=1min
+RandomizedDelaySec=10
+
+[Install]
+WantedBy=timers.target

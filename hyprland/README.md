@@ -4,7 +4,8 @@ A highly customizable dynamic tiling Wayland compositor
 
 https://hyprland.org/
 
-    # pacman -S foot fuzzel hyprland jq udiskie waybar wl-clip-persist
+    # pacman -S hyprland xdg-desktop-portal-hyprland
+    # pacman -S foot fuzzel jq udiskie waybar
 
 Dependencies:
 

@@ -1,7 +1,7 @@
 autoload add-zsh-hook compinit edit-command-line zmv
 
 eval "$(dircolors)"
-export BROWSER='qutebrowser'
+export BROWSER='firefox'
 export EDITOR='vim'
 export LESS='-iRQ'
 export PAGER='less'
@@ -10,8 +10,8 @@ export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 # export ESCDELAY=0
 # export GCC_COLORS='auto'
 
-# export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
-# path=("$HOME/.local/bin" "$GEM_HOME/bin" $path)
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir' 2>/dev/null)"
+[ -n "$GEM_HOME" ] && path=($path "$GEM_HOME/bin")
 
 source ~/.zsh/aliases
 source ~/.zsh/functions

@@ -21,7 +21,7 @@ ff = only
 
 [push]
 autoSetupRemote = true
-default = upstream
+default = current
 
 [tag]
 sort = -version:refname

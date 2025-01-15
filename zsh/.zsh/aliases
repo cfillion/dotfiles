@@ -1,5 +1,6 @@
 # vim: ft=zsh
 
+alias ..='cd ..'
 alias ag="ag --color-line-number='0;93' --color-match='31;1' --smart-case"
 alias bc='bc -lq'
 alias cal='task calendar'

@@ -17,7 +17,6 @@ source ~/.zsh/aliases
 source ~/.zsh/functions
 
 # changing directories
-setopt AUTO_CD
 setopt AUTO_PUSHD
 # setopt CHASE_LINKS
 

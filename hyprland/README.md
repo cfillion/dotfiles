@@ -16,3 +16,4 @@ Dependencies:
 - [Waybar](https://github.com/Alexays/Waybar/)
 - [wl-clip-persist](https://github.com/Linus789/wl-clip-persist)
 - [xdg-desktop-portal-hyprland](https://github.com/hyprwm/xdg-desktop-portal-hyprland)
+- [yubikey-touch-detector](https://github.com/maximbaz/yubikey-touch-detector)

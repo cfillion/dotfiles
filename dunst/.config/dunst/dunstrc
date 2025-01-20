@@ -36,21 +36,25 @@ progress_bar_frame_width=0
 progress_bar_height=4
 progress_bar_min_width=500
 progress_bar_max_width=500
-highlight="#c0c0c0"
+highlight="#c6c6c6"
 
 frame_width=1
 frame_color="#768980"
 
+[yubikey]
+appname = yubikey-touch-detector
+urgency = critical
+
 [urgency_low]
 background="#262626b0"
-foreground="#c0c0c0"
+foreground="#c6c6c6"
 
 [urgency_normal]
 background="#262626f0"
-foreground="#c0c0c0"
+foreground="#c6c6c6"
 
 [urgency_critical]
 timeout=0
 background="#461616f0"
 foreground="#ffffff"
-frame_color="#cc0000"
+frame_color="#ff0000"

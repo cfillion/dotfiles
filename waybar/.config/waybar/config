@@ -9,9 +9,12 @@
   ],
   "modules-right": [
     "cpu",
-    "temperature",
+    "temperature#cpu",
     "jack",
     "memory",
+    "custom/gpu",
+    "temperature#gpu",
+    "custom/vram",
     "disk",
     "network#wan",
     "network#vpn",
@@ -39,9 +42,9 @@
     "interval": 1,
     "format": "CPU {usage}%"
   },
-  "temperature": {
+  "temperature#cpu": {
     "format": " {temperatureC}ºC",
-    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
     "interval": 1,
     "critical-threshold": 90
   },
@@ -53,6 +56,22 @@
     "interval": 1,
     "format": "RAM {}%",
     "tooltip-format": "{used:0.1f}/{total:0.1f}GiB used, {avail:0.1f}GiB avail"
+  },
+  "custom/gpu": {
+    "exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
+    "format": "GPU {}%",
+    "interval": 1
+  },
+  "temperature#gpu": {
+    "format": " {temperatureC}ºC",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "interval": 1,
+    "critical-threshold": 90
+  },
+  "custom/vram": {
+    "exec": "cat /sys/class/hwmon/hwmon2/device/mem_info_vram_{used,total} | tr '\n' ' ' | awk '{print int($1/$2*100)}'",
+    "format": "VRAM {}%",
+    "interval": 1
   },
   "network#wan": {
     "interval": 1,

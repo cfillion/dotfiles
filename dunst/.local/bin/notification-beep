@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# appname summary body icon urgency
+
+[[ "$5" == "CRITICAL" ]] && beep -f 750 -l 150

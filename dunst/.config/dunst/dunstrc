@@ -58,3 +58,6 @@ timeout=0
 background="#461616f0"
 foreground="#ffffff"
 frame_color="#ff0000"
+
+[beep]
+script=~/.local/bin/notification-beep

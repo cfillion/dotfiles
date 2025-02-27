@@ -1,10 +1,12 @@
 [commit]
 gpgSign = true
+verbose = true
 
 [diff]
 algorithm = histogram
 submodule = log
 wsErrorHighlight = all
+mnemonicPrefix = true
 
 [filter "lfs"]
 clean = git-lfs clean -- %f

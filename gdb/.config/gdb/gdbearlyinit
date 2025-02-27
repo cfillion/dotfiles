@@ -3,4 +3,5 @@ set history filename ~/.gdb_history
 set history remove-duplicates unlimited
 set history save on
 set pagination off
+set print thread-events off
 set startup-quietly on

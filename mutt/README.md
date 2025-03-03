@@ -4,7 +4,7 @@ The Mutt E-Mail Client
 
 http://www.mutt.org/
 
-    # pacman -S goimapnotify inotify-tools isync msmtp mutt w3m
+    # pacman -S goimapnotify inotify-tools isync msmtp mutt ruby-mail w3m
 
 Dependencies:
 

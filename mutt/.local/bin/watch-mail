@@ -5,9 +5,10 @@ count="$(find "${folders[@]}" -type f -printf . | wc -c)"
 
 echo "$count"
 
-inotifywait -m "${folders[@]}" -e create -e move -e delete --format %e -q | while read action; do
+inotifywait -m "${folders[@]}" -e create -e move -e delete --format '%e %w%f' -q | while read -r action file; do
   case "$action" in
   CREATE|MOVED_TO)
+    notify-mail "$file"
     ((++count))
     ;;
   DELETE|MOVED_FROM)

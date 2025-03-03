@@ -1,0 +1,65 @@
+#!/usr/bin/env ruby
+
+require 'mail'
+
+APP = File.basename $0
+
+def make_encoding(name)
+  Encoding.find name.to_s
+rescue ArgumentError
+  Encoding::US_ASCII
+end
+
+def format_from(mail)
+  mail.header[:from].parse.addrs.map do |from|
+    if from.display_name.nil? || from.display_name == from.address
+      from.address
+    else
+      "#{truncate from.display_name, 24} <#{from.address}>"
+    end
+  end
+end
+
+def truncate(str, len)
+  return unless str
+  return str unless str.size > len
+  return str[0..len] + '…'
+end
+
+def extract_body(mail)
+  encoding = nil
+  if mail.text_part
+    encoding = make_encoding(mail.text_part.charset)
+    mail.text_part.decoded
+  elsif mail.content_type =~ /^text\/(?!html)/
+    encoding = make_encoding(mail.charset || mail.body.charset)
+    mail.body.decoded
+  else
+    encoding = Encoding::UTF_8
+    ''
+  end.force_encoding encoding
+end
+
+def normalize(str)
+  str.to_s.strip.gsub /\s+/, "\x20"
+end
+
+ARGV.each do |file|
+  mail = Mail.read file
+
+  subject = normalize mail.subject
+  subject = truncate subject, 85
+
+  from = format_from mail
+  from = normalize from.join(', ')
+  from.gsub! "\x20", "\u00A0"
+
+  body = extract_body mail
+  body.encode! Encoding::UTF_8,
+    invalid: :replace, undef: :replace, universal_newline: true
+  body = body[0..body.index("\n-- \n")]
+  body = normalize body
+
+  Process.spawn 'notify-send', '-i', 'mail-message-new', '-a', APP, '--',
+    subject, "From: #{from}\n#{body}"
+end

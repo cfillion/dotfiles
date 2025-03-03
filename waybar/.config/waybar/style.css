@@ -53,7 +53,7 @@ menu {
   margin-right: -4px;
 }
 
-#workspaces .active {
+#workspaces .visible {
   color: @-black;
   background-color: @-white;
 }
